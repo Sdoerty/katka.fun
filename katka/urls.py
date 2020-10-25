@@ -7,7 +7,8 @@ from django.views.generic import RedirectView
 urlpatterns = [
     path('admin/', admin.site.urls),
     path('auth_reg/', include('auth_reg.urls')),
-    path('', RedirectView.as_view(url='/auth_reg/', permanent=True))
+    path('mainpage/', include('mainpage.urls')),
+    path('user_profile/', include('user_profile.urls')),
 ]
 urlpatterns += static(settings.MEDIA_URL, document_root=settings.MEDIA_ROOT)
 urlpatterns += static(settings.STATIC_URL, document_root=settings.STATIC_ROOT)
