@@ -650,6 +650,10 @@ textarea.w-input, textarea.w-select {
     display: none
 }
 
+.btn:focus{
+    outline: none;
+}
+
 .w-file-upload-uploading-btn {
     display: flex;
     font-size: 14px;
