@@ -3069,6 +3069,7 @@ a {
     -webkit-flex: 0 auto;
     -ms-flex: 0 auto;
     flex: 0 auto;
+    padding-bottom: 4px;
 }
 
 .container-5 {
