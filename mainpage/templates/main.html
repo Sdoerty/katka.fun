@@ -5,8 +5,8 @@
     <title>KATKA.FUN | Главная страница</title>
     {% load static %}
     <meta content="width=device-width, initial-scale=1" name="viewport"/>
-    <link rel="stylesheet" type="text/css" href="{% static 'css/main.css' %}"/>
-    <link rel="stylesheet" type="text/css" href="{% static 'css/table.css' %}"/>
+    <link rel="stylesheet" type="text/css" href="{% static 'css/style_main.css' %}"/>
+    <link rel="stylesheet" type="text/css" href="{% static 'css/style_main_table.css' %}"/>
     <!-- Bootstrap CSS -->
     <link rel="stylesheet" type="text/css" href="{% static 'css/bootstrap.css' %}"/>
     <link rel="stylesheet" type="text/css" href="{% static 'css/bootstrap-grid.css' %}"/>
@@ -47,6 +47,7 @@
                 <div class="dropdown-menu">
                     <a class="dropdown-item" href="#">Редактировать профиль</a>
                     <a class="dropdown-item" href="#">Настройки</a>
+                    <a class="dropdown-item" href="#">Контакты</a>
                     <div class="dropdown-divider"></div>
                     <a class="dropdown-item" href="#">Выход</a>
                 </div>
@@ -119,9 +120,7 @@
                 <div class="banner-section">
                     <table class="scroll">
                         <div class="table-caption">
-                            <div class="btncreate">
-                                <button type="button" class="btn btn-info">Создать</button>
-                            </div>
+                            <button type="button" class="btn btn-info">Создать</button>
                             <div class="btn-group dropleft dropdown">
                                 <button type="button" class="btn btn-secondary dropdown-toggle" data-toggle="dropdown"
                                         aria-haspopup="true" aria-expanded="false">
