@@ -7,12 +7,12 @@
     <meta content="profile" property="twitter:title"/>
     <meta content="width=device-width, initial-scale=1" name="viewport"/>
     {% load static %}
-    <link href="{% static 'css/style_profile.css' %}" rel="stylesheet" type="text/css"/>
-    <link href="{% static 'css/style_profile_table.css' %}" rel="stylesheet" type="text/css"/>
+    <link href="{% static 'user_profile/css/style_profile.css' %}" rel="stylesheet" type="text/css"/>
+    <link rel="stylesheet" type="text/css" href="{% static 'css/table.css' %}"/>
     <!-- Bootstrap CSS -->
-    <link rel="stylesheet" type="text/css" href="{% static 'css/bootstrap.css' %}"/>
-    <link rel="stylesheet" type="text/css" href="{% static 'css/bootstrap-grid.css' %}"/>
-    <link rel="stylesheet" type="text/css" href="{% static 'css/bootstrap-reboot.css' %}"/>
+    <link rel="stylesheet" type="text/css" href="{% static 'bootstrap/bootstrap.css' %}"/>
+    <link rel="stylesheet" type="text/css" href="{% static 'bootstrap/bootstrap-grid.css' %}"/>
+    <link rel="stylesheet" type="text/css" href="{% static 'bootstrap/bootstrap-reboot.css' %}"/>
 
     <script src="{% static "js/bootstrap.bundle.min.js" %}"></script>
     <script src="{% static "js/bootstrap.bundle.js" %}"></script>
@@ -30,8 +30,6 @@
         var n = c.documentElement, t = " w-mod-";
         n.className += t + "js", ("ontouchstart" in o || o.DocumentTouch && c instanceof DocumentTouch) && (n.className += t + "touch")
     }(window, document);</script>
-    <link href="https://uploads-ssl.webflow.com/img/favicon.ico" rel="shortcut icon" type="image/x-icon"/>
-    <link href="https://uploads-ssl.webflow.com/img/webclip.png" rel="apple-touch-icon"/>
 </head>
 <body class="body-2">
 <div data-collapse="none" data-animation="default" data-duration="400" role="banner" class="navbar-5 w-nav">
@@ -83,104 +81,115 @@
             <div class="div-block-21">
                 <div><img
                         src="https://uploads-ssl.webflow.com/5f1d72d3a5d4074a78fb17c3/5f31b0c4af9e9a19741f39f7_WhatsApp%20Image%202020-08-10%20at%2023.20.51.jpeg"
-                        sizes="(max-width: 767px) 100vw, (max-width: 991px) 33vw, 32vw"
+                        sizes="(max-width: 767px) 100vw, 33vw"
                         srcset="https://uploads-ssl.webflow.com/5f1d72d3a5d4074a78fb17c3/5f31b0c4af9e9a19741f39f7_WhatsApp%20Image%202020-08-10%20at%2023.20.51-p-500.jpeg 500w, https://uploads-ssl.webflow.com/5f1d72d3a5d4074a78fb17c3/5f31b0c4af9e9a19741f39f7_WhatsApp%20Image%202020-08-10%20at%2023.20.51.jpeg 1024w"
                         alt="" class="image-14"/></div>
-                <div class="columns-8 w-row">
-                    <div class="column-12 w-col w-col-6"><h1 class="heading-2">Роман Смирнов</h1></div>
-                    <div class="column-20 w-col w-col-6">
-                        <div class="div-block-18"><img
-                                src="https://uploads-ssl.webflow.com/5f1d72d3a5d4074a78fb17c3/5f359179603d9982f96c7c09_map-marker-2-128%20(1).png"
-                                width="20" alt="" class="image-16"/>
-                            <div class="text-block-15">Москва, Россия</div>
-                        </div>
-                    </div>
-                </div>
+                <div class="div-block-30"><h1 class="heading-2">Роман Смирнов</h1></div>
                 <div class="div-block-28">
                     <div class="columns-7 w-row">
                         <div class="column-11 w-col w-col-6"><a href="profile.html#"
-                                                                class="button-4 w-button">Сообщение</a></div>
+                                                                class="button-4 w-button"
+                                                                style="text-decoration: none;color: white !important;">Сообщение</a>
+                        </div>
                         <div class="column-13 w-col w-col-6"><a href="profile.html#"
-                                                                class="button-5 w-button">Добавить</a></div>
+                                                                class="button-5 w-button"
+                                                                style="text-decoration: none;color: white !important;">Добавить</a>
+                        </div>
                     </div>
                 </div>
             </div>
-            <div class="div-block-22">
-                <div class="form-block w-form">
-                    <form action="#" id="email-form" name="email-form" data-name="Email Form" class="form"><textarea
-                            name="field"
-                            maxlength="5000"
-                            id="field"
-                            placeholder="Напишите что-нибудь..."
-                            class="textarea-2 w-input"></textarea>
-                        <div class="columns-10 w-row">
-                            <div class="column-15 w-col w-col-6"><img
-                                    src="https://uploads-ssl.webflow.com/5f1d72d3a5d4074a78fb17c3/5f69d59d7232f90ae453e73a_picture.png"
-                                    loading="lazy" width="25" height="25" alt=""/></div>
-                            <div class="column-14 w-col w-col-6"><input type="submit" value="Отправить"
-                                                                        data-wait="Ожидайте..."
-                                                                        class="submit-button-2 w-button"/></div>
+            <div class="div-block-29">
+                <div class="section-16">
+                    <div class="columns-13 w-row">
+                        <div class="w-col w-col-5 w-col-small-5 w-col-tiny-5">
+                            <div class="text-block-22">Интересы:</div>
                         </div>
-                    </form>
-                    <div class="w-form-done">
-                        <div>Thank you! Your submission has been received!</div>
+                        <div class="w-col w-col-7 w-col-small-7 w-col-tiny-7">
+                            <div class="text-block-15">Велосипед, Скейтборд</div>
+                        </div>
                     </div>
-                    <div class="w-form-fail">
-                        <div>Oops! Something went wrong while submitting the form.</div>
+                    <div class="columns-13 w-row">
+                        <div class="w-col w-col-5 w-col-small-5 w-col-tiny-5">
+                            <div class="text-block-22">Город:</div>
+                        </div>
+                        <div class="w-col w-col-7 w-col-small-7 w-col-tiny-7">
+                            <div class="text-block-15">Москва, Россия</div>
+                        </div>
+                    </div>
+                    <div class="columns-13 w-row">
+                        <div class="w-col w-col-5 w-col-small-5 w-col-tiny-5">
+                            <div class="text-block-22">Дата рождения:</div>
+                        </div>
+                        <div class="w-col w-col-7 w-col-small-7 w-col-tiny-7">
+                            <div class="text-block-15">29.03.1995</div>
+                        </div>
+                    </div>
+                    <div class="columns-13 w-row">
+                        <div class="w-col w-col-5 w-col-small-5 w-col-tiny-5">
+                            <div class="text-block-22">Пол:</div>
+                        </div>
+                        <div class="w-col w-col-7 w-col-small-7 w-col-tiny-7">
+                            <div class="text-block-15">Муж.</div>
+                        </div>
+                    </div>
+                </div>
+                <div class="section-16">
+                    <div class="columns-13 w-row">
+                        <div class="w-col w-col-1 w-col-medium-1 w-col-small-1 w-col-tiny-1"><img
+                                src="https://uploads-ssl.webflow.com/5f1d72d3a5d4074a78fb17c3/5fbb8a00987231f539fd311c_instagram.png"
+                                loading="lazy" width="30" alt=""/></div>
+                        <div class="w-col w-col-11 w-col-medium-11 w-col-small-11 w-col-tiny-11">
+                            <div class="text-block-15">@captain.mountain</div>
+                        </div>
+                    </div>
+                    <div class="columns-13 w-row">
+                        <div class="w-col w-col-1 w-col-small-1 w-col-tiny-1"><img
+                                src="https://uploads-ssl.webflow.com/5f1d72d3a5d4074a78fb17c3/5fbb8cdfa371e8d1d3933c32_vk.png"
+                                loading="lazy" width="30" alt=""/></div>
+                        <div class="w-col w-col-11 w-col-small-11 w-col-tiny-11">
+                            <div class="text-block-15">vk.com/rom_sm</div>
+                        </div>
+                    </div>
+                    <div class="columns-13 w-row">
+                        <div class="w-col w-col-1 w-col-small-1 w-col-tiny-1"><img
+                                src="https://uploads-ssl.webflow.com/5f1d72d3a5d4074a78fb17c3/5fbb8cf66e2641812f75c80c_facebook.png"
+                                loading="lazy" width="30" alt=""/></div>
+                        <div class="w-col w-col-11 w-col-small-11 w-col-tiny-11">
+                            <div class="text-block-15">@captain.mountain</div>
+                        </div>
                     </div>
                 </div>
             </div>
             <div class="div-block-23">
-                <div class="div-block-25">
-                    <div>
-                        <div class="columns-11 w-row">
-                            <div class="column-16 w-col w-col-2 w-col-small-2 w-col-tiny-2"><img
-                                    src="https://uploads-ssl.webflow.com/5f1d72d3a5d4074a78fb17c3/5f1d8ecba807cd9e0bc6ef29_profile.png"
-                                    loading="lazy" width="40" height="40" alt="" class="image-19"/></div>
-                            <div class="column-17 w-col w-col-7 w-col-small-7 w-col-tiny-7">
-                                <div class="div-block-24"><a href="profile.html#" class="link-2">Name Surname</a></div>
-                            </div>
-                            <div class="column-18 w-col w-col-3 w-col-small-3 w-col-tiny-3">
-                                <div class="text-block-19">23.12.2020<br/></div>
-                            </div>
-                        </div>
+                <div class="columns-14 w-row">
+                    <div class="w-col w-col-6 w-col-small-6 w-col-tiny-6">
+                        <div class="text-block-24">Галерея</div>
                     </div>
-                    <div class="section-13"><img
-                            src="https://uploads-ssl.webflow.com/5f1d72d3a5d4074a78fb17c3/5f31b5e4c6a53322b967d637_WhatsApp%20Image%202020-01-16%20at%2001.49.57.jpeg"
-                            loading="lazy" width="614"
-                            sizes="(max-width: 479px) 93vw, (max-width: 767px) 94vw, (max-width: 991px) 30vw, 29vw"
-                            srcset="https://uploads-ssl.webflow.com/5f1d72d3a5d4074a78fb17c3/5f31b5e4c6a53322b967d637_WhatsApp%20Image%202020-01-16%20at%2001.49.57-p-500.jpeg 500w, https://uploads-ssl.webflow.com/5f1d72d3a5d4074a78fb17c3/5f31b5e4c6a53322b967d637_WhatsApp%20Image%202020-01-16%20at%2001.49.57-p-800.jpeg 800w, https://uploads-ssl.webflow.com/5f1d72d3a5d4074a78fb17c3/5f31b5e4c6a53322b967d637_WhatsApp%20Image%202020-01-16%20at%2001.49.57-p-1080.jpeg 1080w, https://uploads-ssl.webflow.com/5f1d72d3a5d4074a78fb17c3/5f31b5e4c6a53322b967d637_WhatsApp%20Image%202020-01-16%20at%2001.49.57.jpeg 1280w"
-                            alt=""/></div>
-                    <div class="section-14">
-                        <div class="div-block-27"><img
-                                src="https://uploads-ssl.webflow.com/5f1d72d3a5d4074a78fb17c3/5f69d4f6d2ab1b7b7dc236d4_like.png"
-                                loading="lazy" width="20" height="20"
-                                srcset="https://uploads-ssl.webflow.com/5f1d72d3a5d4074a78fb17c3/5f69d4f6d2ab1b7b7dc236d4_like-p-500.png 500w, https://uploads-ssl.webflow.com/5f1d72d3a5d4074a78fb17c3/5f69d4f6d2ab1b7b7dc236d4_like.png 512w"
-                                sizes="(max-width: 479px) 26vw, 20px" alt="" class="image-20"/>
-                            <div class="text-block-20">12</div>
-                        </div>
-                    </div>
+                    <div class="column-25 w-col w-col-6 w-col-small-6 w-col-tiny-6"><a href="profile.html#"
+                                                                                       class="link-4">Все</a></div>
                 </div>
-            </div>
-            <div style="display: flex; justify-content: center; align-content: center;">
-                <nav aria-label="Pagination">
-                    <ul class="pagination">
-                        <li class="page-item">
-                            <a class="page-link" href="#" aria-label="Previous">
-                                <span aria-hidden="true">&laquo;</span>
-                            </a>
-                        </li>
-                        <li class="page-item"><a class="page-link" href="#">1</a></li>
-                        <li class="page-item"><a class="page-link" href="#">2</a></li>
-                        <li class="page-item"><a class="page-link" href="#">3</a></li>
-                        <li class="page-item">
-                            <a class="page-link" href="#" aria-label="Next">
-                                <span aria-hidden="true">&raquo;</span>
-                            </a>
-                        </li>
-                    </ul>
-                </nav>
-
+                <div class="gallery-grid-container-2"><a href="profile.html#"
+                                                         class="gallery-lightbox-2 w-inline-block w-lightbox"><img
+                        src="https://uploads-ssl.webflow.com/5f1d72d3a5d4074a78fb17c3/5f31b5e4c6a53322b967d637_WhatsApp%20Image%202020-01-16%20at%2001.49.57.jpeg"
+                        sizes="(max-width: 767px) 25vw, 8vw"
+                        srcset="https://uploads-ssl.webflow.com/5f1d72d3a5d4074a78fb17c3/5f31b5e4c6a53322b967d637_WhatsApp%20Image%202020-01-16%20at%2001.49.57-p-500.jpeg 500w, https://uploads-ssl.webflow.com/5f1d72d3a5d4074a78fb17c3/5f31b5e4c6a53322b967d637_WhatsApp%20Image%202020-01-16%20at%2001.49.57-p-800.jpeg 800w, https://uploads-ssl.webflow.com/5f1d72d3a5d4074a78fb17c3/5f31b5e4c6a53322b967d637_WhatsApp%20Image%202020-01-16%20at%2001.49.57-p-1080.jpeg 1080w, https://uploads-ssl.webflow.com/5f1d72d3a5d4074a78fb17c3/5f31b5e4c6a53322b967d637_WhatsApp%20Image%202020-01-16%20at%2001.49.57.jpeg 1280w"
+                        alt="" class="gallery-thumbnail-2"/>
+                </a><a href="profile.html#" class="gallery-lightbox-2 w-inline-block w-lightbox"><img
+                        src="https://uploads-ssl.webflow.com/5f1d72d3a5d4074a78fb17c3/5f31b5d0d2b93052409169d5_WhatsApp%20Image%202020-08-10%20at%2023.20.52.jpeg"
+                        sizes="(max-width: 767px) 25vw, 8vw"
+                        srcset="https://uploads-ssl.webflow.com/5f1d72d3a5d4074a78fb17c3/5f31b5d0d2b93052409169d5_WhatsApp%20Image%202020-08-10%20at%2023.20.52-p-500.jpeg 500w, https://uploads-ssl.webflow.com/5f1d72d3a5d4074a78fb17c3/5f31b5d0d2b93052409169d5_WhatsApp%20Image%202020-08-10%20at%2023.20.52.jpeg 1280w"
+                        alt="" class="gallery-thumbnail-2"/>
+                </a><a href="profile.html#" class="gallery-lightbox-2 w-inline-block w-lightbox"><img
+                        src="https://uploads-ssl.webflow.com/5f1d72d3a5d4074a78fb17c3/5f31b5f1c1e5521d82524e8f_WhatsApp%20Image%202020-02-09%20at%2013.56.13.jpeg"
+                        sizes="(max-width: 767px) 25vw, 8vw"
+                        srcset="https://uploads-ssl.webflow.com/5f1d72d3a5d4074a78fb17c3/5f31b5f1c1e5521d82524e8f_WhatsApp%20Image%202020-02-09%20at%2013.56.13-p-500.jpeg 500w, https://uploads-ssl.webflow.com/5f1d72d3a5d4074a78fb17c3/5f31b5f1c1e5521d82524e8f_WhatsApp%20Image%202020-02-09%20at%2013.56.13-p-800.jpeg 800w, https://uploads-ssl.webflow.com/5f1d72d3a5d4074a78fb17c3/5f31b5f1c1e5521d82524e8f_WhatsApp%20Image%202020-02-09%20at%2013.56.13-p-1080.jpeg 1080w, https://uploads-ssl.webflow.com/5f1d72d3a5d4074a78fb17c3/5f31b5f1c1e5521d82524e8f_WhatsApp%20Image%202020-02-09%20at%2013.56.13.jpeg 1280w"
+                        alt="" class="gallery-thumbnail-2"/>
+                </a><a href="profile.html#" class="gallery-lightbox-2 w-inline-block w-lightbox"><img
+                        src="https://uploads-ssl.webflow.com/5f1d72d3a5d4074a78fb17c3/5f31b63597841ee8153b3f66_WhatsApp%20Image%202020-02-23%20at%2022.03.56.jpeg"
+                        sizes="(max-width: 767px) 25vw, 8vw"
+                        srcset="https://uploads-ssl.webflow.com/5f1d72d3a5d4074a78fb17c3/5f31b63597841ee8153b3f66_WhatsApp%20Image%202020-02-23%20at%2022.03.56-p-1080.jpeg 1080w, https://uploads-ssl.webflow.com/5f1d72d3a5d4074a78fb17c3/5f31b63597841ee8153b3f66_WhatsApp%20Image%202020-02-23%20at%2022.03.56.jpeg 1280w"
+                        alt="" class="gallery-thumbnail-2"/>
+                </a></div>
             </div>
         </div>
         <div class="column w-col w-col-8">
@@ -207,27 +216,62 @@
                             width="25" alt=""/><h6 class="heading-9">24 Друзей найдено</h6></div>
                 </div>
             </div>
-            <div class="section-15"><a href="profile.html#" class="button-3 w-button">Велосипед</a><a
-                    href="profile.html#" class="button-3 w-button">Скейтборд</a></div>
+
             <div data-duration-in="300" data-duration-out="100" class="tabs-2 w-tabs">
                 <div class="tabs-menu-2 w-tab-menu"><a data-w-tab="Tab 1"
                                                        class="tab-link-tab-1-2 w-inline-block w-tab-link">
-                    <div>Мои</div>
-                </a><a data-w-tab="Tab 2" class="tab-link-tab-2-2 w-inline-block w-tab-link">
-                    <div>Участвую</div>
-                </a><a data-w-tab="Tab 3" class="tab-link-tab-3 w-inline-block w-tab-link w--current">
-                    <div>Прошедшие</div>
+                    <div style="text-decoration: none;color: black !important;">Мои</div>
+                </a><a data-w-tab="Tab 2" class="tab-link-tab-2-2 w-inline-block w-tab-link w--current">
+                    <div style="text-decoration: none;color: black !important;">Участвую</div>
+                </a><a data-w-tab="Tab 3" class="tab-link-tab-3-2 w-inline-block w-tab-link">
+                    <div style="text-decoration: none;color: black !important;">Прошедшие</div>
                 </a></div>
                 <div class="w-tab-content">
                     <div data-w-tab="Tab 1" class="w-tab-pane">
                         <div class="banner-section" style=" margin-top: 15px;">
                             <div class="containerse">
-                                <table class="tableprofile">
+                                <table class="scroll">
                                     <thead>
                                     <tr style="cursor: default;">
-                                        <th id="th-id" style="width: 15%" scope="col">ID</th>
-                                        <th id="th-town" scope="col">Город</th>
-                                        <th id="th-date" scope="col">Дата/время</th>
+                                        <th class="table-th" id="th-id" style="width: 10%" scope="col">ID</th>
+                                        <th class="table-th" id="th-town" scope="col">Город</th>
+                                        <th class="table-th" id="th-date" scope="col">Дата/время</th>
+                                        <th class="table-th" id="th-transport" style="width: 15%" scope="col">Вид</th>
+
+                                    </tr>
+                                    </thead>
+                                    <tbody>
+                                    <tr onclick="document.location = 'detailkatka.html';">
+                                        <td aria-label="ID">1</td>
+                                        <td aria-label="Город">Волгоград</td>
+                                        <td aria-label="Дата/время">04.07.2019 / 19:00</td>
+                                        <td aria-label="Вид"><img src="{% static 'img/cycle.png' %}" width="30"
+                                                                  height="30"></td>
+
+                                    </tr>
+                                    <tr onclick="document.location = 'detailkatka.html';">
+                                        <td aria-label="ID">2</td>
+                                        <td aria-label="Город">Москва</td>
+                                        <td aria-label="Дата/время">04.07.2019 / 19:00</td>
+                                        <td aria-label="Вид"><img src="{% static 'img/cycle.png' %}" width="30"
+                                                                  height="30"></td>
+
+                                    </tr>
+
+                                    </tbody>
+                                </table>
+                            </div>
+                        </div>
+                    </div>
+                    <div data-w-tab="Tab 2" class="w-tab-pane">
+                        <div class="banner-section" style=" margin-top: 15px;">
+                            <div class="containerse">
+                                <table class="scroll">
+                                    <thead>
+                                    <tr style="cursor: default;">
+                                        <th class="table-th" id="th-id" style="width: 10%" scope="col">ID</th>
+                                        <th class="table-th" id="th-town" scope="col">Город</th>
+                                        <th class="table-th" id="th-date" scope="col">Дата/время</th>
                                         <th class="table-th" id="th-transport" style="width: 15%" scope="col">Вид</th>
 
                                     </tr>
@@ -255,50 +299,15 @@
                             </div>
                         </div>
                     </div>
-                    <div data-w-tab="Tab 2" class="w-tab-pane">
-                        <div class="banner-section" style=" margin-top: 15px;">
-                            <div class="containerse">
-                                <table class="tableprofile">
-                                    <thead>
-                                    <tr style="cursor: default;">
-                                        <th id="th-id" style="width: 15%" scope="col">ID</th>
-                                        <th id="th-town" scope="col">Город</th>
-                                        <th id="th-date" scope="col">Дата/время</th>
-                                        <th class="table-th" id="th-transport" style="width: 15%" scope="col">Вид</th>
-
-                                    </tr>
-                                    </thead>
-                                    <tbody>
-                                    <tr onclick="document.location = 'detailkatka.html';">
-                                        <td aria-label="ID">1</td>
-                                        <td aria-label="Город">Санкт-Петербург</td>
-                                        <td aria-label="Дата/время">04.07.2019 / 19:00</td>
-                                        <td aria-label="Вид"><img src="{% static 'img/cycle.png' %}" width="30"
-                                                                  height="30"></td>
-
-                                    </tr>
-                                    <tr onclick="document.location = 'detailkatka.html';">
-                                        <td aria-label="ID">2</td>
-                                        <td aria-label="Город">Москва</td>
-                                        <td aria-label="Дата/время">04.07.2019 / 19:00</td>
-                                        <td aria-label="Вид"><img src="{% static 'img/cycle.png' %}" width="30"
-                                                                  height="30"></td>
-
-                                    </tr>
-
-                                    </tbody>
-                                </table>                            </div>
-                        </div>
-                    </div>
                     <div data-w-tab="Tab 3" class="w-tab-pane w--tab-active">
                         <div class="banner-section" style=" margin-top: 15px;">
                             <div class="containerse">
-                                <table class="tableprofile">
+                                <table class="scroll">
                                     <thead>
                                     <tr style="cursor: default;">
-                                        <th id="th-id" style="width: 15%" scope="col">ID</th>
-                                        <th id="th-town" scope="col">Город</th>
-                                        <th id="th-date" scope="col">Дата/время</th>
+                                        <th class="table-th" id="th-id" style="width: 10%" scope="col">ID</th>
+                                        <th class="table-th" id="th-town" scope="col">Город</th>
+                                        <th class="table-th" id="th-date" scope="col">Дата/время</th>
                                         <th class="table-th" id="th-transport" style="width: 15%" scope="col">Вид</th>
 
                                     </tr>
@@ -306,7 +315,7 @@
                                     <tbody>
                                     <tr onclick="document.location = 'detailkatka.html';">
                                         <td aria-label="ID">1</td>
-                                        <td aria-label="Город">Санкт-Петербург</td>
+                                        <td aria-label="Город">Нижний Новгород</td>
                                         <td aria-label="Дата/время">04.07.2019 / 19:00</td>
                                         <td aria-label="Вид"><img src="{% static 'img/cycle.png' %}" width="30"
                                                                   height="30"></td>
@@ -322,7 +331,8 @@
                                     </tr>
 
                                     </tbody>
-                                </table>                            </div>
+                                </table>
+                            </div>
                         </div>
                     </div>
                 </div>

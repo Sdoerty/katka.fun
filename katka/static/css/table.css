@@ -47,7 +47,7 @@ tr {
     top: 0;
     padding: .625em;
     text-align: center;
-    height: 80px;
+    height: 50px;
     font-size: 16px;
     letter-spacing: .1em;
     text-transform: uppercase;
@@ -68,7 +68,7 @@ tr {
 
 .banner-section {
     border: 1px solid #ccc;
-    height: 900px;
+    height: 500px;
     position: relative;
     overflow: scroll;
     overflow-x: hidden;
@@ -96,7 +96,8 @@ tr {
 
 @media screen and (max-width: 600px) {
     .banner-section {
-        height: 700px;
+        height: 550px;
+        max-height: 550px;
     }
 
     .leftblock {

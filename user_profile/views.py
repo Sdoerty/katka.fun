@@ -2,4 +2,4 @@ from django.shortcuts import render
 
 
 def index(request):
-    return render(request, '../templates/profile.html')
+    return render(request, '../templates/user_profile/profile.html')
