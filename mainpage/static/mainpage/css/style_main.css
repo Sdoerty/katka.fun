@@ -1947,7 +1947,7 @@ textarea.w-input, textarea.w-select {
 
 .w-nav-menu {
     position: relative;
-    float: right
+    width: 50px;
 }
 
 [data-nav-menu-open] {

@@ -2,4 +2,4 @@ from django.shortcuts import render
 
 
 def index(request):
-    return render(request, '../templates/signin.html')
+    return render(request, '../templates/signup.html')
