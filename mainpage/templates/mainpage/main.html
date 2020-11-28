@@ -8,6 +8,7 @@
     {% load static %}
     <link rel="stylesheet" type="text/css" href="{% static 'mainpage/css/style_main.css' %}"/>
     <link rel="stylesheet" type="text/css" href="{% static 'css/table.css' %}"/>
+
 {% endblock %}
 
 
@@ -95,17 +96,18 @@
             <div class="column w-col w-col-4 w-col-stack">
                 <div class="section mt-3">
                     <blockquote class="block-quote">
-                        <h5>Статьи <span class="badge badge-secondary">новые</span></h5>
+                        <p>Статьи <span class="badge badge-secondary">новые</span></p>
                     </blockquote>
                 </div>
                 <div class="div-block-5">
                     <div class="card mb-3">
-                        <img src="https://uploads-ssl.webflow.com/5f1d72d3a5d4074a78fb17c3/5f1d8a2f4884816158847418_1.jpg"
+                        <img src="{% static 'img/example_gallery/img5.jpg' %}"
                              class="card-img-top" alt="...">
                         <div class="card-body">
-                            <h4 class="card-title"><b>Заголовок статьи</b></h4>
-                            <p class="card-text">This is a wider card with supporting text below as a natural lead-in to
-                                additional content. This content is a little bit longer.</p>
+                            <p class="card-title"><b>Единый день велопарадов в России</b></p>
+                            <p class="card-text">Дептранс Москвы не согласовал проведение 20-го Московского Велопарада
+                                за развитие велосипедной инфраструктуры и безопасность на дорогах. Он был запланирован
+                                на 26 мая...</p>
                             <p class="card-text"><small class="text-muted">23.03.2020 12:22</small></p>
                             <span class="badge badge-primary">Велосипед</span>
                             <span class="badge badge-secondary">Freeride</span>
@@ -115,7 +117,7 @@
                 </div>
                 <div class="section">
                     <blockquote class="block-quote">
-                        <h5>Партнёры <span class="badge badge-secondary">все</span></h5>
+                        <p>Партнёры <span class="badge badge-secondary">все</span></p>
                     </blockquote>
                 </div>
                 <div>
@@ -150,7 +152,7 @@
                 </div>
                 <div class="section">
                     <blockquote class="block-quote">
-                        <h5>Популярные города</h5>
+                        <p>Популярные города</p>
                     </blockquote>
                 </div>
                 <div>

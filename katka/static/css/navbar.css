@@ -30,7 +30,8 @@
 
 @media screen and (max-width: 991px) {
     .w-container {
-        max-width: 728px
+        max-width: 728px;
+
     }
 
 }
@@ -293,7 +294,7 @@
 }
 
 
-.section-3 {
+.nav-sec {
     display: -webkit-box;
     display: -webkit-flex;
     display: -ms-flexbox;
@@ -500,12 +501,11 @@
         -webkit-flex: 0 auto;
         -ms-flex: 0 auto;
         flex: 0 auto;
-        box-shadow: 0 0 14px -3px #000;
         opacity: 1;
     }
 
 
-    .section-3 {
+    .nav-sec {
         display: -webkit-box;
         display: -webkit-flex;
         display: -ms-flexbox;
@@ -628,7 +628,7 @@
         box-shadow: none;
     }
 
-    .section-3 {
+    .nav-sec {
         display: -webkit-box;
         display: -webkit-flex;
         display: -ms-flexbox;
@@ -649,10 +649,6 @@
         flex: 0 auto;
     }
 
-    .div-block-2 {
-        background-color: #1f282d;
-        box-shadow: 1px 1px 3px 0 #000;
-    }
 
 
     .text-block-12 {
