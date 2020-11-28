@@ -68,7 +68,7 @@ tr {
 
 .banner-section {
     border: 1px solid #ccc;
-    height: 500px;
+    height: 400px;
     position: relative;
     overflow: scroll;
     overflow-x: hidden;
