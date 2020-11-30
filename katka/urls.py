@@ -8,7 +8,7 @@ from user_profile import views
 
 urlpatterns = [
     path('admin/', admin.site.urls),
-    path('auth_reg/', include('auth_reg.urls')),
+    path('login/', include('login.urls')),
     path('mainpage/', include('mainpage.urls')),
     path('user_profile/', include('user_profile.urls')),
     path('mainpage/', views.index, name='mainpage'),

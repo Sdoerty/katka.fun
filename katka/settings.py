@@ -38,7 +38,7 @@ INSTALLED_APPS = [
     'django.contrib.sessions',
     'django.contrib.messages',
     'django.contrib.staticfiles',
-    'auth_reg.apps.AuthRegConfig',
+    'login.apps.AuthRegConfig',
     'mainpage.apps.MainpageConfig',
     'user_profile.apps.UserProfileConfig',
 ]
