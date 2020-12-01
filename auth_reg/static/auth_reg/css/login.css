@@ -229,7 +229,7 @@ iframe {
 
 
 /*//////////////////////////////////////////////////////////////////
-[ login ]*/
+[ auth_reg ]*/
 .limiter {
     width: 100%;
     margin: 0 auto;
@@ -255,7 +255,7 @@ iframe {
 .wrap-login100 {
     width: 500px;
     background: #fff;
-    opacity: 0.7;
+    opacity: 0.9;
     border-radius: 10px;
     overflow: hidden;
 }

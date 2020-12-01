@@ -2,4 +2,4 @@ from django.apps import AppConfig
 
 
 class AuthRegConfig(AppConfig):
-    name = 'login'
+    name = 'auth_reg'
