@@ -29,6 +29,14 @@ DEBUG = True
 
 ALLOWED_HOSTS = []
 
+ACCOUNT_EMAIL_REQUIRED = True
+ACCOUNT_USERNAME_REQUIRED = False
+ACCOUNT_AUTHENTICATION_METHOD = 'email'
+ACCOUNT_LOGIN_ATTEMPTS_TIMEOUT = 60
+
+# REDIRECT
+ACCOUNT_ADAPTER = 'auth_reg.adapter.MyAccountAdapter'
+
 # Application definition
 
 INSTALLED_APPS = [
@@ -38,10 +46,18 @@ INSTALLED_APPS = [
     'django.contrib.sessions',
     'django.contrib.messages',
     'django.contrib.staticfiles',
+    'django.contrib.sites',
+    'allauth',
+    'allauth.account',
+    'allauth.socialaccount',
+    'allauth.socialaccount.providers.vk',
     'auth_reg.apps.AuthRegConfig',
     'mainpage.apps.MainpageConfig',
     'user_profile.apps.UserProfileConfig',
 ]
+
+SITE_ID = 1
+
 
 MIDDLEWARE = [
     'django.middleware.security.SecurityMiddleware',
@@ -70,9 +86,11 @@ TEMPLATES = [
         },
     },
 ]
-# TEMPLATE_DIRS = [
-#     os.path.join(BASE_DIR, 'katka/base_templates/'),
-# ]
+
+AUTHENTICATION_BACKENDS = (
+    'django.contrib.auth.backends.ModelBackend',
+    'allauth.account.auth_backends.AuthenticationBackend',
+)
 
 WSGI_APPLICATION = 'katka.wsgi.application'
 
@@ -82,7 +100,7 @@ WSGI_APPLICATION = 'katka.wsgi.application'
 DATABASES = {
     'default': {
         'ENGINE': 'django.db.backends.postgresql_psycopg2',
-        'NAME': 'katka',
+        'NAME': 'katkadb',
         'USER': 'romero',
         'PASSWORD': '2580654',
         'HOST': 'localhost',

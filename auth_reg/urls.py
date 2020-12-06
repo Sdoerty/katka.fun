@@ -1,8 +1,8 @@
-from django.conf.urls import url
 from django.urls import path
 from . import views
+from django.conf.urls import include, url
 
 
 urlpatterns = [
-    url('', views.regform, name='regform')
+    url('', views.regform, name='regform'),
 ]

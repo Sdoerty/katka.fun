@@ -11,6 +11,13 @@ class RegForm(UserCreationForm):
     password1 = forms.CharField(label='Пароль', widget=forms.PasswordInput(attrs={'class': 'form-control m-b-10'}))
     password2 = forms.CharField(label='Повторить пароль', widget=forms.PasswordInput(attrs={'class': 'form-control'}))
 
+    # activities = forms.ImageField(label='Интересы', required=False)
+    # location = forms.CharField(label='Город', required=False)
+    # born_date = forms.DateField(label='Дата рождения', required=False)
+    # social_inst = forms.CharField(label='Инстаграм', required=False)
+    # social_vk = forms.CharField(label='Вконтакте', required=False)
+    # social_fb = forms.CharField(label='Фейсбук', required=False)
+
     class Meta:
         model = User
         fields = ('email', 'first_name', 'last_name', 'password1', 'password2')
