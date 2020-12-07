@@ -3,7 +3,7 @@ from django.contrib.auth.forms import UserCreationForm
 from .forms import RegForm
 
 
-def regform(request):
+def login(request):
     # if request.method == 'POST':
     #     form = RegForm(request.POST)
     #     if form.is_valid():
@@ -12,4 +12,4 @@ def regform(request):
     # else:
     #     form = RegForm()
 
-    return render(request, 'auth_reg/signin.html')
+    return render(request, 'account/login.html')

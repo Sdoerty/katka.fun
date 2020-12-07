@@ -4,5 +4,5 @@ from django.conf.urls import include, url
 
 
 urlpatterns = [
-    url('', views.regform, name='regform'),
+    url('', views.login, name='login'),
 ]

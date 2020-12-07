@@ -29,6 +29,9 @@ DEBUG = True
 
 ALLOWED_HOSTS = []
 
+# ОТПРАВКА ПРОВЕРОЧНОГО КОДА НА E-MAIL (отключено!)
+# EMAIL_BACKEND = ('django.core.mail.backends.console.EmailBackend')
+
 ACCOUNT_EMAIL_REQUIRED = True
 ACCOUNT_USERNAME_REQUIRED = False
 ACCOUNT_AUTHENTICATION_METHOD = 'email'
@@ -58,7 +61,6 @@ INSTALLED_APPS = [
 
 SITE_ID = 1
 
-
 MIDDLEWARE = [
     'django.middleware.security.SecurityMiddleware',
     'django.contrib.sessions.middleware.SessionMiddleware',
@@ -71,10 +73,12 @@ MIDDLEWARE = [
 
 ROOT_URLCONF = 'katka.urls'
 TEMPLATE_DIR = os.path.join(BASE_DIR, "katka/base_templates/")
+LOGIN_TEMPLATE = os.path.join(BASE_DIR, 'auth_reg', 'templates')
+LOGIN_TEMPLATE_SEC = os.path.join(BASE_DIR, 'auth_reg', 'social')
 TEMPLATES = [
     {
         'BACKEND': 'django.template.backends.django.DjangoTemplates',
-        'DIRS': [TEMPLATE_DIR],
+        'DIRS': [TEMPLATE_DIR, LOGIN_TEMPLATE, LOGIN_TEMPLATE_SEC],
         'APP_DIRS': True,
         'OPTIONS': {
             'context_processors': [

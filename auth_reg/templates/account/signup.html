@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Регистрация</title>
+
+
+</head>
+<body style="background: lightgrey">
+
+
+<div>
+    <strong>Menu:</strong>
+    <ul>
+
+        <li><a href="/auth_reg/login/">Sign In</a></li>
+        <li><a href="/auth_reg/signup/">Sign Up</a></li>
+
+    </ul>
+</div>
+
+<h1>Регистрация</h1>
+
+<p>Уже зарегистрированы? <a href="/auth_reg/login/">Войдите</a>.</p>
+
+<form class="signup" id="signup_form" method="post" action="/auth_reg/signup/">
+    <input type="hidden" name="csrfmiddlewaretoken"
+           value="F8bTAGIW0vwbdUzEv5rUG0UEFOPjnrmXUv4FMoNEcULvQTjpdNSpAKQhBbdkvo5K">
+    <p><label for="id_email">E-mail:</label> <input type="email" name="email" placeholder="E-mail адрес"
+                                                    autocomplete="email" required id="id_email"></p>
+    <p><label for="id_password1">Пароль:</label> <input type="password" name="password1" placeholder="Пароль"
+                                                        autocomplete="new-password" required id="id_password1"></p>
+    <p><label for="id_password2">Пароль (ещё раз):</label> <input type="password" name="password2"
+                                                                  placeholder="Пароль (ещё раз)" required
+                                                                  id="id_password2"></p>
+
+    <button type="submit">Регистрация &raquo;</button>
+</form>
+
+
+</body>
+</html>
