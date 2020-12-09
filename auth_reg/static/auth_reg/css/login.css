@@ -183,6 +183,7 @@ textarea:-ms-input-placeholder {
     border-bottom: 1px solid #c4c3c3;
 }
 
+
 /*---------------------------------------------*/
 button {
     outline: none !important;
@@ -396,7 +397,7 @@ iframe {
 /*------------------------------------------------------------------
 [ Button ]*/
 .container-login100-form-btn {
-    padding-top: 40px;
+    padding-top: 20px;
     padding-bottom: 31px;
     display: -webkit-box;
     display: -webkit-flex;

@@ -13,7 +13,7 @@ urlpatterns = [
     path('mainpage/', include('mainpage.urls')),
     path('mainpage/', views.index, name='mainpage'),
     path('user_profile/', include('user_profile.urls')),
-    path('user_profile/', views.index, name='profile'),
+    path('user_profile/', views.index, name='user_profile'),
 ]
 urlpatterns += static(settings.MEDIA_URL, document_root=settings.MEDIA_ROOT)
 urlpatterns += static(settings.STATIC_URL, document_root=settings.STATIC_ROOT)

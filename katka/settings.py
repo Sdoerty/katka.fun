@@ -30,12 +30,13 @@ DEBUG = True
 ALLOWED_HOSTS = []
 
 # ОТПРАВКА ПРОВЕРОЧНОГО КОДА НА E-MAIL (отключено!)
-# EMAIL_BACKEND = ('django.core.mail.backends.console.EmailBackend')
+EMAIL_BACKEND = ('django.core.mail.backends.console.EmailBackend')
 
 ACCOUNT_EMAIL_REQUIRED = True
 ACCOUNT_USERNAME_REQUIRED = False
 ACCOUNT_AUTHENTICATION_METHOD = 'email'
 ACCOUNT_LOGIN_ATTEMPTS_TIMEOUT = 60
+LOGIN_REDIRECT_URL = 'user_profile'
 
 # REDIRECT
 ACCOUNT_ADAPTER = 'auth_reg.adapter.MyAccountAdapter'

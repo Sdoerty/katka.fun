@@ -5,5 +5,5 @@ from allauth.account.adapter import DefaultAccountAdapter
 class MyAccountAdapter(DefaultAccountAdapter):
 
     def get_login_redirect_url(self, request):
-        path = "/mainpage/{username}/"
+        path = "/user_profile/{username}/"
         return path.format(username=request.user.username)

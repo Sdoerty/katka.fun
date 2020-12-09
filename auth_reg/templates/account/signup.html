@@ -1,41 +1,81 @@
 <!DOCTYPE html>
-<html>
+<html lang="en">
 <head>
-    <title>Регистрация</title>
-
-
+    <title>KATKA.FUN | Регистрация аккаунта</title>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    {% load static %}
+    <link rel="stylesheet" type="text/css" href="{% static 'auth_reg/vendor/bootstrap/css/bootstrap.min.css' %}">
+    <link rel="stylesheet" type="text/css"
+          href="{% static 'auth_reg/fonts/font-awesome-4.7.0/css/font-awesome.min.css' %}">
+    <link rel="stylesheet" type="text/css"
+          href="{% static 'auth_reg/fonts/iconic/css/material-design-iconic-font.min.css' %}">
+    <link rel="stylesheet" type="text/css" href="{% static 'auth_reg/vendor/animate/animate.css' %}">
+    <link rel="stylesheet" type="text/css" href="{% static 'auth_reg/vendor/css-hamburgers/hamburgers.min.css' %}">
+    <link rel="stylesheet" type="text/css" href="{% static 'auth_reg/vendor/animsition/css/animsition.min.css' %}">
+    <link rel="stylesheet" type="text/css" href="{% static 'auth_reg/vendor/select2/select2.min.css' %}">
+    <link rel="stylesheet" type="text/css" href="{% static 'auth_reg/vendor/daterangepicker/daterangepicker.css' %}">
+    <link rel="stylesheet" type="text/css" href="{% static 'css/util.css' %}">
+    <link rel="stylesheet" type="text/css" href="{% static 'auth_reg/css/login.css' %}">
 </head>
-<body style="background: lightgrey">
+<body>
 
+<div class="limiter">
+    <div class="container-login100" style="background-image: url({% static 'img/login-bg1.jpg' %});">
+        <div class="wrap-login100 p-l-55 p-r-55 p-t-65 p-b-54">
+            <form class="signup" id="signup_form" method="post" action="/auth_reg/signup/">
+                {% csrf_token %}
+                <span class="login100-form-title p-b-20">
+						KATKA.FUN
+                </span>
+                <span class="login100-form-podtitle">Заполните данные для регистрации</span>
+                <p><label for="id_email">E-mail:</label>
+                    <input class="form-control m-b-10" type="email" name="email" autocomplete="email" required
+                           id="id_email">
+                </p>
+                <p><label for="id_password1">Пароль:</label>
+                    <input class="form-control m-b-10" type="password" name="password1"
+                           autocomplete="new-password" required id="id_password1"></p>
+                <p><label for="id_password2">Пароль (ещё раз):</label>
+                    <input class="form-control m-b-10" type="password" name="password2"
+                           required id="id_password2"></p>
 
-<div>
-    <strong>Menu:</strong>
-    <ul>
-
-        <li><a href="/auth_reg/login/">Sign In</a></li>
-        <li><a href="/auth_reg/signup/">Sign Up</a></li>
-
-    </ul>
+                <div class="container-login100-form-btn">
+                    <div class="wrap-login100-form-btn">
+                        <div class="login100-form-bgbtn"></div>
+                        <button type="submit" class="login100-form-btn">
+                            Регистрация
+                        </button>
+                    </div>
+                </div>
+                <div style="text-align: center">
+                    <p>Уже зарегистрированы? <br> <a style="text-decoration: underline"
+                                                     href="/auth_reg/login/">Войдите</a>.</p>
+                </div>
+            </form>
+        </div>
+    </div>
 </div>
 
-<h1>Регистрация</h1>
 
-<p>Уже зарегистрированы? <a href="/auth_reg/login/">Войдите</a>.</p>
+{#<div id="dropDownSelect1"></div>#}
 
-<form class="signup" id="signup_form" method="post" action="/auth_reg/signup/">
-    <input type="hidden" name="csrfmiddlewaretoken"
-           value="F8bTAGIW0vwbdUzEv5rUG0UEFOPjnrmXUv4FMoNEcULvQTjpdNSpAKQhBbdkvo5K">
-    <p><label for="id_email">E-mail:</label> <input type="email" name="email" placeholder="E-mail адрес"
-                                                    autocomplete="email" required id="id_email"></p>
-    <p><label for="id_password1">Пароль:</label> <input type="password" name="password1" placeholder="Пароль"
-                                                        autocomplete="new-password" required id="id_password1"></p>
-    <p><label for="id_password2">Пароль (ещё раз):</label> <input type="password" name="password2"
-                                                                  placeholder="Пароль (ещё раз)" required
-                                                                  id="id_password2"></p>
-
-    <button type="submit">Регистрация &raquo;</button>
-</form>
-
+<!--===============================================================================================-->
+<script src="{% static 'auth_reg/vendor/jquery/jquery-3.2.1.min.js' %}"></script>
+<!--===============================================================================================-->
+<script src="{% static 'auth_reg/vendor/animsition/js/animsition.min.js' %}"></script>
+<!--===============================================================================================-->
+<script src="{% static 'auth_reg/vendor/bootstrap/js/popper.js' %}"></script>
+<script src="{% static 'auth_reg/vendor/bootstrap/js/bootstrap.min.js' %}"></script>
+<!--===============================================================================================-->
+<script src="{% static 'auth_reg/vendor/select2/select2.min.js' %}"></script>
+<!--===============================================================================================-->
+<script src="{% static 'auth_reg/vendor/daterangepicker/moment.min.js' %}"></script>
+<script src="{% static 'auth_reg/vendor/daterangepicker/daterangepicker.js' %}"></script>
+<!--===============================================================================================-->
+<script src="{% static 'css/vendor/countdowntime/countdowntime.js' %}"></script>
+<!--===============================================================================================-->
+<script src="{% static 'js/auth_reg_js.js' %}"></script>
 
 </body>
 </html>
