@@ -42,7 +42,7 @@ LOGIN_REDIRECT_URL = 'user_profile'
 ACCOUNT_ADAPTER = 'auth_reg.adapter.MyAccountAdapter'
 
 ACCOUNT_FORMS = {
-    'login': 'allauth.account.forms.LoginForm',
+    'login': 'auth_reg.forms.KatkaLoginForm',
     'signup': 'allauth.account.forms.SignupForm',
     'add_email': 'allauth.account.forms.AddEmailForm',
     'change_password': 'allauth.account.forms.ChangePasswordForm',
@@ -85,11 +85,10 @@ MIDDLEWARE = [
 ROOT_URLCONF = 'katka.urls'
 TEMPLATE_DIR = os.path.join(BASE_DIR, "katka/base_templates/")
 LOGIN_TEMPLATE = os.path.join(BASE_DIR, 'auth_reg', 'templates')
-LOGIN_TEMPLATE_SEC = os.path.join(BASE_DIR, 'auth_reg', 'social')
 TEMPLATES = [
     {
         'BACKEND': 'django.template.backends.django.DjangoTemplates',
-        'DIRS': [TEMPLATE_DIR, LOGIN_TEMPLATE, LOGIN_TEMPLATE_SEC],
+        'DIRS': [TEMPLATE_DIR, LOGIN_TEMPLATE],
         'APP_DIRS': True,
         'OPTIONS': {
             'context_processors': [
