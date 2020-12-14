@@ -1,0 +1,38 @@
+{% extends 'base_auth_reg.html' %}
+
+{% block form %}
+
+    <form class="signup" id="signup_form" method="post" action="">
+        {% csrf_token %}
+        <span class="login100-form-title p-b-20">
+						KATKA.FUN
+        </span>
+        <span class="login100-form-podtitle">Заполните данные для регистрации</span>
+        <p><label for="id_email">E-mail:</label>
+            <input class="form-control m-b-10" type="email" name="email" autocomplete="email" required
+                   id="id_email">
+        </p>
+        <p><label for="id_password1">Пароль:</label>
+            <input class="form-control m-b-10" type="password" name="password1"
+                   autocomplete="new-password" required id="id_password1"></p>
+        <p><label for="id_password2">Пароль (ещё раз):</label>
+            <input class="form-control m-b-10" type="password" name="password2"
+                   required id="id_password2"></p>
+
+        <div class="container-login100-form-btn">
+            <div class="wrap-login100-form-btn">
+                <div class="login100-form-bgbtn"></div>
+                <button type="submit" class="login100-form-btn">
+                    Регистрация
+                </button>
+            </div>
+        </div>
+        <div style="text-align: center">
+            <p>Уже зарегистрированы? <br> <a style="text-decoration: underline"
+                                             href="{% url 'login' %}">Войдите</a>.</p>
+        </div>
+    </form>
+
+{% endblock %}
+
+

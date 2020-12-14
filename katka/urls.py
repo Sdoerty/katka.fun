@@ -8,11 +8,13 @@ from user_profile import views
 
 urlpatterns = [
     path('admin/', admin.site.urls),
-    path('auth_reg/', include('allauth.urls')),
-    path('auth_reg/', include('auth_reg.urls')),
+    path('login/', include('login.urls')),
+    path('signup/', include('signup.urls')),
     path('mainpage/', include('mainpage.urls')),
-    path('mainpage/', views.index, name='mainpage'),
     path('user_profile/', include('user_profile.urls')),
+    path('login/', views.index, name='login'),
+    path('signup/', views.index, name='signup'),
+    path('mainpage/', views.index, name='mainpage'),
     path('user_profile/', views.index, name='user_profile'),
 ]
 urlpatterns += static(settings.MEDIA_URL, document_root=settings.MEDIA_ROOT)

@@ -28,29 +28,10 @@ SECRET_KEY = 's4qiuu9o3jg=l!7k2lwt17tkc!6aye+ms(at&n(m%b^tsz5yt6'
 DEBUG = True
 
 ALLOWED_HOSTS = []
+SITE_ID = 1
 
-# ОТПРАВКА ПРОВЕРОЧНОГО КОДА НА E-MAIL (отключено!)
-EMAIL_BACKEND = ('django.core.mail.backends.console.EmailBackend')
-
-ACCOUNT_EMAIL_REQUIRED = True
-ACCOUNT_USERNAME_REQUIRED = False
-ACCOUNT_AUTHENTICATION_METHOD = 'email'
-ACCOUNT_LOGIN_ATTEMPTS_TIMEOUT = 60
 LOGIN_REDIRECT_URL = 'user_profile'
 
-# REDIRECT
-ACCOUNT_ADAPTER = 'auth_reg.adapter.MyAccountAdapter'
-
-ACCOUNT_FORMS = {
-    'login': 'auth_reg.forms.KatkaLoginForm',
-    'signup': 'allauth.account.forms.SignupForm',
-    'add_email': 'allauth.account.forms.AddEmailForm',
-    'change_password': 'allauth.account.forms.ChangePasswordForm',
-    'set_password': 'allauth.account.forms.SetPasswordForm',
-    'reset_password': 'allauth.account.forms.ResetPasswordForm',
-    'reset_password_from_key': 'allauth.account.forms.ResetPasswordKeyForm',
-    'disconnect': 'allauth.socialaccount.forms.DisconnectForm',
-}
 
 # Application definition
 INSTALLED_APPS = [
@@ -61,16 +42,11 @@ INSTALLED_APPS = [
     'django.contrib.messages',
     'django.contrib.staticfiles',
     'django.contrib.sites',
-    'allauth',
-    'allauth.account',
-    'allauth.socialaccount',
-    'allauth.socialaccount.providers.vk',
-    'auth_reg.apps.AuthRegConfig',
+    'login.apps.AuthRegConfig',
+    'signup.apps.SignupConfig',
     'mainpage.apps.MainpageConfig',
     'user_profile.apps.UserProfileConfig',
 ]
-
-SITE_ID = 1
 
 MIDDLEWARE = [
     'django.middleware.security.SecurityMiddleware',
@@ -84,11 +60,12 @@ MIDDLEWARE = [
 
 ROOT_URLCONF = 'katka.urls'
 TEMPLATE_DIR = os.path.join(BASE_DIR, "katka/base_templates/")
-LOGIN_TEMPLATE = os.path.join(BASE_DIR, 'auth_reg', 'templates')
+LOGIN_TEMPLATE = os.path.join(BASE_DIR, 'login/templates/login/')
+SIGNUP_TEMPLATE = os.path.join(BASE_DIR, 'signup/templates/signup/')
 TEMPLATES = [
     {
         'BACKEND': 'django.template.backends.django.DjangoTemplates',
-        'DIRS': [TEMPLATE_DIR, LOGIN_TEMPLATE],
+        'DIRS': [TEMPLATE_DIR, LOGIN_TEMPLATE, SIGNUP_TEMPLATE],
         'APP_DIRS': True,
         'OPTIONS': {
             'context_processors': [
@@ -103,7 +80,6 @@ TEMPLATES = [
 
 AUTHENTICATION_BACKENDS = (
     'django.contrib.auth.backends.ModelBackend',
-    'allauth.account.auth_backends.AuthenticationBackend',
 )
 
 WSGI_APPLICATION = 'katka.wsgi.application'
@@ -114,7 +90,7 @@ WSGI_APPLICATION = 'katka.wsgi.application'
 DATABASES = {
     'default': {
         'ENGINE': 'django.db.backends.postgresql_psycopg2',
-        'NAME': 'katkadb',
+        'NAME': 'katka',
         'USER': 'romero',
         'PASSWORD': '2580654',
         'HOST': 'localhost',
