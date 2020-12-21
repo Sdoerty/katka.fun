@@ -31,6 +31,7 @@ ALLOWED_HOSTS = []
 SITE_ID = 1
 
 LOGIN_REDIRECT_URL = 'user_profile'
+LOGOUT_REDIRECT_URL = 'login'
 
 
 # Application definition
