@@ -8,9 +8,25 @@
 						KATKA.FUN
         </span>
         <span class="login100-form-podtitle">Заполните данные для регистрации</span>
-        <p><label for="id_email">E-mail:</label>
-            <input class="form-control m-b-10" type="email" name="email" autocomplete="email" required
-                   id="id_email">
+
+        {% if form.errors %}
+            {% for field in form %}
+                {% for error in field.errors %}
+                    <p style="text-align: center; color: red">
+                        {{ error|escape }}
+                    </p>
+                {% endfor %}
+            {% endfor %}
+            {% for error in form.non_field_errors %}
+                <p style="text-align: center; color: red">
+                    {{ error|escape }}
+                </p>
+            {% endfor %}
+        {% endif %}
+
+        <p><label for="id_email">Логин:</label>
+            <input class="form-control m-b-10" type="text" name="username" autocomplete="login" required
+                   id="id_login">
         </p>
         <p><label for="id_password1">Пароль:</label>
             <input class="form-control m-b-10" type="password" name="password1"

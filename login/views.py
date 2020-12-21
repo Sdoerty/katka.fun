@@ -5,7 +5,7 @@ from django.contrib.auth import login, logout
 
 
 def user_login(request):
-    if request.POST == 'POST':
+    if request.method == 'POST':
         form = LoginForm(data=request.POST)
         if form.is_valid():
             user = form.get_user()
@@ -13,7 +13,7 @@ def user_login(request):
             return redirect('mainpage')
     else:
         form = LoginForm()
-    return render(request, 'login.html', {'form': form})
+    return render(request, 'login.html', {"form": form})
 
 
 

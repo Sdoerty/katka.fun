@@ -10,7 +10,7 @@
         <span class="login100-form-podtitle">Вход в личный кабинет</span>
 
         {% if form.errors %}
-            <p style="text-align: center">Your username and password didn't match.<br>Please try again.</p>
+            <p style="text-align: center; color: red">Ваше имя пользователя и пароль не совпадают.<br>Пожалуйста, попробуйте еще раз.</p>
         {% endif %}
 
         {% if next %}
@@ -22,8 +22,8 @@
             {% endif %}
         {% endif %}
 
-        <p><label for="id_login">E-mail:</label>
-            <input class="form-control m-b-10" type="email" name="login" autocomplete="email" required
+        <p><label for="id_login">Логин:</label>
+            <input class="form-control m-b-10" type="text" name="username" autocomplete="login" required
                    id="id_login"></p>
         <p><label for="id_password">Пароль:</label>
             <input class="form-control m-b-10" type="password" name="password"
