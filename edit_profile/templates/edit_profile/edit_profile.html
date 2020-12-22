@@ -22,8 +22,8 @@
                 <form id="email-form" name="email-form" data-name="Email Form" class="form-2">
                     <div class="section-17"><img src=""
                                                  loading="lazy" alt="" class="image-23"/>
-                        <div class="mb-3 mt-3">
-                            <input class="form-control" type="file" id="formFile">
+                        <div class="mb-3 m-t-10">
+                            <input class="form-control form-control-sm" style="padding: 1px 0 0 0;" id="formFileSm" type="file">
                         </div>
                         <p><label for="id_name">Имя:</label>
                             <input class="form-control m-b-10" type="text" name="f_name" autocomplete="name" required
@@ -34,8 +34,15 @@
                                    required id="id_lname">
                         </p>
                         <p><label for="id_town">Город:</label>
-                            <input class="form-control m-b-10" type="text" name="town" autocomplete="town" required
-                                   id="id_town" placeholder="Начните вводить город и выберите из списка">
+                            <input class="form-control" list="datalistOptions" id="id_town"
+                                   placeholder="Начните вводить город и выберите из списка">
+                            <datalist id="datalistOptions">
+                                <option value="Москва">
+                                <option value="Санкт-Петербург">
+                                <option value="Нижний Новгород">
+                                <option value="Казань">
+                                <option value="Екатеринбург">
+                            </datalist>
                         </p>
                         <p><label for="date_birth">Укажите дату рождения:</label>
                         <div class="wrap-input100 validate-input m-b-20">
