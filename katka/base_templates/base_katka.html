@@ -1,3 +1,5 @@
+{#{% if user.is_authenticated %}#}
+
 <!DOCTYPE html>
 <html>
 <head>
@@ -32,11 +34,7 @@
                     <div class="div-block-7"><img
                             src="{% static 'img/nav-icons/nav-face.png' %}" width="30"
                             height="30" alt="" class="image"/>
-                        {% if user.is_authenticated %}
-                            <div class="text-block-12">{{ user.username }}</div>
-                        {% else %}
-                            <div class="text-block-12">Name</div>
-                        {% endif %}
+                        <div class="text-block-12">{{ user.username }}</div>
                     </div>
                 </button>
                 <div class="dropdown-menu">
@@ -120,3 +118,10 @@
 
 </body>
 </html>
+
+{#{% else %}#}
+{#    <div style="margin-top: 400px;text-align: center">#}
+{#        <strong>Вы не авторизованы</strong><br>#}
+{#        <a href="{% url 'login' %}">Авторизация</a>#}
+{#    </div>#}
+{#{% endif %}#}

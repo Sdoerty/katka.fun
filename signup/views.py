@@ -9,7 +9,7 @@ def register(request):
         if form.is_valid():
             form.save()
             messages.success(request, 'Вы успешно зарегистрировались')
-            return redirect('user_profile')
+            return redirect('edit_profile')
         else:
             messages.error(request, 'Ошибка регистрации')
     else:
