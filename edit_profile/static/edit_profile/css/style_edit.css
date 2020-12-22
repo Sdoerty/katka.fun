@@ -1,0 +1,190 @@
+.div-block-33 {
+    display: -webkit-box;
+    display: -webkit-flex;
+    display: -ms-flexbox;
+    display: flex;
+    -webkit-box-orient: vertical;
+    -webkit-box-direction: normal;
+    -webkit-flex-direction: column;
+    -ms-flex-direction: column;
+    flex-direction: column;
+    -webkit-box-pack: center;
+    -webkit-justify-content: center;
+    -ms-flex-pack: center;
+    justify-content: center;
+    -webkit-flex-wrap: nowrap;
+    -ms-flex-wrap: nowrap;
+    flex-wrap: nowrap;
+    -webkit-box-align: center;
+    -webkit-align-items: center;
+    -ms-flex-align: center;
+    align-items: center;
+}
+
+.login100-form-podtitle {
+    display: block;
+    font-family: 'Exo', sans-serif;
+    font-size: 18px;
+    color: #333333;
+    line-height: 1.2;
+    text-align: center;
+    padding-bottom: 10px;
+}
+
+.form-block-2 {
+    width: 500px;
+}
+
+.input5 {
+    font-family: 'Exo', sans-serif;
+    font-size: 16px;
+    color: #333333;
+    display: block;
+    width: 100%;
+    height: 35px;
+
+}
+
+.form-2 {
+    display: block;
+    -webkit-box-align: center;
+    -webkit-align-items: center;
+    -ms-flex-align: center;
+    align-items: center;
+}
+
+
+.section-17 {
+    display: -webkit-box;
+    display: -webkit-flex;
+    display: -ms-flexbox;
+    display: flex;
+    padding-top: 10px;
+    padding-bottom: 10px;
+    -webkit-box-orient: vertical;
+    -webkit-box-direction: normal;
+    -webkit-flex-direction: column;
+    -ms-flex-direction: column;
+    flex-direction: column;
+    -webkit-box-pack: start;
+    -webkit-justify-content: flex-start;
+    -ms-flex-pack: start;
+    justify-content: flex-start;
+}
+
+.image-23 {
+    width: 150px;
+    height: 150px;
+    -webkit-align-self: center;
+    -ms-flex-item-align: center;
+    -ms-grid-row-align: center;
+    align-self: center;
+}
+
+.button-8 {
+    width: 150px;
+    -webkit-align-self: center;
+    -ms-flex-item-align: center;
+    -ms-grid-row-align: center;
+    align-self: center;
+    background-color: #474747;
+    font-family: Exo, sans-serif;
+    font-size: 14px;
+    text-align: center;
+}
+
+.submit-button-3 {
+    width: 100%;
+    background-color: #1f282d;
+    font-family: Exo, sans-serif;
+}
+
+.div-block-34 {
+    display: -webkit-box;
+    display: -webkit-flex;
+    display: -ms-flexbox;
+    display: flex;
+    padding-top: 5px;
+    -webkit-box-pack: center;
+    -webkit-justify-content: center;
+    -ms-flex-pack: center;
+    justify-content: center;
+    -webkit-box-align: center;
+    -webkit-align-items: center;
+    -ms-flex-align: center;
+    align-items: center;
+}
+
+.section-16 {
+    padding-top: 5px;
+    padding-bottom: 5px;
+}
+
+.container-7 {
+    position: static;
+    display: -webkit-box;
+    display: -webkit-flex;
+    display: -ms-flexbox;
+    display: flex;
+    padding-top: 5px;
+    padding-bottom: 5px;
+    -webkit-box-orient: horizontal;
+    -webkit-box-direction: normal;
+    -webkit-flex-direction: row;
+    -ms-flex-direction: row;
+    flex-direction: row;
+    -webkit-box-pack: center;
+    -webkit-justify-content: center;
+    -ms-flex-pack: center;
+    justify-content: center;
+    -webkit-flex-wrap: wrap;
+    -ms-flex-wrap: wrap;
+    flex-wrap: wrap;
+    -webkit-box-align: center;
+    -webkit-align-items: center;
+    -ms-flex-align: center;
+    align-items: center;
+    grid-auto-columns: 1fr;
+    -ms-grid-columns: 1fr 1fr;
+    grid-template-columns: 1fr 1fr;
+    -ms-grid-rows: auto auto;
+    grid-template-rows: auto auto;
+    border-bottom: 1px solid #c4c3c3;
+}
+.button-4 {
+    margin-bottom: 15px;
+    color: white;
+    height: 40px;
+    width: 100%;
+    margin-left: 10px;
+    border-style: none;
+    border-width: 1px;
+    border-color: #1f282d;
+    border-radius: 5px;
+    background-color: #1f282d;
+    font-family: Exo, sans-serif;
+}
+
+
+.div-block-31 {
+    margin: 2px;
+    border-style: solid;
+    border-width: 1px;
+    border-color: #9e9e9e;
+}
+
+.image-22 {
+    width: 50px;
+    height: 50px;
+    margin: 5px;
+}
+
+@media screen and (max-width: 479px) {
+
+    .form-block-2 {
+        width: 100%;
+        max-width: 90%;
+        margin-right: 5px;
+        margin-left: 5px;
+    }
+}

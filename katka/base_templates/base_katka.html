@@ -30,7 +30,7 @@
         <div style="float: left">
             <div class="btn-group dropright">
                 <button type="button" id="dropdownMenuButton" data-toggle="dropdown"
-                        aria-haspopup="true" aria-expanded="false" style="background: none; outline: none;">
+                        aria-haspopup="true" aria-expanded="false" style="background: none; outline: none; border: none">
                     <div class="div-block-7"><img
                             src="{% static 'img/nav-icons/nav-face.png' %}" width="30"
                             height="30" alt="" class="image"/>
@@ -38,7 +38,7 @@
                     </div>
                 </button>
                 <div class="dropdown-menu">
-                    <a id="dr-item" class="dropdown-item" href="#">Редактировать профиль</a>
+                    <a id="dr-item" class="dropdown-item" href="{% url 'edit_profile' %}">Редактировать профиль</a>
                     <a id="dr-item" class="dropdown-item" href="#">Настройки</a>
                     <a id="dr-item" class="dropdown-item" href="#">Контакты</a>
                     <div class="dropdown-divider"></div>
@@ -49,7 +49,7 @@
         <div style="float: right">
             <div class="btn-group dropleft">
                 <button type="button" id="dropdownMenuButton" data-toggle="dropdown"
-                        aria-haspopup="true" aria-expanded="false" style="background: none; outline: none;">
+                        aria-haspopup="true" aria-expanded="false" style="background: none; outline: none;border: none">
                     <div class="div-block-8"><img
                             src="{% static 'img/nav-icons/nav-bell.png' %}"
                             width="25" height="25" alt="" class="image-2"/><span class="badge badge-light">3</span>
