@@ -3,7 +3,7 @@
 <!DOCTYPE html>
 <html>
 <head>
-    {% block title %}<title>KATKA.FUN | Профиль</title>{% endblock %}
+    {% block title %}<title>Профиль {{ user.first_name }} {{ user.last_name }}</title>{% endblock %}
     {% block links %}
         {{ block.super }}
         {% load static %}
@@ -22,7 +22,7 @@
                 <div class="div-block-21">
                     <div><img
                             src="{% static 'img/avatar.jpeg' %}" alt="" class="image-14"/></div>
-                    <div class="div-block-30"><h1 class="heading-2">{{ user.username }} {{ user.username }}</h1></div>
+                    <div class="div-block-30"><h1 class="heading-2">{{ user.first_name }} {{ user.last_name }}</h1></div>
                     <div class="div-block-28">
                         <div class="columns-7 w-row">
                             <div class="column-11 w-col w-col-6"><a href="profile.html#"

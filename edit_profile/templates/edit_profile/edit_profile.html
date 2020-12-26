@@ -15,156 +15,166 @@
 
 
 {% block content %}
+    <div style="margin-left: 80px; margin-top: 80px">
+        <form method="POST">
+            {% csrf_token %}
+            {{ form.as_p }}
+            <button>update</button>
+        </form>
 
-    <div class="div-block m-t-50">
-        <div class="div-block-33">
-            <div class="form-block-2 w-form">
-                <form id="email-form" name="email-form" data-name="Email Form" class="form-2">
-                    <div class="section-17"><img src=""
-                                                 loading="lazy" alt="" class="image-23"/>
-                        <div class="mb-3 m-t-10">
-                            <input class="form-control form-control-sm" style="padding: 1px 0 0 0;" id="formFileSm" type="file">
-                        </div>
-                        <p><label for="id_name">Имя:</label>
-                            <input class="form-control m-b-10" type="text" name="f_name" autocomplete="name" required
-                                   id="id_name">
-                        </p>
-                        <p><label for="id_lname">Фамилия:</label>
-                            <input class="form-control m-b-10" type="text" name="l_name" autocomplete="last_name"
-                                   required id="id_lname">
-                        </p>
-                        <p><label for="id_town">Город:</label>
-                            <input class="form-control" list="datalistOptions" id="id_town"
-                                   placeholder="Начните вводить город и выберите из списка">
-                            <datalist id="datalistOptions">
-                                <option value="Москва">
-                                <option value="Санкт-Петербург">
-                                <option value="Нижний Новгород">
-                                <option value="Казань">
-                                <option value="Екатеринбург">
-                            </datalist>
-                        </p>
-                        <p><label for="date_birth">Укажите дату рождения:</label>
-                        <div class="wrap-input100 validate-input m-b-20">
-                            <input class="input5" id="date_birth" style="text-align: center; padding: 0;" type="date"
-                                   name="date">
-                        </div>
-                        <hr>
-                        <div style="text-align: center"><p>Укажите соц.сети (не обязательно)</p></div>
-
-                        <label for="basic-url" class="form-label">Instagram</label>
-                        <div class="input-group mb-3">
-                            <span class="input-group-text" id="basic-addon3">https://instagram.com/</span>
-                            <input type="text" class="form-control" id="basic-url" aria-describedby="basic-addon3">
-                        </div>
-                        <label for="basic-url" class="form-label">VK</label>
-                        <div class="input-group mb-3">
-                            <span class="input-group-text" id="basic-addon3">https://vk.com/</span>
-                            <input type="text" class="form-control" id="basic-url" aria-describedby="basic-addon3">
-                        </div>
-                        <label for="basic-url" class="form-label">Facebook</label>
-                        <div class="input-group mb-3">
-                            <span class="input-group-text" id="basic-addon3">https://facebook.com/</span>
-                            <input type="text" class="form-control" id="basic-url" aria-describedby="basic-addon3">
-                        </div>
-
-                        <div class="section-16">
-                            <div>
-                                <div class="container-8 w-container">
-                                    <div style="text-align: center"><p>Выберите Ваши интересы</p></div>
-                                </div>
-                                <div class="container-7 w-container">
-                                    <div class="div-block-31"><img
-                                            src="{% static 'img/activity/basketball.png' %}"
-                                            loading="lazy" alt="" class="image-22"/>
-                                    </div>
-                                    <div class="div-block-31"><img
-                                            src="{% static 'img/activity/bicycle.png' %}"
-                                            loading="lazy" alt="" class="image-22"/>
-                                    </div>
-                                    <div class="div-block-31"><img
-                                            src="{% static 'img/activity/bowling.png' %}"
-                                            loading="lazy" alt="" class="image-22"/>
-                                    </div>
-                                    <div class="div-block-31"><img
-                                            src="{% static 'img/activity/dancing.png' %}"
-                                            loading="lazy" alt="" class="image-22"/>
-                                    </div>
-                                    <div class="div-block-31"><img
-                                            src="{% static 'img/activity/football.png' %}"
-                                            loading="lazy" alt="" class="image-22"/>
-                                    </div>
-                                    <div class="div-block-31"><img
-                                            src="{% static 'img/activity/horse-riding.png' %}"
-                                            loading="lazy" alt="" class="image-22"/>
-                                    </div>
-                                    <div class="div-block-31"><img
-                                            src="{% static 'img/activity/lifting.png' %}"
-                                            loading="lazy" alt="" class="image-22"/>
-                                    </div>
-                                    <div class="div-block-31"><img
-                                            src="{% static 'img/activity/motocross.png' %}"
-                                            loading="lazy" alt="" class="image-22"/>
-                                    </div>
-                                    <div class="div-block-31"><img
-                                            src="{% static 'img/activity/ping-pong.png' %}"
-                                            loading="lazy" alt="" class="image-22"/>
-                                    </div>
-                                    <div class="div-block-31"><img
-                                            src="{% static 'img/activity/pullups.png' %}"
-                                            loading="lazy" alt="" class="image-22"/>
-                                    </div>
-                                    <div class="div-block-31"><img
-                                            src="{% static 'img/activity/rolls.png' %}"
-                                            loading="lazy" alt="" class="image-22"/>
-                                    </div>
-                                    <div class="div-block-31"><img
-                                            src="{% static 'img/activity/run.png' %}"
-                                            loading="lazy" alt="" class="image-22"/>
-                                    </div>
-                                    <div class="div-block-31"><img
-                                            src="{% static 'img/activity/skate.png' %}"
-                                            loading="lazy" alt="" class="image-22"/>
-                                    </div>
-                                    <div class="div-block-31"><img
-                                            src="{% static 'img/activity/skiing.png' %}"
-                                            loading="lazy" alt="" class="image-22"/>
-                                    </div>
-                                    <div class="div-block-31"><img
-                                            src="{% static 'img/activity/snowboard.png' %}"
-                                            loading="lazy" alt="" class="image-22"/>
-                                    </div>
-                                    <div class="div-block-31"><img
-                                            src="{% static 'img/activity/tennis.png' %}"
-                                            loading="lazy" alt="" class="image-22"/>
-                                    </div>
-                                    <div class="div-block-31"><img
-                                            src="{% static 'img/activity/trekking.png' %}"
-                                            loading="lazy" alt="" class="image-22"/>
-                                    </div>
-                                    <div class="div-block-31"><img
-                                            src="{% static 'img/activity/volleyball.png' %}"
-                                            loading="lazy" alt="" class="image-22"/>
-                                    </div>
-                                    <div class="div-block-31"><img
-                                            src="{% static 'img/activity/walking.png' %}"
-                                            loading="lazy" alt="" class="image-22"/>
-                                    </div>
-                                    <div class="div-block-31"><img
-                                            src="{% static 'img/activity/yoga.png' %}"
-                                            loading="lazy" alt="" class="image-22"/>
-                                    </div>
-
-                                </div>
-                            </div>
-                        </div>
-                        <div class="div-block-34"><input type="submit" value="Применить" data-wait="Please wait..."
-                                                         class="button-4 w-button"/></div>
-                    </div>
-                </form>
-            </div>
-        </div>
     </div>
-    <hr>
+
+
+
+    {#    <div class="div-block m-t-50">#}
+    {#        <div class="div-block-33">#}
+    {#            <div class="form-block-2 w-form">#}
+    {#                <form id="email-form" name="email-form" data-name="Email Form" class="form-2">#}
+    {#                    <div class="section-17"><img src=""#}
+    {#                                                 loading="lazy" alt="" class="image-23"/>#}
+    {#                        <div class="mb-3 m-t-10">#}
+    {#                            <input class="form-control form-control-sm" style="padding: 1px 0 0 0;" id="formFileSm" type="file">#}
+    {#                        </div>#}
+    {#                        <p><label for="id_name">Имя:</label>#}
+    {#                            <input class="form-control m-b-10" type="text" name="f_name" autocomplete="name" required#}
+    {#                                   id="id_name">#}
+    {#                        </p>#}
+    {#                        <p><label for="id_lname">Фамилия:</label>#}
+    {#                            <input class="form-control m-b-10" type="text" name="l_name" autocomplete="last_name"#}
+    {#                                   required id="id_lname">#}
+    {#                        </p>#}
+    {#                        <p><label for="id_town">Город:</label>#}
+    {#                            <input class="form-control" list="datalistOptions" id="id_town"#}
+    {#                                   placeholder="Начните вводить город и выберите из списка">#}
+    {#                            <datalist id="datalistOptions">#}
+    {#                                <option value="Москва">#}
+    {#                                <option value="Санкт-Петербург">#}
+    {#                                <option value="Нижний Новгород">#}
+    {#                                <option value="Казань">#}
+    {#                                <option value="Екатеринбург">#}
+    {#                            </datalist>#}
+    {#                        </p>#}
+    {#                        <p><label for="date_birth">Укажите дату рождения:</label>#}
+    {#                        <div class="wrap-input100 validate-input m-b-20">#}
+    {#                            <input class="input5" id="date_birth" style="text-align: center; padding: 0;" type="date"#}
+    {#                                   name="date">#}
+    {#                        </div>#}
+    {#                        <hr>#}
+    {#                        <div style="text-align: center"><p>Укажите соц.сети (не обязательно)</p></div>#}
+    {##}
+    {#                        <label for="basic-url" class="form-label">Instagram</label>#}
+    {#                        <div class="input-group mb-3">#}
+    {#                            <span class="input-group-text" id="basic-addon3">https://instagram.com/</span>#}
+    {#                            <input type="text" class="form-control" id="basic-url" aria-describedby="basic-addon3">#}
+    {#                        </div>#}
+    {#                        <label for="basic-url" class="form-label">VK</label>#}
+    {#                        <div class="input-group mb-3">#}
+    {#                            <span class="input-group-text" id="basic-addon3">https://vk.com/</span>#}
+    {#                            <input type="text" class="form-control" id="basic-url" aria-describedby="basic-addon3">#}
+    {#                        </div>#}
+    {#                        <label for="basic-url" class="form-label">Facebook</label>#}
+    {#                        <div class="input-group mb-3">#}
+    {#                            <span class="input-group-text" id="basic-addon3">https://facebook.com/</span>#}
+    {#                            <input type="text" class="form-control" id="basic-url" aria-describedby="basic-addon3">#}
+    {#                        </div>#}
+    {##}
+    {#                        <div class="section-16">#}
+    {#                            <div>#}
+    {#                                <div class="container-8 w-container">#}
+    {#                                    <div style="text-align: center"><p>Выберите Ваши интересы</p></div>#}
+    {#                                </div>#}
+    {#                                <div class="container-7 w-container">#}
+    {#                                    <div class="div-block-31"><img#}
+    {#                                            src="{% static 'img/activity/basketball.png' %}"#}
+    {#                                            loading="lazy" alt="" class="image-22"/>#}
+    {#                                    </div>#}
+    {#                                    <div class="div-block-31"><img#}
+    {#                                            src="{% static 'img/activity/bicycle.png' %}"#}
+    {#                                            loading="lazy" alt="" class="image-22"/>#}
+    {#                                    </div>#}
+    {#                                    <div class="div-block-31"><img#}
+    {#                                            src="{% static 'img/activity/bowling.png' %}"#}
+    {#                                            loading="lazy" alt="" class="image-22"/>#}
+    {#                                    </div>#}
+    {#                                    <div class="div-block-31"><img#}
+    {#                                            src="{% static 'img/activity/dancing.png' %}"#}
+    {#                                            loading="lazy" alt="" class="image-22"/>#}
+    {#                                    </div>#}
+    {#                                    <div class="div-block-31"><img#}
+    {#                                            src="{% static 'img/activity/football.png' %}"#}
+    {#                                            loading="lazy" alt="" class="image-22"/>#}
+    {#                                    </div>#}
+    {#                                    <div class="div-block-31"><img#}
+    {#                                            src="{% static 'img/activity/horse-riding.png' %}"#}
+    {#                                            loading="lazy" alt="" class="image-22"/>#}
+    {#                                    </div>#}
+    {#                                    <div class="div-block-31"><img#}
+    {#                                            src="{% static 'img/activity/lifting.png' %}"#}
+    {#                                            loading="lazy" alt="" class="image-22"/>#}
+    {#                                    </div>#}
+    {#                                    <div class="div-block-31"><img#}
+    {#                                            src="{% static 'img/activity/motocross.png' %}"#}
+    {#                                            loading="lazy" alt="" class="image-22"/>#}
+    {#                                    </div>#}
+    {#                                    <div class="div-block-31"><img#}
+    {#                                            src="{% static 'img/activity/ping-pong.png' %}"#}
+    {#                                            loading="lazy" alt="" class="image-22"/>#}
+    {#                                    </div>#}
+    {#                                    <div class="div-block-31"><img#}
+    {#                                            src="{% static 'img/activity/pullups.png' %}"#}
+    {#                                            loading="lazy" alt="" class="image-22"/>#}
+    {#                                    </div>#}
+    {#                                    <div class="div-block-31"><img#}
+    {#                                            src="{% static 'img/activity/rolls.png' %}"#}
+    {#                                            loading="lazy" alt="" class="image-22"/>#}
+    {#                                    </div>#}
+    {#                                    <div class="div-block-31"><img#}
+    {#                                            src="{% static 'img/activity/run.png' %}"#}
+    {#                                            loading="lazy" alt="" class="image-22"/>#}
+    {#                                    </div>#}
+    {#                                    <div class="div-block-31"><img#}
+    {#                                            src="{% static 'img/activity/skate.png' %}"#}
+    {#                                            loading="lazy" alt="" class="image-22"/>#}
+    {#                                    </div>#}
+    {#                                    <div class="div-block-31"><img#}
+    {#                                            src="{% static 'img/activity/skiing.png' %}"#}
+    {#                                            loading="lazy" alt="" class="image-22"/>#}
+    {#                                    </div>#}
+    {#                                    <div class="div-block-31"><img#}
+    {#                                            src="{% static 'img/activity/snowboard.png' %}"#}
+    {#                                            loading="lazy" alt="" class="image-22"/>#}
+    {#                                    </div>#}
+    {#                                    <div class="div-block-31"><img#}
+    {#                                            src="{% static 'img/activity/tennis.png' %}"#}
+    {#                                            loading="lazy" alt="" class="image-22"/>#}
+    {#                                    </div>#}
+    {#                                    <div class="div-block-31"><img#}
+    {#                                            src="{% static 'img/activity/trekking.png' %}"#}
+    {#                                            loading="lazy" alt="" class="image-22"/>#}
+    {#                                    </div>#}
+    {#                                    <div class="div-block-31"><img#}
+    {#                                            src="{% static 'img/activity/volleyball.png' %}"#}
+    {#                                            loading="lazy" alt="" class="image-22"/>#}
+    {#                                    </div>#}
+    {#                                    <div class="div-block-31"><img#}
+    {#                                            src="{% static 'img/activity/walking.png' %}"#}
+    {#                                            loading="lazy" alt="" class="image-22"/>#}
+    {#                                    </div>#}
+    {#                                    <div class="div-block-31"><img#}
+    {#                                            src="{% static 'img/activity/yoga.png' %}"#}
+    {#                                            loading="lazy" alt="" class="image-22"/>#}
+    {#                                    </div>#}
+    {##}
+    {#                                </div>#}
+    {#                            </div>#}
+    {#                        </div>#}
+    {#                        <div class="div-block-34"><input type="submit" value="Применить" data-wait="Please wait..."#}
+    {#                                                         class="button-4 w-button"/></div>#}
+    {#                    </div>#}
+    {#                </form>#}
+    {#            </div>#}
+    {#        </div>#}
+    {#    </div>#}
+    {#    <hr>#}
 
 {% endblock %}

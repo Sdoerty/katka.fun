@@ -1,8 +1,8 @@
 from django.urls import path
-from . import views
+from .views import EditProfile
 from django.conf.urls import include, url
 
 
 urlpatterns = [
-    url('', views.index, name='edit_profile'),
+    url('', EditProfile.as_view(), name='edit_profile'),
 ]
