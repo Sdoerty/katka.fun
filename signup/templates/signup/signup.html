@@ -24,16 +24,30 @@
             {% endfor %}
         {% endif %}
 
-        <p><label for="id_email">Логин:</label>
-            <input class="form-control m-b-10" type="text" name="username" autocomplete="login" required
-                   id="id_login">
+        <p><label for="id_username">Логин:</label>
+            <input class="form-control m-b-10" type="text" name="username" autocomplete="username" required
+                   id="id_username">
         </p>
+
+            <p><label for="id_first_name">Имя:</label>
+            <input class="form-control m-b-10" type="text" name="first_name" autocomplete="given-name" required
+                   id="id_first_name">
+        </p>
+
+            <p><label for="id_last_name">Фамилия:</label>
+            <input class="form-control m-b-10" type="text" name="last_name" autocomplete="family-name" required
+                   id="id_last_name">
+        </p>
+
         <p><label for="id_password1">Пароль:</label>
             <input class="form-control m-b-10" type="password" name="password1"
-                   autocomplete="new-password" required id="id_password1"></p>
+                   autocomplete="new-password" required id="id_password1">
+        </p>
+
         <p><label for="id_password2">Пароль (ещё раз):</label>
             <input class="form-control m-b-10" type="password" name="password2"
-                   required id="id_password2"></p>
+                   required id="id_password2">
+        </p>
 
         <div class="container-login100-form-btn">
             <div class="wrap-login100-form-btn">
