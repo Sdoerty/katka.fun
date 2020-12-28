@@ -30,7 +30,7 @@ DEBUG = True
 ALLOWED_HOSTS = []
 SITE_ID = 1
 
-LOGIN_REDIRECT_URL = 'user_profile'
+LOGIN_REDIRECT_URL = 'profile'
 LOGOUT_REDIRECT_URL = 'login'
 
 
@@ -45,9 +45,8 @@ INSTALLED_APPS = [
     'django.contrib.sites',
     'login.apps.AuthRegConfig',
     'signup.apps.SignupConfig',
-    'mainpage.apps.MainpageConfig',
-    'user_profile.apps.UserProfileConfig',
-    'edit_profile.apps.EditProfileConfig',
+    'main.apps.MainpageConfig',
+    'profile.apps.UserProfileConfig',
 ]
 
 MIDDLEWARE = [
@@ -61,13 +60,17 @@ MIDDLEWARE = [
 ]
 
 ROOT_URLCONF = 'katka.urls'
+
 TEMPLATE_DIR = os.path.join(BASE_DIR, "katka/base_templates/")
 LOGIN_TEMPLATE = os.path.join(BASE_DIR, 'login/templates/login/')
 SIGNUP_TEMPLATE = os.path.join(BASE_DIR, 'signup/templates/signup/')
+PROFILE_TEMPLATE = os.path.join(BASE_DIR, 'profile/templates/profile')
+EDIT_PROFILE_TEMPLATE = os.path.join(BASE_DIR, 'profile/templates/edit_profile')
+
 TEMPLATES = [
     {
         'BACKEND': 'django.template.backends.django.DjangoTemplates',
-        'DIRS': [TEMPLATE_DIR, LOGIN_TEMPLATE, SIGNUP_TEMPLATE],
+        'DIRS': [TEMPLATE_DIR, LOGIN_TEMPLATE, SIGNUP_TEMPLATE, PROFILE_TEMPLATE, EDIT_PROFILE_TEMPLATE],
         'APP_DIRS': True,
         'OPTIONS': {
             'context_processors': [

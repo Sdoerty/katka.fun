@@ -10,7 +10,7 @@ def user_login(request):
         if form.is_valid():
             user = form.get_user()
             login(request, user)
-            return redirect('mainpage')
+            return redirect('main')
     else:
         form = LoginForm()
     return render(request, 'login.html', {"form": form})

@@ -5,5 +5,5 @@
 # class MyAccountAdapter(DefaultAccountAdapter):
 #
 #     def get_login_redirect_url(self, request):
-#         path = "/user_profile/{username}/"
+#         path = "/profile/{username}/"
 #         return path.format(username=request.user.username)
