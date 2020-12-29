@@ -4,6 +4,6 @@ from . import views
 
 
 urlpatterns = [
-    # url('', views.index, name='index'),
-    # url('', views.edit_profile, name='edit_profile'),
+    # url('', views.index, name='profile'),
+    url(r'^edit_profile/$', views.edit, name='edit_profile'),
 ]
