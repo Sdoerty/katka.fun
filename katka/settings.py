@@ -61,6 +61,7 @@ MIDDLEWARE = [
 
 ROOT_URLCONF = 'katka.urls'
 
+
 TEMPLATE_DIR = os.path.join(BASE_DIR, "katka/base_templates/")
 LOGIN_TEMPLATE = os.path.join(BASE_DIR, 'login/templates/login/')
 SIGNUP_TEMPLATE = os.path.join(BASE_DIR, 'signup/templates/signup/')
@@ -95,7 +96,7 @@ WSGI_APPLICATION = 'katka.wsgi.application'
 DATABASES = {
     'default': {
         'ENGINE': 'django.db.backends.postgresql_psycopg2',
-        'NAME': 'k4',
+        'NAME': 'k5',
         'USER': 'romero',
         'PASSWORD': '2580654',
         'HOST': 'localhost',
