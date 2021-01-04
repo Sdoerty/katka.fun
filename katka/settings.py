@@ -67,11 +67,13 @@ LOGIN_TEMPLATE = os.path.join(BASE_DIR, 'login/templates/login/')
 SIGNUP_TEMPLATE = os.path.join(BASE_DIR, 'signup/templates/signup/')
 PROFILE_TEMPLATE = os.path.join(BASE_DIR, 'profile/templates/profile')
 EDIT_PROFILE_TEMPLATE = os.path.join(BASE_DIR, 'profile/templates/edit_profile')
+KATKA_PAGE = os.path.join(BASE_DIR, 'main/templates/katka_page')
+CREATE_KATKA = os.path.join(BASE_DIR, 'main/templates/create_katka')
 
 TEMPLATES = [
     {
         'BACKEND': 'django.template.backends.django.DjangoTemplates',
-        'DIRS': [TEMPLATE_DIR, LOGIN_TEMPLATE, SIGNUP_TEMPLATE, PROFILE_TEMPLATE, EDIT_PROFILE_TEMPLATE],
+        'DIRS': [TEMPLATE_DIR, LOGIN_TEMPLATE, SIGNUP_TEMPLATE, PROFILE_TEMPLATE, EDIT_PROFILE_TEMPLATE, KATKA_PAGE, CREATE_KATKA],
         'APP_DIRS': True,
         'OPTIONS': {
             'context_processors': [

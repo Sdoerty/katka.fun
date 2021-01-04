@@ -4,5 +4,7 @@ from . import views
 
 
 urlpatterns = [
-    url('', views.index, name='index')
+    url(r'^table/$', views.index, name='main'),
+    url(r'^katka_page/$', views.katka_page, name='katka_page'),
+    url(r'^create_katka/$', views.create_katka, name='create_katka'),
 ]

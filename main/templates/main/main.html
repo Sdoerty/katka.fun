@@ -6,7 +6,7 @@
     {{ block.super }}
 
     {% load static %}
-    <link rel="stylesheet" type="text/css" href="{% static 'mainpage/css/style_main.css' %}"/>
+    <link rel="stylesheet" type="text/css" href="{% static 'main/css/style_main.css' %}"/>
     <link rel="stylesheet" type="text/css" href="{% static 'css/table.css' %}"/>
 
 {% endblock %}
@@ -22,7 +22,7 @@
                     <div class="banner-section" style="height: 800px;">
                         <table class="scroll">
                             <div class="table-caption">
-                                <button type="button" class="btn btn-info">Создать</button>
+                                <a href="{% url 'create_katka' %}"><button type="button" class="btn btn-info">Создать</button></a>
                                 <div class="btn-group dropleft dropdown">
                                     <button type="button" class="btn btn-secondary dropdown-toggle"
                                             data-toggle="dropdown"
@@ -46,7 +46,7 @@
                             </tr>
                             </thead>
                             <tbody>
-                            <tr onclick="document.location = 'detailkatka.html';">
+                            <tr onclick="document.location = '{% url "katka_page" %}';">
                                 <td aria-label="ID">1</td>
                                 <td aria-label="Город">Санкт-Петербург</td>
                                 <td aria-label="Дата/время">03.07.2020 / (19:00)</td>
@@ -55,41 +55,10 @@
                                 <td aria-label="Статус"><img src="{% static 'img/lock.png' %}" width="30" height="30">
                                 </td>
                             </tr>
-                            <tr onclick="document.location = 'detailkatka.html';">
-                                <td aria-label="ID">2</td>
-                                <td aria-label="Город">Москва</td>
-                                <td aria-label="Дата/время">20.07.2020 / (12:00)</td>
-                                <td aria-label="Вид"><img src="{% static 'img/activity/skate.png' %}" width="30" height="30">
-                                </td>
-                                <td aria-label="Статус"><img src="{% static 'img/unlock.png' %}" width="30"
-                                                             height="30">
-                                </td>
-                            </tr>
-                            <tr onclick="document.location = 'detailkatka.html';">
-                                <td aria-label="ID">3</td>
-                                <td aria-label="Город">Н. Новгород</td>
-                                <td aria-label="Дата/время">04.07.2019 / (16:00)</td>
-                                <td aria-label="Вид"><img src="{% static 'img/activity/rolls.png' %}" width="30" height="30"></td>
-                                <td aria-label="Статус"><img src="{% static 'img/unlock.png' %}" width="30"
-                                                             height="30">
-                                </td>
-                            </tr>
-                            <tr onclick="document.location = 'detailkatka.html';">
-                                <td aria-label="ID">3</td>
-                                <td aria-label="Город">Н. Новгород</td>
-                                <td aria-label="Дата/время">04.07.2019 / (16:00)</td>
-                                <td aria-label="Вид"><img src="{% static 'img/activity/bicycle.png' %}" width="30" height="30"></td>
-                                <td aria-label="Статус"><img src="{% static 'img/lock.png' %}" width="30"
-                                                             height="30">
-                                </td>
-                            </tr>
-
-
                             </tbody>
                         </table>
                     </div>
                 </div>
-
             </div>
             <!--                                             ПРАВЫЙ БЛОК -->
 

@@ -10,7 +10,8 @@
         <span class="login100-form-podtitle">Вход в личный кабинет</span>
 
         {% if form.errors %}
-            <p style="text-align: center; color: red">Ваше имя пользователя и пароль не совпадают.<br>Пожалуйста, попробуйте еще раз.</p>
+            <p style="text-align: center; color: red">Ваше имя пользователя и пароль не совпадают.<br>Пожалуйста,
+                попробуйте еще раз.</p>
         {% endif %}
 
         {% if next %}
@@ -71,6 +72,13 @@
                         Нет аккаунта?
                     </span>
             <a style="text-decoration: underline" href="{% url 'signup' %}">Регистрация</a>
+        </div>
+        <br>
+        <p style="text-align: center">Готовность проекта</p>
+        <div class="progress">
+            <div class="progress-bar" role="progressbar" style="width: 26%;" aria-valuenow="26" aria-valuemin="0"
+                 aria-valuemax="100">26%
+            </div>
         </div>
 
     </form>
