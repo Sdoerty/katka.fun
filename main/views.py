@@ -1,4 +1,5 @@
 from django.shortcuts import render
+from .models import Katka
 
 
 def index(request):
@@ -6,7 +7,8 @@ def index(request):
 
 
 def katka_page(request):
-    return render(request, 'katka_page/katka_page.html')
+    ktk = Katka.objects.all()
+    return render(request, 'katka_page/katka_page.html', {"ktk": ktk})
 
 
 def create_katka(request):

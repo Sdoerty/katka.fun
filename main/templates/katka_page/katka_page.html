@@ -19,10 +19,12 @@
                     <div class="div-block-42">
                         <div>
                             <div class="div-block-35">
-                                <div class="text-block-25">ID: 123</div>
+                                {% for katka in ktk %}
+                                <div class="text-block-25">ID: {{ katka.id }}</div>
+                                {% endfor %}
                             </div>
                         </div>
-                        <div class="div-block-46"><a href="profile.html#" class="button-4 w-button">Вступить</a></div>
+                        <div class="div-block-46"><a href="#" class="button-4 w-button">Вступить</a></div>
                         <div class="div-block-43">
                             <div class="block-act"><img
                                     src="https://uploads-ssl.webflow.com/5f1d72d3a5d4074a78fb17c3/5fc5473ba87f3518b3f98f39_skate.png"
@@ -34,7 +36,7 @@
                     </div>
                     <div class="div-block-49">
                         <div>Организатор:</div>
-                        <a href="profile.html#" class="link-5">Ronald Berger</a></div>
+                        <a href="{% url 'profile' %}" class="link-5">Ronald Berger</a></div>
                 </div>
                 <div class="div-block-29">
                     <div class="columns-16 w-row">
@@ -43,7 +45,9 @@
                                 <div class="text-block-22">Город:</div>
                             </div>
                             <div class="section-23">
-                                <div class="text-block-15">Москва, Россия</div>
+                                {% for katka in ktk %}
+                                    <div class="text-block-15">{{ katka.city }}</div>
+                                {% endfor %}
                             </div>
                         </div>
                         <div class="w-col w-col-4">
@@ -51,7 +55,9 @@
                                 <div class="text-block-22">Дата:</div>
                             </div>
                             <div class="section-24">
-                                <div class="text-block-15">06.06.2021</div>
+                                {% for katka in ktk %}
+                                    <div class="text-block-15">{{ katka.date }}</div>
+                                {% endfor %}
                             </div>
                         </div>
                         <div class="w-col w-col-4">
@@ -59,7 +65,9 @@
                                 <div class="text-block-22">Время:</div>
                             </div>
                             <div class="section-25">
-                                <div class="text-block-15">18:00</div>
+                                {% for katka in ktk %}
+                                    <div class="text-block-15">{{ katka.time }}</div>
+                                {% endfor %}
                             </div>
                         </div>
                     </div>
@@ -122,7 +130,7 @@
             </div>
             <div class="column w-col w-col-5 w-col-medium-5">
                 <div class="w-form">
-                    <form action="#" >
+                    <form action="#">
                         <div class="div-block-41"></div>
                         <div class="section-21"><input type="text" class="text-field w-input" maxlength="256"
                                                        name="field"
