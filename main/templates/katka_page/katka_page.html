@@ -19,9 +19,7 @@
                     <div class="div-block-42">
                         <div>
                             <div class="div-block-35">
-                                {% for katka in ktk %}
-                                <div class="text-block-25">ID: {{ katka.id }}</div>
-                                {% endfor %}
+                                    <div class="text-block-25">ID: {{ ktk_item.id }}</div>
                             </div>
                         </div>
                         <div class="div-block-46"><a href="#" class="button-4 w-button">Вступить</a></div>
@@ -45,9 +43,7 @@
                                 <div class="text-block-22">Город:</div>
                             </div>
                             <div class="section-23">
-                                {% for katka in ktk %}
-                                    <div class="text-block-15">{{ katka.city }}</div>
-                                {% endfor %}
+                                    <div class="text-block-15">{{ ktk_item.city }}</div>
                             </div>
                         </div>
                         <div class="w-col w-col-4">
@@ -55,9 +51,7 @@
                                 <div class="text-block-22">Дата:</div>
                             </div>
                             <div class="section-24">
-                                {% for katka in ktk %}
-                                    <div class="text-block-15">{{ katka.date }}</div>
-                                {% endfor %}
+                                    <div class="text-block-15">{{ ktk_item.date }}</div>
                             </div>
                         </div>
                         <div class="w-col w-col-4">
@@ -65,19 +59,13 @@
                                 <div class="text-block-22">Время:</div>
                             </div>
                             <div class="section-25">
-                                {% for katka in ktk %}
-                                    <div class="text-block-15">{{ katka.time }}</div>
-                                {% endfor %}
+                                    <div class="text-block-15">{{ ktk_item.time }}</div>
                             </div>
                         </div>
                     </div>
                 </div>
                 <div>
-                    <div class="div-block-45"><p class="paragraph-2">Описание заезда - Велоспорт это спортивная
-                        дисциплина,
-                        где преодоление трассы происходит с помощью велосипеда. Спортсмен приводит его в движение своей
-                        мускульной силой. Этот спорт схож с легкой атлетикой: и там, и там максимум нагрузки ложится на
-                        ноги.</p></div>
+                        <div class="div-block-45"><p class="paragraph-2">{{ ktk_item.descr }}</p></div>
                 </div>
                 <div class="div-block-23">
                     <div class="section-9"><h5 class="heading-4">Length: 123 km.</h5><img

@@ -5,6 +5,6 @@ from . import views
 
 urlpatterns = [
     url(r'^table/$', views.index, name='main'),
-    url(r'^katka_page/$', views.katka_page, name='katka_page'),
+    url(r'^katka/(?P<pk>\d+)/$', views.katka_page, name='katka'),
     url(r'^create_katka/$', views.create_katka, name='create_katka'),
 ]

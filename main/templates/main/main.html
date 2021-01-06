@@ -22,7 +22,9 @@
                     <div class="banner-section" style="height: 800px;">
                         <table class="scroll">
                             <div class="table-caption">
-                                <a href="{% url 'create_katka' %}"><button type="button" class="btn btn-info">Создать</button></a>
+                                <a href="{% url 'create_katka' %}">
+                                    <button type="button" class="btn btn-info">Создать</button>
+                                </a>
                                 <div class="btn-group dropleft dropdown">
                                     <button type="button" class="btn btn-secondary dropdown-toggle"
                                             data-toggle="dropdown"
@@ -46,15 +48,19 @@
                             </tr>
                             </thead>
                             <tbody>
-                            <tr onclick="document.location = '{% url "katka_page" %}';">
-                                <td aria-label="ID">1</td>
-                                <td aria-label="Город">Санкт-Петербург</td>
-                                <td aria-label="Дата/время">03.07.2020 / (19:00)</td>
-                                <td aria-label="Вид"><img src="{% static 'img/activity/snowboard.png' %}" width="30" height="30">
-                                </td>
-                                <td aria-label="Статус"><img src="{% static 'img/lock.png' %}" width="30" height="30">
-                                </td>
-                            </tr>
+                            {% for katka in ktk %}
+                                <tr onclick="document.location = '{{ katka.get_absolute_url }}';">
+                                    <td aria-label="ID">{{ katka.id }}</td>
+                                    <td aria-label="Город">{{ katka.city }}</td>
+                                    <td aria-label="Дата/время">{{ katka.date }} / ({{ katka.time }})</td>
+                                    <td aria-label="Вид"><img src="{% static 'img/activity/snowboard.png' %}" width="30"
+                                                              height="30">
+                                    </td>
+                                    <td aria-label="Статус"><img src="{% static 'img/lock.png' %}" width="30"
+                                                                 height="30">
+                                    </td>
+                                </tr>
+                            {% endfor %}
                             </tbody>
                         </table>
                     </div>

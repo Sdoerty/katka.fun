@@ -6,4 +6,4 @@ from .models import Katka
 class KatkaForm(forms.ModelForm):
     class Meta:
         model = Katka
-        fields = ('id', 'city', 'date', 'time', 'k_descriptions')
+        fields = ('id', 'city', 'date', 'time', 'descr')
