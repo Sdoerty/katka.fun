@@ -11,6 +11,7 @@ urlpatterns = [
     path('signup/', include('signup.urls')),
     path('main/', include('main.urls')),
     path('profile/', include('profile.urls')),
+    path('users/', include('users.urls')),
     path('login/', views.index, name='login'),
     path('signup/', views.index, name='signup'),
 ]

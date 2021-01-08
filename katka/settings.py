@@ -47,6 +47,7 @@ INSTALLED_APPS = [
     'signup.apps.SignupConfig',
     'main.apps.MainpageConfig',
     'profile.apps.UserProfileConfig',
+    'users.apps.UsersConfig',
 ]
 
 MIDDLEWARE = [
@@ -69,11 +70,14 @@ PROFILE_TEMPLATE = os.path.join(BASE_DIR, 'profile/templates/profile')
 EDIT_PROFILE_TEMPLATE = os.path.join(BASE_DIR, 'profile/templates/edit_profile')
 KATKA_PAGE = os.path.join(BASE_DIR, 'main/templates/katka_page')
 CREATE_KATKA = os.path.join(BASE_DIR, 'main/templates/create_katka')
+ALL_USERS = os.path.join(BASE_DIR, 'users/templates/users')
+
 
 TEMPLATES = [
     {
         'BACKEND': 'django.template.backends.django.DjangoTemplates',
-        'DIRS': [TEMPLATE_DIR, LOGIN_TEMPLATE, SIGNUP_TEMPLATE, PROFILE_TEMPLATE, EDIT_PROFILE_TEMPLATE, KATKA_PAGE, CREATE_KATKA],
+        'DIRS': [TEMPLATE_DIR, LOGIN_TEMPLATE, SIGNUP_TEMPLATE, PROFILE_TEMPLATE, EDIT_PROFILE_TEMPLATE, KATKA_PAGE,
+                 CREATE_KATKA, ALL_USERS],
         'APP_DIRS': True,
         'OPTIONS': {
             'context_processors': [
