@@ -1,6 +1,6 @@
-from django.shortcuts import render
+from django.shortcuts import render, redirect
 from django.views.generic import DetailView
-
+from .forms import KatkaForm
 from .models import Katka
 
 
@@ -15,4 +15,12 @@ def katka_page(request, pk):
 
 
 def create_katka(request):
-    return render(request, 'create_katka/create_katka.html')
+    if request.method == 'POST':
+        form = KatkaForm(request.POST)
+        if form.is_valid():
+            form.save()
+            return redirect('main')
+    else:
+        form = Katka()
+
+    return render(request, 'create_katka/create_katka.html', {'form': form})

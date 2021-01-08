@@ -1,6 +1,6 @@
 {% extends 'base_katka.html' %}
 
-{% block title %}<title>Редактировать профиль</title>{% endblock %}
+{% block title %}<title>Создать Катку</title>{% endblock %}
 
 {% block links %}
     {{ block.super }}
@@ -20,9 +20,8 @@
             <div class="form-block-2 w-form">
                 <form method="POST">
                     {% csrf_token %}
-                    <p><label for="id_city">Город:</label>
-                        <input class="form-control" list="datalistOptions" id="id_city" name="city"
-                               value="{{ user.profile.city }}"
+                    <p><label for="city">Город:</label>
+                        <input class="form-control" list="datalistOptions" required id="city" name="city"
                                placeholder="Начните вводить город и выберите из списка">
                         <datalist id="datalistOptions">
                             <option value="Москва">
@@ -32,15 +31,15 @@
                             <option value="Екатеринбург">
                         </datalist>
                     </p>
-                    <p><label for="date_of_birth">Укажите дату мероприятия:</label>
+                    <p><label for="date">Укажите дату мероприятия:</label>
                     <div class="wrap-input100 validate-input m-b-20">
-                        <input class="input5" id="date_of_birth" style="text-align: center; padding: 0;" type="date"
-                               name="date_of_birth" value="{{ user.profile.date_of_birth }}">
+                        <input class="input5" required id="date" style="text-align: center; padding: 0;" type="date"
+                               name="date">
                     </div>
-                    <p><label for="date_of_birth">Укажите время:</label>
+                    <p><label for="time">Укажите время:</label>
                     <div class="wrap-input100 validate-input m-b-20">
-                        <input class="input5" id="date_of_birth" style="text-align: center; padding: 0;" type="time"
-                               name="date_of_birth" value="{{ user.profile.date_of_birth }}">
+                        <input class="input5" required id="time" style="text-align: center; padding: 0;" type="time"
+                               name="time">
                     </div>
                     <hr>
 
@@ -51,8 +50,8 @@
                         </div>
                     </div>
 
-                    <p><label for="id_description">Описание:</label>
-                        <textarea class="form-control" placeholder="..." id="id_description"
+                    <p><label for="descr">Описание:</label>
+                        <textarea class="form-control" placeholder="..." id="descr" name="descr"
                                   style="height: 100px"></textarea>
                     </p>
 
@@ -146,8 +145,9 @@
                             </div>
                         </div>
                     </div>
-                    <div class="div-block-34"><input type="submit" value="Применить" data-wait="Please wait..."
-                                                     class="button-4 w-button"/></div>
+                    <div class="div-block-34">
+                        <button class="button-4 w-button" type="submit">Создать</button>
+                    </div>
                 </form>
             </div>
         </div>

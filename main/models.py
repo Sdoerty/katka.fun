@@ -15,3 +15,4 @@ class Katka(models.Model):
     class Meta:
         verbose_name = 'Катка'
         verbose_name_plural = 'Все события Катка'
+
