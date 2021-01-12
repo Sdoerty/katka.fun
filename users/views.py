@@ -6,6 +6,7 @@ def index(request):
     usu = User.objects.all()
     return render(request, 'users/users.html', {"usu": usu})
 
+
 def some(request, pk):
     some_item = User.objects.get(pk=pk)
-    return render(request, 'users/some.html', {"some_item": some_item})
+    return render(request, 'some/some.html', {"some_item": some_item})

@@ -19,6 +19,7 @@
             <div class="div-block-40">
                 <div class="container-7 w-container">
                     {% for users in usu %}
+                        <a href="{{ users.get_absolute_url }}">ссылка</a>
                         <div class="div-block-44">
                             <div class="section-19">
                                 <img src="{% static 'img/user.png' %}"
@@ -33,7 +34,6 @@
                             </div>
                         </div>
                     {% endfor %}
-
                 </div>
             </div>
         </div>

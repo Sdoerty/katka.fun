@@ -5,4 +5,4 @@ from profile.models import Profile
 
 class Users(Profile):
     def get_absolute_url(self):
-        return reverse('users', kwargs={'pk': self.pk})
+        return reverse('some', kwargs={'pk': self.pk})
