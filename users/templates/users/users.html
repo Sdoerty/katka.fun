@@ -18,19 +18,22 @@
         <div class="div-block-52">
             <div class="div-block-40">
                 <div class="container-7 w-container">
-                    <div class="div-block-44">
-                        <div class="section-19">
-                            <img src="{% static 'img/user.png' %}"
-                                loading="lazy" width="50" height="50" alt="" class="image-22"/>
-                        </div>
-                        <div class="section-20">
-                            <div class="username">Ronald Berger</div>
-                            <div class="usertown">Москва</div>
-                            <div class="blockuserbtn">
-                                <button class="userbtn">Добавить</button>
+                    {% for users in usu %}
+                        <div class="div-block-44">
+                            <div class="section-19">
+                                <img src="{% static 'img/user.png' %}"
+                                     loading="lazy" width="50" height="50" alt="" class="image-22"/>
+                            </div>
+                            <div class="section-20">
+                                <div class="username">{{ users.first_name }} {{ users.last_name }}</div>
+                                <div class="usertown">{{ users.profile.city }}</div>
+                                <div class="blockuserbtn">
+                                    <button class="userbtn">Добавить</button>
+                                </div>
                             </div>
                         </div>
-                    </div>
+                    {% endfor %}
+
                 </div>
             </div>
         </div>
