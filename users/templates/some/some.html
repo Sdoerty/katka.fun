@@ -3,7 +3,7 @@
 <!DOCTYPE html>
 <html>
 <head>
-    {% block title %}<title>Профиль {{ user.first_name }} {{ user.last_name }}</title>{% endblock %}
+    {% block title %}<title>Профиль {{ some_item.first_name }} {{ some_item.last_name }}</title>{% endblock %}
     {% block links %}
         {{ block.super }}
         {% load static %}
@@ -22,7 +22,7 @@
                 <div class="div-block-21">
                     <div><img
                             src="{% static 'img/avatar.jpeg' %}" alt="" class="image-14"/></div>
-                    <div class="div-block-30"><h1 class="heading-2">{{ user.first_name }} {{ user.last_name }}</h1></div>
+                    <div class="div-block-30"><h1 class="heading-2">{{ some_item.first_name }} {{ some_item.last_name }}</h1></div>
                     <div class="div-block-28">
                         <div class="columns-7 w-row">
                             <div class="column-11 w-col w-col-6"><a href="profile.html#"
@@ -71,7 +71,7 @@
                                 <div class="text-block-22">Город:</div>
                             </div>
                             <div class="w-col w-col-7 w-col-small-7 w-col-tiny-7">
-                                <div class="text-block-15">{{ user.profile.city }}</div>
+                                <div class="text-block-15">{{ some_item.profile.city }}</div>
                             </div>
                         </div>
                         <div class="columns-13 w-row">
@@ -79,7 +79,7 @@
                                 <div class="text-block-22">Дата рождения:</div>
                             </div>
                             <div class="w-col w-col-7 w-col-small-7 w-col-tiny-7">
-                                <div class="text-block-15">{{ user.profile.date_of_birth }}</div>
+                                <div class="text-block-15">{{ some_item.profile.date_of_birth }}</div>
                             </div>
                         </div>
                     </div>
@@ -89,7 +89,7 @@
                                     src="https://uploads-ssl.webflow.com/5f1d72d3a5d4074a78fb17c3/5fbb8a00987231f539fd311c_instagram.png"
                                     loading="lazy" width="30" alt=""/></div>
                             <div class="w-col w-col-11 w-col-medium-11 w-col-small-11 w-col-tiny-11">
-                                <div class="text-block-15">@{{ user.profile.inst }}</div>
+                                <div class="text-block-15">@{{ some_item.profile.inst }}</div>
                             </div>
                         </div>
                         <div class="columns-13 w-row">
@@ -97,7 +97,7 @@
                                     src="https://uploads-ssl.webflow.com/5f1d72d3a5d4074a78fb17c3/5fbb8cdfa371e8d1d3933c32_vk.png"
                                     loading="lazy" width="30" alt=""/></div>
                             <div class="w-col w-col-11 w-col-small-11 w-col-tiny-11">
-                                <div class="text-block-15">vk.com/{{ user.profile.vk }}</div>
+                                <div class="text-block-15">vk.com/{{ some_item.profile.vk }}</div>
                             </div>
                         </div>
                         <div class="columns-13 w-row">
@@ -105,7 +105,7 @@
                                     src="https://uploads-ssl.webflow.com/5f1d72d3a5d4074a78fb17c3/5fbb8cf66e2641812f75c80c_facebook.png"
                                     loading="lazy" width="30" alt=""/></div>
                             <div class="w-col w-col-11 w-col-small-11 w-col-tiny-11">
-                                <div class="text-block-15">www.facebook.com/{{ user.profile.fb }}</div>
+                                <div class="text-block-15">www.facebook.com/{{ some_item.profile.fb }}</div>
                             </div>
                         </div>
                     </div>
