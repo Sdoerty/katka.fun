@@ -74,7 +74,7 @@
 
 .image-23 {
     width: 150px;
-    height: 150px;
+    height: auto;
     -webkit-align-self: center;
     -ms-flex-item-align: center;
     -ms-grid-row-align: center;

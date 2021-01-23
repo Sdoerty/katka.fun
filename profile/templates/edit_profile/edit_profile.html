@@ -18,13 +18,13 @@
     <div class="div-block m-t-50">
         <div class="div-block-33">
             <div class="form-block-2 w-form">
-                <form method="POST">
+                <form method="POST" enctype="multipart/form-data">
                     {% csrf_token %}
-                    <div class="section-17"><img src=""
+                    <div class="section-17"><img src="{{ user.profile.avatar.url }}"
                                                  loading="lazy" alt="" class="image-23"/>
                         <div class="mb-3 m-t-10">
                             <input class="form-control form-control-sm" style="padding: 1px 0 0 0;" id="formFileSm"
-                                   type="file">
+                                   type="file" name="avatar">
                         </div>
                         <p><label for="id_city">Город:</label>
                             <input class="form-control" list="datalistOptions" id="id_city" name="city"

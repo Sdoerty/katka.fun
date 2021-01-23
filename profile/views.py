@@ -12,7 +12,7 @@ def index(request):
 @transaction.atomic
 def edit(request):
     if request.method == 'POST':
-        profile_form = ProfileEditForm(request.POST, instance=request.user.profile)
+        profile_form = ProfileEditForm(request.POST, request.FILES, instance=request.user.profile)
 
         if profile_form.is_valid():
             profile_form.save()
