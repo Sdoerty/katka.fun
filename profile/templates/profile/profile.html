@@ -20,18 +20,16 @@
         <div class="columns w-row">
             <div class="column-4 w-col w-col-4">
                 <div class="div-block-21">
-                    <div><img
-                            src="{{ user.profile.avatar.url }}" alt="" class="image-14"/></div>
-                    <div class="div-block-30"><h1 class="heading-2">{{ user.first_name }} {{ user.last_name }}</h1></div>
+                    <div>
+                        <img src="{{ user.profile.avatar.url }}" alt="" class="image-14"/>
+                    </div>
+                    <div class="div-block-30"><h1 class="heading-2">{{ user.first_name }} {{ user.last_name }}</h1>
+                    </div>
                     <div class="div-block-28">
                         <div class="columns-7 w-row">
-                            <div class="column-11 w-col w-col-6"><a href="profile.html#"
-                                                                    class="button-4 w-button"
-                                                                    style="text-decoration: none;color: white !important;">Сообщение</a>
-                            </div>
-                            <div class="column-13 w-col w-col-6"><a href="profile.html#"
-                                                                    class="button-5 w-button"
-                                                                    style="text-decoration: none;color: white !important;">Добавить</a>
+                            <div class="column-11 w-col w-col-12">
+                                <a href="{% url 'edit_profile' %}" class="button-edit-profile w-button"
+                                   style="text-decoration: none;">Редактировать</a>
                             </div>
                         </div>
                     </div>

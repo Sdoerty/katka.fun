@@ -2783,7 +2783,6 @@ a {
 }
 
 
-
 .columns-4 {
     position: fixed;
     left: 0%;
@@ -3378,8 +3377,9 @@ a {
 }
 
 .image-14 {
-    position: relative;
     width: 100%;
+    height: 350px;
+    object-fit: cover;
     -webkit-box-flex: 0;
     -webkit-flex: 0 auto;
     -ms-flex: 0 auto;
@@ -3936,6 +3936,7 @@ a {
     margin-top: 15px;
 }
 
+
 .div-block-21 {
     padding-bottom: 0px;
     border-style: none none solid;
@@ -4347,6 +4348,16 @@ a {
     font-family: Exo, sans-serif;
 }
 
+.button-edit-profile {
+    width: 93%;
+    color: #8d8d8d !important;
+    background-color: #e5e5e5;
+    padding-right: 0px;
+    padding-left: 0px;
+    border-radius: 5px;
+    font-family: Exo, sans-serif;
+}
+
 .text-block-21 {
     display: -webkit-box;
     display: -webkit-flex;
@@ -4440,7 +4451,7 @@ a {
 }
 
 .div-block-30 {
-    padding-top: 15px;
+    padding-top: 20px;
     padding-bottom: 15px;
 }
 
@@ -4957,8 +4968,8 @@ a {
     }
 
     .div-block-30 {
-        padding-top: 10px;
-        padding-bottom: 10px;
+        padding-top: 20px;
+        padding-bottom: 15px;
     }
 
     .gallery-grid-container-2 {
@@ -5262,7 +5273,7 @@ a {
     }
 
     .div-block-30 {
-        padding-top: 15px;
+        padding-top: 20px;
     }
 
     .gallery-grid-container-2 {
