@@ -6,4 +6,4 @@ from .models import Profile
 class ProfileEditForm(forms.ModelForm):
     class Meta:
         model = Profile
-        fields = ('city', 'date_of_birth', 'inst', 'vk', 'fb')
+        fields = ('avatar', 'city', 'date_of_birth', 'inst', 'vk', 'fb')
