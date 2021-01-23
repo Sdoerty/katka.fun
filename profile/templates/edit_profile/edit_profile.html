@@ -41,7 +41,7 @@
                         <p><label for="date_of_birth">Укажите дату рождения:</label>
                         <div class="wrap-input100 validate-input m-b-20">
                             <input class="input5" id="date_of_birth" style="text-align: center; padding: 0;" type="date"
-                                   name="date_of_birth" value="{{ user.profile.date_of_birth }}">
+                                   name="date_of_birth" value="{{ user.profile.date_of_birth|date:"Y-m-d" }}">
                         </div>
                         <hr>
                         <div style="text-align: center"><p>Укажите соц.сети (не обязательно)</p></div>
