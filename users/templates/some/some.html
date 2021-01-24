@@ -21,9 +21,14 @@
             <div class="column-4 w-col w-col-4">
                 <div class="div-block-21">
                     <div>
-                        <img src="{{ some_item.profile.avatar.url }}" alt="" class="image-14"/>
+                        {% if some_item.profile.avatar %}
+                            <img src="{{ some_item.profile.avatar.url }}" alt="" class="image-14"/>
+                        {% else %}
+                            <img src="{% static 'img/empty_face.png' %}" alt="" class="image-14"/>
+                        {% endif %}
                     </div>
-                    <div class="div-block-30"><h1 class="heading-2">{{ some_item.first_name }} {{ some_item.last_name }}</h1></div>
+                    <div class="div-block-30"><h1
+                            class="heading-2">{{ some_item.first_name }} {{ some_item.last_name }}</h1></div>
                     <div class="div-block-28">
                         <div class="columns-7 w-row">
                             <div class="column-11 w-col w-col-6"><a href="profile.html#"
@@ -90,7 +95,11 @@
                                     src="https://uploads-ssl.webflow.com/5f1d72d3a5d4074a78fb17c3/5fbb8a00987231f539fd311c_instagram.png"
                                     loading="lazy" width="30" alt=""/></div>
                             <div class="w-col w-col-11 w-col-medium-11 w-col-small-11 w-col-tiny-11">
-                                <div class="text-block-15">@{{ some_item.profile.inst }}</div>
+                                {% if some_item.profile.inst %}
+                                    <div class="text-block-15">@{{ some_item.profile.inst }}</div>
+                                {% else %}
+                                    <div class="text-block-15">не заполнено</div>
+                                {% endif %}
                             </div>
                         </div>
                         <div class="columns-13 w-row">
@@ -98,7 +107,11 @@
                                     src="https://uploads-ssl.webflow.com/5f1d72d3a5d4074a78fb17c3/5fbb8cdfa371e8d1d3933c32_vk.png"
                                     loading="lazy" width="30" alt=""/></div>
                             <div class="w-col w-col-11 w-col-small-11 w-col-tiny-11">
-                                <div class="text-block-15">vk.com/{{ some_item.profile.vk }}</div>
+                                {% if some_item.profile.vk %}
+                                    <div class="text-block-15">vk.com/{{ some_item.profile.vk }}</div>
+                                {% else %}
+                                    <div class="text-block-15">не заполнено</div>
+                                {% endif %}
                             </div>
                         </div>
                         <div class="columns-13 w-row">
@@ -106,8 +119,11 @@
                                     src="https://uploads-ssl.webflow.com/5f1d72d3a5d4074a78fb17c3/5fbb8cf66e2641812f75c80c_facebook.png"
                                     loading="lazy" width="30" alt=""/></div>
                             <div class="w-col w-col-11 w-col-small-11 w-col-tiny-11">
-                                <div class="text-block-15">www.facebook.com/{{ some_item.profile.fb }}</div>
-                            </div>
+                                {% if some_item.profile.fb %}
+                                    <div class="text-block-15">facebook.com/{{ some_item.profile.fb }}</div>
+                                {% else %}
+                                    <div class="text-block-15">не заполнено</div>
+                                {% endif %}                            </div>
                         </div>
                     </div>
                 </div>
