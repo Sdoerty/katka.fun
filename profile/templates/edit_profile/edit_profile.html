@@ -20,16 +20,23 @@
             <div class="form-block-2 w-form">
                 <form method="POST" enctype="multipart/form-data">
                     {% csrf_token %}
-                    <div class="section-17"><img src="{{ user.profile.avatar.url }}"
-                                                 loading="lazy" alt="" class="image-23"/>
+                    <div class="section-17">
+                        {% if user.profile.avatar %}
+                            <img src="{{ user.profile.avatar.url }}" alt="" class="image-23"/>
+                        {% else %}
+                            <img src="{% static 'img/empty_face.png' %}" alt="" class="image-23"/>
+                        {% endif %}
                         <div class="mb-3 m-t-10">
                             <input class="form-control form-control-sm" style="padding: 1px 0 0 0;" id="formFileSm"
                                    type="file" name="avatar">
                         </div>
                         <p><label for="id_city">Город:</label>
                             <input class="form-control" list="datalistOptions" id="id_city" name="city"
+                                    {% if user.profile.city %}
                                    value="{{ user.profile.city }}"
-                                   placeholder="Начните вводить город и выберите из списка">
+                                    {% else %}
+                                   placeholder="Начните вводить город или выберите из списка"
+                                    {% endif %}>
                             <datalist id="datalistOptions">
                                 <option value="Москва">
                                 <option value="Санкт-Петербург">
@@ -50,19 +57,34 @@
                         <div class="input-group mb-3">
                             <span class="input-group-text" id="basic-addon3">https://instagram.com/</span>
                             <input type="text" class="form-control" id="id_inst" aria-describedby="basic-addon3"
-                                   name="inst" value="{{ user.profile.inst }}">
+                                   name="inst"
+                                    {% if user.profile.inst %}
+                                   value="{{ user.profile.inst }}"
+                                    {% else %}
+                                   placeholder="Пусто"
+                                    {% endif %}>
                         </div>
                         <label for="id_vk" class="form-label">VK</label>
                         <div class="input-group mb-3">
                             <span class="input-group-text" id="basic-addon3">https://vk.com/</span>
                             <input type="text" class="form-control" id="id_vk" aria-describedby="basic-addon3"
-                                   name="vk" value="{{ user.profile.vk }}">
+                                   name="vk"
+                                    {% if user.profile.vk %}
+                                   value="{{ user.profile.vk }}"
+                                    {% else %}
+                                   placeholder="Пусто"
+                                    {% endif %}>
                         </div>
                         <label for="id_fb" class="form-label">Facebook</label>
                         <div class="input-group mb-3">
                             <span class="input-group-text" id="basic-addon3">https://facebook.com/</span>
                             <input type="text" class="form-control" id="id_fb" aria-describedby="basic-addon3"
-                                   name="fb" value="{{ user.profile.fb }}">
+                                   name="fb"
+                                    {% if user.profile.fb %}
+                                   value="{{ user.profile.fb }}"
+                                    {% else %}
+                                   placeholder="Пусто"
+                                    {% endif %}>
                         </div>
 
                         <div class="section-16">

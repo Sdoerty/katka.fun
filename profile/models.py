@@ -6,12 +6,13 @@ from django.dispatch import receiver
 
 class Profile(models.Model):
     user = models.OneToOneField(User, on_delete=models.CASCADE, primary_key=True)
-    avatar = models.ImageField(upload_to='avatars/users/%Y/%m/%d', blank=True)
+    avatar = models.ImageField(upload_to='avatars/users/%Y/%m/%d', blank=True, null=True)
     city = models.CharField(max_length=150, blank=True, null=True)
     date_of_birth = models.DateField(max_length=150, blank=True, null=True)
     inst = models.CharField(max_length=150, blank=True, null=True)
     vk = models.CharField(max_length=150, blank=True, null=True)
     fb = models.CharField(max_length=150, blank=True, null=True)
+    act = models.CharField(max_length=150, blank=True, null=True)
 
     @receiver(post_save, sender=User)
     def create_user_profile(sender, instance, created, **kwargs):
@@ -28,3 +29,7 @@ class Profile(models.Model):
     class Meta:
         verbose_name = 'Профиль'
         verbose_name_plural = 'Профили'
+
+
+class Activity(models.Model):
+    activity = models.CharField(max_length=150)
