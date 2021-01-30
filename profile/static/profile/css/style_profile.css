@@ -51,6 +51,23 @@ html {
     height: 100%
 }
 
+.dot-green {
+    margin-left: 100px;
+    height: 15px;
+    width: 15px;
+    background-color: #00b408;
+    border-radius: 50%;
+    display: inline-block;
+}
+
+.dot-red {
+    height: 5px;
+    width: 5px;
+    background-color: #f30000;
+    border-radius: 50%;
+    display: inline-block;
+}
+
 
 img {
     max-width: 100%;
@@ -4450,9 +4467,46 @@ a {
     border-bottom: 1px none #c4c3c3;
 }
 
+.profile-level {
+    width: auto;
+    margin-left: 5px;
+    padding: 5px 12px 5px 12px;
+    border: 1px solid #dcdcdc;
+    border-radius: 50px;
+    background: #fcfcfc;
+}
+
+.current_level {
+    float: right;
+    width: auto;
+    font-size: 12px;
+    text-align: center;
+    padding: 8px 15px 8px 15px;
+}
+
+.next-level {
+    color: #727272;
+    float: left;
+    width: auto;
+    font-size: 12px;
+    text-align: center;
+    padding: 8px 15px 8px 15px;
+    border-radius: 8px;
+    background: repeating-linear-gradient(
+            -45deg,
+            #f8f8f8,
+            #f8f8f8 10px,
+            #e7e7e7 10px,
+            #e7e7e7 20px
+    );
+}
+
+
 .div-block-30 {
+    display: flex;
+    align-items: center;
+    justify-content: center;
     padding-top: 20px;
-    padding-bottom: 15px;
 }
 
 .section-16 {
@@ -4969,7 +5023,6 @@ a {
 
     .div-block-30 {
         padding-top: 20px;
-        padding-bottom: 15px;
     }
 
     .gallery-grid-container-2 {

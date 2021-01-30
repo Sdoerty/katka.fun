@@ -12,7 +12,6 @@ class Profile(models.Model):
     inst = models.CharField(max_length=150, blank=True, null=True)
     vk = models.CharField(max_length=150, blank=True, null=True)
     fb = models.CharField(max_length=150, blank=True, null=True)
-    act = models.CharField(max_length=150, blank=True, null=True)
 
     @receiver(post_save, sender=User)
     def create_user_profile(sender, instance, created, **kwargs):
@@ -24,12 +23,20 @@ class Profile(models.Model):
         instance.profile.save()
 
     def __str__(self):
-        return 'Profile for user {}'.format(self.user)
+        return self.user
 
     class Meta:
         verbose_name = 'Профиль'
         verbose_name_plural = 'Профили'
 
 
-class Activity(models.Model):
-    activity = models.CharField(max_length=150)
+# class Activity(models.Model):
+#     user = models.ForeignKey(User, on_delete=models.CASCADE)
+#     activity = models.CharField(max_length=150, blank=True, null=True)
+#
+#     def __str__(self):
+#         return self.activity
+#
+#     class Meta:
+#         verbose_name = 'Активность'
+#         verbose_name_plural = 'Активности'

@@ -177,7 +177,32 @@
                                 </div>
                             </div>
                         </div>
-                        <div class="div-block-34"><input type="submit" value="Применить" data-wait="Please wait..."
+
+
+                        <select class="form-select form-select-lg mb-3" id="select_activity" multiple="multiple">
+                            <option value="1">basketball</option>
+                            <option value="2">bicycle</option>
+                            <option value="3"></option>
+                            <option value="4"></option>
+                            <option value="5"></option>
+                            <option value="6"></option>
+                            <option value="7"></option>
+                            <option value="8"></option>
+                            <option value="9"></option>
+                            <option value="10"></option>
+                            <option value="11"></option>
+                            <option value="12"></option>
+                            <option value="13"></option>
+                            <option value="14"></option>
+                            <option value="15"></option>
+                            <option value="16"></option>
+                            <option value="17"></option>
+                            <option value="18"></option>
+                            <option value="19"></option>
+                            <option value="20"></option>
+                        </select>
+
+                        <div style="margin-top: 500px;" class="div-block-34"><input type="submit" value="Применить" data-wait="Please wait..."
                                                          class="button-4 w-button"/></div>
                     </div>
                 </form>
@@ -185,5 +210,21 @@
         </div>
     </div>
     <hr>
+
+
+
+
+    <script type="text/javascript" src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.2/js/bootstrap.min.js"></script>
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/2.1.1/jquery.min.js"></script>
+    <script type="text/javascript"
+            src="https://cdnjs.cloudflare.com/ajax/libs/bootstrap-multiselect/0.9.13/js/bootstrap-multiselect.js"></script>
+
+
+
+    <script>
+        $(document).ready(function () {
+            $('#select_activity').multiselect();
+        });
+    </script>
 
 {% endblock %}

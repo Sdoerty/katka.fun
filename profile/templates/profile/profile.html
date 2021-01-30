@@ -27,13 +27,40 @@
                             <img src="{% static 'img/empty_face.png' %}" alt="" class="image-14"/>
                         {% endif %}
                     </div>
-                    <div class="div-block-30"><h1 class="heading-2">{{ user.first_name }} {{ user.last_name }}</h1>
+                    <div class="div-block-30">
+                        <div>
+                            <b class="heading-2">{{ user.first_name }} {{ user.last_name }} </b>
+                        </div>
+                        <div class="profile-level">
+                            <text>1</text>
+                        </div>
                     </div>
+
+                    <div class="columns-13 w-row" style="padding: 0 15px 15px 15px">
+                        <div class="w-col w-col-2 w-col-small-2 w-col-tiny-2">
+                            <div class="current_level">
+                                <b>1</b>
+                            </div>
+                        </div>
+                        <div class="w-col w-col-9 w-col-small-9 w-col-tiny-9" style="padding: 0 10px 0 10px">
+                            <div class="progress" >
+                                <div class="progress-bar progress-bar-striped" role="progressbar" style="width: 50%; text-align: center"
+                                     aria-valuenow="50"
+                                     aria-valuemin="0" aria-valuemax="100">5/10</div>
+                            </div>
+                        </div>
+                        <div class="w-col w-col-2 w-col-small-2 w-col-tiny-2">
+                            <div class="next-level">
+                                <b>2</b>
+                            </div>
+                        </div>
+                    </div>
+
                     <div class="div-block-28">
                         <div class="columns-7 w-row">
                             <div class="column-11 w-col w-col-12">
                                 <a href="{% url 'edit_profile' %}" class="button-edit-profile w-button"
-                                   style="text-decoration: none;">Редактировать</a>
+                                   style="text-decoration: none;">Редактировать профиль</a>
                             </div>
                         </div>
                     </div>
