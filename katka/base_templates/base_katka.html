@@ -38,9 +38,38 @@
                     <a id="dr-item" class="dropdown-item" href="{% url 'logout' %}">Выход</a>
                 </div>
             </div>
-
         </div>
+
         <div style="float: right">
+            <div class="btn-group">
+                <button type="button" id="dropdownMenuButton" data-bs-toggle="dropdown"
+                        aria-haspopup="true" aria-expanded="false"
+                        style="background: none; outline: none; border: none">
+                    <div class="div-block-7"><img
+                            src="{% static 'img/nav-icons/services.png' %}" width="30"
+                            height="30" alt="" class="image"/>
+                        <div class="text-block-12">Сервисы</div>
+                    </div>
+                </button>
+                <div class="dropdown-menu" style="width: 350px; height: auto; font-size: 14px;padding: 0;">
+                    <ul class="list-group list-group-horizontal">
+                        <li class="list-group-item list-group-item-warning">Карты</li>
+                        <li class="list-group-item list-group-item-info">Обзоры мест</li>
+                    </ul>
+                    <ul class="list-group list-group-horizontal">
+                        <li class="list-group-item list-group-item-success">Партнёры</li>
+                        <li class="list-group-item list-group-item-primary">Блог</li>
+                        <li class="list-group-item list-group-item-secondary">Новости</li>
+                    </ul>
+                    <ul class="list-group list-group-horizontal">
+                        <li class="list-group-item">Вопросы</li>
+                        <li class="list-group-item">Обратная связь</li>
+                        <li class="list-group-item">Помощь</li>
+                    </ul>
+                </div>
+            </div>
+
+
             <div class="btn-group dropleft">
                 <button type="button" id="dropdownMenuButton" data-bs-toggle="dropdown"
                         aria-haspopup="true" aria-expanded="false" style="background: none; outline: none;border: none">
