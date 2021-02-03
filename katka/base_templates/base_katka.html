@@ -51,21 +51,49 @@
                         <div class="text-block-12">Сервисы</div>
                     </div>
                 </button>
+
                 <div class="dropdown-menu" style="width: 350px; height: auto; font-size: 14px;padding: 0;">
-                    <ul class="list-group list-group-horizontal">
-                        <li class="list-group-item list-group-item-warning">Карты</li>
-                        <li class="list-group-item list-group-item-info">Обзоры мест</li>
-                    </ul>
-                    <ul class="list-group list-group-horizontal">
-                        <li class="list-group-item list-group-item-success">Партнёры</li>
-                        <li class="list-group-item list-group-item-primary">Блог</li>
-                        <li class="list-group-item list-group-item-secondary">Новости</li>
-                    </ul>
-                    <ul class="list-group list-group-horizontal">
-                        <li class="list-group-item">Вопросы</li>
-                        <li class="list-group-item">Обратная связь</li>
-                        <li class="list-group-item">Помощь</li>
-                    </ul>
+                    <p style="margin: 15px 0 0 0; text-align: center">Доступные сервисы</p>
+                    <div class="list-group" style="padding: 15px">
+                        <div class="divaservices" style="margin-top: 0">
+                            <a href="#" class="aservices list-group-item list-group-item-action">
+                                <img src="{% static 'img/nav-icons/mapservice.png' %}"
+                                     width="25" height="25" alt=""/><b class="servtext">Карты</b></a>
+                        </div>
+
+                        <div class="divaservices">
+                            <a href="#" class="aservices list-group-item list-group-item-action">
+                                <img src="{% static 'img/nav-icons/partnerservice.png' %}"
+                                     width="25" height="25" alt=""/><b class="servtext">Партнёры</b></a>
+                        </div>
+
+                        <div class="divaservices">
+                            <a href="#" class="aservices list-group-item list-group-item-action">
+                                <img src="{% static 'img/nav-icons/starsservice.png' %}"
+                                     width="25" height="25" alt=""/><b class="servtext">Обзоры мест</b></a>
+                        </div>
+
+                        <div class="divaservices">
+                            <a href="#" class="aservices list-group-item list-group-item-action">
+                                <img src="{% static 'img/nav-icons/newsservice.png' %}"
+                                     width="25" height="25" alt=""/><b class="servtext">Статьи</b></a>
+                        </div>
+
+                        <div class="divaservices">
+                            <a href="#" class="aservices list-group-item list-group-item-action">
+                                <img src="{% static 'img/nav-icons/newservice.png' %}"
+                                     width="25" height="25" alt=""/><b class="servtext">Новости проекта</b> </a>
+                        </div>
+
+                        <ul class="list-group list-group-horizontal divaservices">
+                            <a href="#" class="aservices list-group-item list-group-item-action"
+                               style="text-align: center">Вопросы</a>
+                            <a href="#" class="aservices list-group-item list-group-item-action"
+                               style="text-align: center">Обратная связь</a>
+                            <a href="#" class="aservices list-group-item list-group-item-action"
+                               style="text-align: center">Помощь</a>
+                        </ul>
+                    </div>
                 </div>
             </div>
 
@@ -140,7 +168,7 @@
                     <div class="nav-sec"><img
                             src="{% static 'img/nav-icons/news.png' %}"
                             width="25" height="25" alt=""/>
-                        <div class="text-block-8">Лента</div>
+                        <div class="text-block-8">Статьи</div>
                     </div>
                 </a>
                 <a href="#" style="text-decoration: none;">

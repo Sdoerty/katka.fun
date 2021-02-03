@@ -9,6 +9,19 @@
     max-width: 940px
 }
 
+.aservices{
+    text-decoration: none;
+}
+
+.divaservices{
+    margin-top: 5px;
+    border-radius: 10px;
+}
+
+.servtext{
+    padding-left: 15px;
+}
+
 .w-container:before, .w-container:after {
     content: " ";
     display: table;
