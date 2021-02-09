@@ -1,4 +1,4 @@
-{#{% if user.is_authenticated %}#}
+{% if user.is_authenticated %}
 
 <!DOCTYPE html>
 <html>
@@ -200,9 +200,9 @@
 </body>
 </html>
 
-{#{% else %}#}
-{#    <div style="margin-top: 400px;text-align: center">#}
-{#        <strong>Вы не авторизованы</strong><br>#}
-{#        <a href="{% url 'login' %}">Авторизация</a>#}
-{#    </div>#}
-{#{% endif %}#}
+{% else %}
+    <div style="margin-top: 400px;text-align: center">
+        <strong>Вы не авторизованы</strong><br>
+        <a href="{% url 'login' %}">Авторизация</a>
+    </div>
+{% endif %}

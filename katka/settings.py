@@ -33,7 +33,6 @@ SITE_ID = 1
 LOGIN_REDIRECT_URL = 'profile'
 LOGOUT_REDIRECT_URL = 'login'
 
-
 # Application definition
 INSTALLED_APPS = [
     'django.contrib.admin',
@@ -48,6 +47,7 @@ INSTALLED_APPS = [
     'main.apps.MainpageConfig',
     'profile.apps.UserProfileConfig',
     'users.apps.UsersConfig',
+    'multiselectfield',
 ]
 
 MIDDLEWARE = [
@@ -62,7 +62,6 @@ MIDDLEWARE = [
 
 ROOT_URLCONF = 'katka.urls'
 
-
 TEMPLATE_DIR = os.path.join(BASE_DIR, "katka/base_templates/")
 LOGIN_TEMPLATE = os.path.join(BASE_DIR, 'login/templates/login/')
 SIGNUP_TEMPLATE = os.path.join(BASE_DIR, 'signup/templates/signup/')
@@ -72,7 +71,6 @@ KATKA_PAGE = os.path.join(BASE_DIR, 'main/templates/katka_page')
 CREATE_KATKA = os.path.join(BASE_DIR, 'main/templates/create_katka')
 ALL_USERS = os.path.join(BASE_DIR, 'users/templates/users')
 SOME_USER = os.path.join(BASE_DIR, 'users/templates/some')
-
 
 TEMPLATES = [
     {

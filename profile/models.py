@@ -2,6 +2,30 @@ from django.contrib.auth.models import User
 from django.db import models
 from django.db.models.signals import post_save
 from django.dispatch import receiver
+from multiselectfield import MultiSelectField
+
+ACTIVITY = (
+    ('1', 'basketball'),
+    ('2', 'bicycle'),
+    ('3', 'bowling'),
+    ('4', 'dancing'),
+    ('5', 'football'),
+    ('6', 'horse-riding'),
+    ('7', 'lifting'),
+    ('8', 'motocross'),
+    ('9', 'ping-pong'),
+    ('10', 'pullups'),
+    ('11', 'rolls'),
+    ('12', 'run'),
+    ('13', 'skate'),
+    ('14', 'skiing'),
+    ('15', 'snowboard'),
+    ('16', 'tennis'),
+    ('17', 'trekking'),
+    ('18', 'volleyball'),
+    ('19', 'walking'),
+    ('20', 'yoga'),
+)
 
 
 class Profile(models.Model):
@@ -12,6 +36,7 @@ class Profile(models.Model):
     inst = models.CharField(max_length=150, blank=True, null=True)
     vk = models.CharField(max_length=150, blank=True, null=True)
     fb = models.CharField(max_length=150, blank=True, null=True)
+    act = MultiSelectField(choices=ACTIVITY)
 
     @receiver(post_save, sender=User)
     def create_user_profile(sender, instance, created, **kwargs):
@@ -23,12 +48,11 @@ class Profile(models.Model):
         instance.profile.save()
 
     def __str__(self):
-        return self.user
+        return str(self.user)
 
     class Meta:
         verbose_name = 'Профиль'
         verbose_name_plural = 'Профили'
-
 
 # class Activity(models.Model):
 #     user = models.ForeignKey(User, on_delete=models.CASCADE)

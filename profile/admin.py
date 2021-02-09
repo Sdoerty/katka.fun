@@ -5,9 +5,5 @@ from .models import Profile
 
 @admin.register(Profile)
 class ProfileAdmin(admin.ModelAdmin):
-    list_display = ('user', 'avatar', 'city', 'date_of_birth', 'inst', 'vk', 'fb')
+    list_display = ('user', 'avatar', 'city', 'date_of_birth', 'inst', 'vk', 'fb', 'act')
 
-#
-# @admin.register(Activity)
-# class ActivityAdmin(admin.ModelAdmin):
-#     list_display = ('user', 'activity')

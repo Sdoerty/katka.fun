@@ -2,10 +2,12 @@ from django.db import transaction
 from .forms import ProfileEditForm
 from django.contrib.auth.decorators import login_required
 from django.shortcuts import render, redirect
+from .models import Profile
 
 
 def index(request):
-    return render(request, 'profile/profile.html')
+    prfl = Profile.objects.all()
+    return render(request, 'profile/profile.html', {"prfl": prfl})
 
 
 @login_required
