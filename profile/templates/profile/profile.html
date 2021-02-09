@@ -17,221 +17,220 @@
 
 {% block content %}
     <div class="div-block">
-        <div class="columns w-row">
-            <div class="column-4 w-col w-col-4">
-                <div class="div-block-21">
+    <div class="columns w-row">
+        <div class="column-4 w-col w-col-4">
+            <div class="div-block-21">
+                <div>
+                    {% if user.profile.avatar %}
+                        <img src="{{ user.profile.avatar.url }}" alt="" class="image-14"/>
+                    {% else %}
+                        <img src="{% static 'img/empty_face.png' %}" alt="" class="image-14"/>
+                    {% endif %}
+                </div>
+                <div class="div-block-30">
                     <div>
-                        {% if user.profile.avatar %}
-                            <img src="{{ user.profile.avatar.url }}" alt="" class="image-14"/>
-                        {% else %}
-                            <img src="{% static 'img/empty_face.png' %}" alt="" class="image-14"/>
-                        {% endif %}
+                        <b class="heading-2">{{ user.first_name }} {{ user.last_name }} </b>
                     </div>
-                    <div class="div-block-30">
-                        <div>
-                            <b class="heading-2">{{ user.first_name }} {{ user.last_name }} </b>
-                        </div>
-                        <div class="profile-level">
-                            <text>1</text>
-                        </div>
+                    <div class="profile-level">
+                        <text>1</text>
                     </div>
+                </div>
 
-                    <div class="columns-13 w-row" style="padding: 0 15px 15px 15px">
-                        <div class="w-col w-col-2 w-col-small-2 w-col-tiny-2">
-                            <div class="current_level">
-                                <b>1</b>
-                            </div>
+                <div class="columns-13 w-row" style="padding: 0 15px 15px 15px">
+                    <div class="w-col w-col-2 w-col-small-2 w-col-tiny-2">
+                        <div class="current_level">
+                            <b>1</b>
                         </div>
-                        <div class="w-col w-col-9 w-col-small-9 w-col-tiny-9" style="padding: 0 10px 0 10px">
-                            <div class="progress">
-                                <div class="progress-bar progress-bar-striped" role="progressbar"
-                                     style="width: 50%; text-align: center"
-                                     aria-valuenow="50"
-                                     aria-valuemin="0" aria-valuemax="100">5/10
-                                </div>
-                            </div>
-                        </div>
-                        <div class="w-col w-col-2 w-col-small-2 w-col-tiny-2">
-                            <div class="next-level">
-                                <b>2</b>
+                    </div>
+                    <div class="w-col w-col-9 w-col-small-9 w-col-tiny-9" style="padding: 0 10px 0 10px">
+                        <div class="progress">
+                            <div class="progress-bar progress-bar-striped" role="progressbar"
+                                 style="width: 50%; text-align: center"
+                                 aria-valuenow="50"
+                                 aria-valuemin="0" aria-valuemax="100">5/10
                             </div>
                         </div>
                     </div>
-
-                    <div class="div-block-28">
-                        <div class="columns-7 w-row">
-                            <div class="column-11 w-col w-col-12">
-                                <a href="{% url 'edit_profile' %}" class="button-edit-profile w-button"
-                                   style="text-decoration: none;">Редактировать профиль</a>
-                            </div>
+                    <div class="w-col w-col-2 w-col-small-2 w-col-tiny-2">
+                        <div class="next-level">
+                            <b>2</b>
                         </div>
                     </div>
                 </div>
-                <div class="div-block-29">
-                    <div class="section-16">
-                        <div>
-                            <div class="container-8 w-container">
-                                <div class="text-block-22">Интересы:</div>
-                            </div>
-                            {% for item in prfl %}
-                                <div class="text-block-15">{{ item.act }}</div>
-                            {% endfor %}
-                            <div class="container-7 w-container">
 
-                                {#                                <div class="div-block-31"><img#}
-                                {#                                        src="{% static 'img/activity/bicycle.png' %}"#}
-                                {#                                        loading="lazy" width="35" height="35" alt="" class="image-22"/></div>#}
-                                {#                                <div class="div-block-31"><img#}
-                                {#                                        src="{% static 'img/activity/snowboard.png' %}"#}
-                                {#                                        loading="lazy" width="35" height="35" alt="" class="image-22"/></div>#}
-                                {#                                <div class="div-block-31"><img#}
-                                {#                                        src="{% static 'img/activity/yoga.png' %}"#}
-                                {#                                        loading="lazy" width="35" height="35" alt="" class="image-22"/></div>#}
-                                {#                                <div class="div-block-31"><img#}
-                                {#                                        src="{% static 'img/activity/skate.png' %}"#}
-                                {#                                        loading="lazy" width="35" height="35" alt="" class="image-22"/></div>#}
-                                {#                                <div class="div-block-31"><img#}
-                                {#                                        src="{% static 'img/activity/trekking.png' %}"#}
-                                {#                                        loading="lazy" width="35" height="35" alt="" class="image-22"/></div>#}
-                                {#                                <div class="div-block-31"><img#}
-                                {#                                        src="{% static 'img/activity/football.png' %}"#}
-                                {#                                        loading="lazy" width="35" height="35" alt="" class="image-22"/></div>#}
-                                {#                                <div class="div-block-31"><img#}
-                                {#                                        src="{% static 'img/activity/pullups.png' %}"#}
-                                {#                                        loading="lazy" width="35" height="35" alt="" class="image-22"/></div>#}
-                            </div>
-                        </div>
-                        <div class="columns-13 w-row">
-                            <div class="w-col w-col-5 w-col-small-5 w-col-tiny-5">
-                                <div class="text-block-22">Город:</div>
-                            </div>
-                            <div class="w-col w-col-7 w-col-small-7 w-col-tiny-7">
-                                <div class="text-block-15">{{ user.profile.city }}</div>
-                            </div>
-                        </div>
-                        <div class="columns-13 w-row">
-                            <div class="w-col w-col-5 w-col-small-5 w-col-tiny-5">
-                                <div class="text-block-22">Дата рождения:</div>
-                            </div>
-                            <div class="w-col w-col-7 w-col-small-7 w-col-tiny-7">
-                                <div class="text-block-15">{{ user.profile.date_of_birth }}</div>
-                            </div>
-                        </div>
-                    </div>
-                    <div class="section-16">
-                        <div class="columns-13 w-row">
-                            <div class="w-col w-col-1 w-col-medium-1 w-col-small-1 w-col-tiny-1"><img
-                                    src="https://uploads-ssl.webflow.com/5f1d72d3a5d4074a78fb17c3/5fbb8a00987231f539fd311c_instagram.png"
-                                    loading="lazy" width="30" alt=""/></div>
-                            <div class="w-col w-col-11 w-col-medium-11 w-col-small-11 w-col-tiny-11">
-                                {% if user.profile.inst %}
-                                    <div class="text-block-15">@{{ user.profile.inst }}</div>
-                                {% else %}
-                                    <div class="text-block-15">не заполнено</div>
-                                {% endif %}
-                            </div>
-                        </div>
-                        <div class="columns-13 w-row">
-                            <div class="w-col w-col-1 w-col-small-1 w-col-tiny-1"><img
-                                    src="https://uploads-ssl.webflow.com/5f1d72d3a5d4074a78fb17c3/5fbb8cdfa371e8d1d3933c32_vk.png"
-                                    loading="lazy" width="30" alt=""/></div>
-                            <div class="w-col w-col-11 w-col-small-11 w-col-tiny-11">
-                                {% if user.profile.vk %}
-                                    <div class="text-block-15">vk.com/{{ user.profile.vk }}</div>
-                                {% else %}
-                                    <div class="text-block-15">не заполнено</div>
-                                {% endif %}
-                            </div>
-                        </div>
-                        <div class="columns-13 w-row">
-                            <div class="w-col w-col-1 w-col-small-1 w-col-tiny-1"><img
-                                    src="https://uploads-ssl.webflow.com/5f1d72d3a5d4074a78fb17c3/5fbb8cf66e2641812f75c80c_facebook.png"
-                                    loading="lazy" width="30" alt=""/></div>
-                            <div class="w-col w-col-11 w-col-small-11 w-col-tiny-11">
-                                {% if user.profile.fb %}
-                                    <div class="text-block-15">facebook.com/{{ user.profile.fb }}</div>
-                                {% else %}
-                                    <div class="text-block-15">не заполнено</div>
-                                {% endif %}
-                            </div>
-                        </div>
-                    </div>
-                </div>
-                <div class="div-block-23">
-                    <div class="columns-14 w-row">
-                        <div class="w-col w-col-6 w-col-small-6 w-col-tiny-6">
-                            <div class="text-block-24">Галерея</div>
-                        </div>
-                        <div class="column-25 w-col w-col-6 w-col-small-6 w-col-tiny-6"><a href="profile.html#"
-                                                                                           class="link-4">Все</a></div>
-                    </div>
-
-                    <div class="mainGallery">
-                        <div class="row1">
-                            <div class="column_gallery">
-                                <img class="preview-img" src="{% static 'img/example_gallery/img1.jpg' %}"
-                                     style="width:100%"
-                                     onclick="openModal();currentSlide(1)"
-                                     class="hover-shadow cursor">
-                            </div>
-                            <div class="column_gallery">
-                                <img class="preview-img" src="{% static 'img/example_gallery/img2.jpeg' %}"
-                                     style="width:100%"
-                                     onclick="openModal();currentSlide(2)"
-                                     class="hover-shadow cursor">
-                            </div>
-                            <div class="column_gallery">
-                                <img class="preview-img" src="{% static 'img/example_gallery/img3.jpeg' %}"
-                                     style="width:100%"
-                                     onclick="openModal();currentSlide(3)"
-                                     class="hover-shadow cursor">
-                            </div>
-                            <div class="column_gallery">
-                                <img class="preview-img" src="{% static 'img/example_gallery/img5.jpg' %}"
-                                     style="width:100%"
-                                     onclick="openModal();currentSlide(4)"
-                                     class="hover-shadow cursor">
-                            </div>
-                        </div>
-
-                        <div id="myModal" class="modal" style="background-color: black;">
-                            <span style="color: white;" class="close cursor" onclick="closeModal()">&times;</span>
-                            <div class="modal-content" style="background-color: black;">
-                                <div class="modal-content-include" style="z-index: 999">
-                                    <div class="mySlides">
-                                        <div class="numbertext">1 / 4</div>
-                                        <img class="imgview" src="{% static 'img/example_gallery/img1.jpg' %}">
-                                    </div>
-
-                                    <div class="mySlides">
-                                        <div class="numbertext">2 / 4</div>
-                                        <img class="imgview" src="{% static 'img/example_gallery/img2.jpeg' %}">
-                                    </div>
-
-                                    <div class="mySlides">
-                                        <div class="numbertext">3 / 4</div>
-                                        <img class="imgview" src="{% static 'img/example_gallery/img3.jpeg' %}">
-                                    </div>
-
-                                    <div class="mySlides">
-                                        <div class="numbertext">4 / 4</div>
-                                        <img class="imgview" src="{% static 'img/example_gallery/img5.jpg' %}">
-                                    </div>
-                                </div>
-                                <a class="prev" style="color: white;text-decoration: none"
-                                   onclick="plusSlides(-1)">&#10094;</a>
-                                <a class="next" style="color: white;text-decoration: none"
-                                   onclick="plusSlides(1)">&#10095;</a>
-                            </div>
+                <div class="div-block-28">
+                    <div class="columns-7 w-row">
+                        <div class="column-11 w-col w-col-12">
+                            <a href="{% url 'edit_profile' %}" class="button-edit-profile w-button"
+                               style="text-decoration: none;">Редактировать профиль</a>
                         </div>
                     </div>
                 </div>
             </div>
-            <div class="column w-col w-col-8">
-                <div class="section-12">
-                    <div data-widget-latlng="55.755826,37.6172999" data-widget-zoom="11" data-widget-style="hybrid"
-                         class="map-2 w-widget w-widget-map"></div>
+            <div class="div-block-29">
+                <div class="section-16">
+                    <div>
+                        <div class="container-8 w-container">
+                            <div class="text-block-22">Интересы:</div>
+                        </div>
+                        {% for item in prfl %}
+                            <div class="text-block-15">{{ item.act }}</div>
+                        {% endfor %}
+                        <div class="container-7 w-container">
+
+                            {#                                <div class="div-block-31"><img#}
+                            {#                                        src="{% static 'img/activity/bicycle.png' %}"#}
+                            {#                                        loading="lazy" width="35" height="35" alt="" class="image-22"/></div>#}
+                            {#                                <div class="div-block-31"><img#}
+                            {#                                        src="{% static 'img/activity/snowboard.png' %}"#}
+                            {#                                        loading="lazy" width="35" height="35" alt="" class="image-22"/></div>#}
+                            {#                                <div class="div-block-31"><img#}
+                            {#                                        src="{% static 'img/activity/yoga.png' %}"#}
+                            {#                                        loading="lazy" width="35" height="35" alt="" class="image-22"/></div>#}
+                            {#                                <div class="div-block-31"><img#}
+                            {#                                        src="{% static 'img/activity/skate.png' %}"#}
+                            {#                                        loading="lazy" width="35" height="35" alt="" class="image-22"/></div>#}
+                            {#                                <div class="div-block-31"><img#}
+                            {#                                        src="{% static 'img/activity/trekking.png' %}"#}
+                            {#                                        loading="lazy" width="35" height="35" alt="" class="image-22"/></div>#}
+                            {#                                <div class="div-block-31"><img#}
+                            {#                                        src="{% static 'img/activity/football.png' %}"#}
+                            {#                                        loading="lazy" width="35" height="35" alt="" class="image-22"/></div>#}
+                            {#                                <div class="div-block-31"><img#}
+                            {#                                        src="{% static 'img/activity/pullups.png' %}"#}
+                            {#                                        loading="lazy" width="35" height="35" alt="" class="image-22"/></div>#}
+                        </div>
+                    </div>
+                    <div class="columns-13 w-row">
+                        <div class="w-col w-col-5 w-col-small-5 w-col-tiny-5">
+                            <div class="text-block-22">Город:</div>
+                        </div>
+                        <div class="w-col w-col-7 w-col-small-7 w-col-tiny-7">
+                            <div class="text-block-15">{{ user.profile.city }}</div>
+                        </div>
+                    </div>
+                    <div class="columns-13 w-row">
+                        <div class="w-col w-col-5 w-col-small-5 w-col-tiny-5">
+                            <div class="text-block-22">Дата рождения:</div>
+                        </div>
+                        <div class="w-col w-col-7 w-col-small-7 w-col-tiny-7">
+                            <div class="text-block-15">{{ user.profile.date_of_birth }}</div>
+                        </div>
+                    </div>
                 </div>
+                <div class="section-16">
+                    <div class="columns-13 w-row">
+                        <div class="w-col w-col-1 w-col-medium-1 w-col-small-1 w-col-tiny-1"><img
+                                src="https://uploads-ssl.webflow.com/5f1d72d3a5d4074a78fb17c3/5fbb8a00987231f539fd311c_instagram.png"
+                                loading="lazy" width="30" alt=""/></div>
+                        <div class="w-col w-col-11 w-col-medium-11 w-col-small-11 w-col-tiny-11">
+                            {% if user.profile.inst %}
+                                <div class="text-block-15">@{{ user.profile.inst }}</div>
+                            {% else %}
+                                <div class="text-block-15">не заполнено</div>
+                            {% endif %}
+                        </div>
+                    </div>
+                    <div class="columns-13 w-row">
+                        <div class="w-col w-col-1 w-col-small-1 w-col-tiny-1"><img
+                                src="https://uploads-ssl.webflow.com/5f1d72d3a5d4074a78fb17c3/5fbb8cdfa371e8d1d3933c32_vk.png"
+                                loading="lazy" width="30" alt=""/></div>
+                        <div class="w-col w-col-11 w-col-small-11 w-col-tiny-11">
+                            {% if user.profile.vk %}
+                                <div class="text-block-15">vk.com/{{ user.profile.vk }}</div>
+                            {% else %}
+                                <div class="text-block-15">не заполнено</div>
+                            {% endif %}
+                        </div>
+                    </div>
+                    <div class="columns-13 w-row">
+                        <div class="w-col w-col-1 w-col-small-1 w-col-tiny-1"><img
+                                src="https://uploads-ssl.webflow.com/5f1d72d3a5d4074a78fb17c3/5fbb8cf66e2641812f75c80c_facebook.png"
+                                loading="lazy" width="30" alt=""/></div>
+                        <div class="w-col w-col-11 w-col-small-11 w-col-tiny-11">
+                            {% if user.profile.fb %}
+                                <div class="text-block-15">facebook.com/{{ user.profile.fb }}</div>
+                            {% else %}
+                                <div class="text-block-15">не заполнено</div>
+                            {% endif %}
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="div-block-23">
+                <div class="columns-14 w-row">
+                    <div class="w-col w-col-6 w-col-small-6 w-col-tiny-6">
+                        <div class="text-block-24">Галерея</div>
+                    </div>
+                    <div class="column-25 w-col w-col-6 w-col-small-6 w-col-tiny-6"><a href="profile.html#"
+                                                                                       class="link-4">Все</a></div>
+                </div>
+
+                <div class="mainGallery">
+                    <div class="row1">
+                        <div class="column_gallery">
+                            <img class="preview-img" src="{% static 'img/example_gallery/img1.jpg' %}"
+                                 style="width:100%"
+                                 onclick="openModal();currentSlide(1)"
+                                 class="hover-shadow cursor">
+                        </div>
+                        <div class="column_gallery">
+                            <img class="preview-img" src="{% static 'img/example_gallery/img2.jpeg' %}"
+                                 style="width:100%"
+                                 onclick="openModal();currentSlide(2)"
+                                 class="hover-shadow cursor">
+                        </div>
+                        <div class="column_gallery">
+                            <img class="preview-img" src="{% static 'img/example_gallery/img3.jpeg' %}"
+                                 style="width:100%"
+                                 onclick="openModal();currentSlide(3)"
+                                 class="hover-shadow cursor">
+                        </div>
+                        <div class="column_gallery">
+                            <img class="preview-img" src="{% static 'img/example_gallery/img5.jpg' %}"
+                                 style="width:100%"
+                                 onclick="openModal();currentSlide(4)"
+                                 class="hover-shadow cursor">
+                        </div>
+                    </div>
+
+                    <div id="myModal" class="modal" style="background-color: black;">
+                        <span style="color: white;" class="close cursor" onclick="closeModal()">&times;</span>
+                        <div class="modal-content" style="background-color: black;">
+                            <div class="modal-content-include" style="z-index: 999">
+                                <div class="mySlides">
+                                    <div class="numbertext">1 / 4</div>
+                                    <img class="imgview" src="{% static 'img/example_gallery/img1.jpg' %}">
+                                </div>
+
+                                <div class="mySlides">
+                                    <div class="numbertext">2 / 4</div>
+                                    <img class="imgview" src="{% static 'img/example_gallery/img2.jpeg' %}">
+                                </div>
+
+                                <div class="mySlides">
+                                    <div class="numbertext">3 / 4</div>
+                                    <img class="imgview" src="{% static 'img/example_gallery/img3.jpeg' %}">
+                                </div>
+
+                                <div class="mySlides">
+                                    <div class="numbertext">4 / 4</div>
+                                    <img class="imgview" src="{% static 'img/example_gallery/img5.jpg' %}">
+                                </div>
+                            </div>
+                            <a class="prev" style="color: white;text-decoration: none"
+                               onclick="plusSlides(-1)">&#10094;</a>
+                            <a class="next" style="color: white;text-decoration: none"
+                               onclick="plusSlides(1)">&#10095;</a>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div class="column w-col w-col-8">
+            <div class="section-12">
+                <iframe src="https://yandex.ru/map-widget/v1/?um=constructor%3Ad47277beca50469695ff4b31803d8e5a10e235c9b818a64e3834c43c844824e3&amp;source=constructor"
+                        width="100%" height="350" frameborder="0"></iframe>
                 <div class="section-9"><h5 class="heading-4">Мои места</h5><img
                         src="https://uploads-ssl.webflow.com/5f1d72d3a5d4074a78fb17c3/5f358f5ebe8534b3f1ac7172_map-marker-2-128.png"
                         width="20" alt=""/><h5 class="heading-3">Москва, Россия</h5></div>
