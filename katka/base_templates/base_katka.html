@@ -1,204 +1,211 @@
 {% if user.is_authenticated %}
 
-<!DOCTYPE html>
-<html>
-<head>
-    {% block title %}<title></title>{% endblock %}
-    {% block links %}
-        {% load static %}
-        <meta charset="utf-8"/>
-        <meta content="width=device-width, initial-scale=1" name="viewport"/>
-        <link rel="stylesheet" type="text/css" href="{% static 'css/navbar.css' %}"/>
-        <link rel="stylesheet" type="text/css" href="{% static 'bootstrap/bootstrap.css' %}"/>
-        <link rel="stylesheet" type="text/css" href="{% static 'bootstrap/bootstrap-grid.css' %}"/>
-        <link rel="stylesheet" type="text/css" href="{% static 'bootstrap/bootstrap-reboot.css' %}"/>
+    <!DOCTYPE html>
+    <html>
+    <head>
+        {% block title %}<title></title>{% endblock %}
+        {% block links %}
+            {% load static %}
+            <meta charset="utf-8"/>
+            <meta content="width=device-width, initial-scale=1" name="viewport"/>
+            <link rel="stylesheet" type="text/css" href="{% static 'css/navbar.css' %}"/>
+            <link rel="stylesheet" type="text/css" href="{% static 'bootstrap/bootstrap.css' %}"/>
+            <link rel="stylesheet" type="text/css" href="{% static 'bootstrap/bootstrap-grid.css' %}"/>
+            <link rel="stylesheet" type="text/css" href="{% static 'bootstrap/bootstrap-reboot.css' %}"/>
+        {% endblock %}
+    </head>
+
+
+    <body class="body-2">
+    <div data-collapse="none" data-animation="default" data-duration="400" role="banner" class="navbar-4 w-nav">
+        <div style="width: 100%">
+            <div style="float: left">
+                <div class="btn-group dropend">
+                    <button type="button" id="dropdownMenuButton" data-bs-toggle="dropdown"
+                            aria-haspopup="true" aria-expanded="false"
+                            style="background: none; outline: none; border: none">
+                        <div class="div-block-7"><img
+                                src="{% static 'img/nav-icons/nav-face.png' %}" width="30"
+                                height="30" alt="" class="image"/>
+                            <div class="text-block-12">{{ user.first_name }}</div>
+                        </div>
+                    </button>
+                    <div class="dropdown-menu">
+                        <a id="dr-item" class="dropdown-item" href="{% url 'edit_profile' %}">Редактировать профиль</a>
+                        <a id="dr-item" class="dropdown-item disabled" href="#">Настройки</a>
+                        <a id="dr-item" class="dropdown-item disabled" href="#">Контакты</a>
+                        <div class="dropdown-divider"></div>
+                        <a id="dr-item" class="dropdown-item" href="{% url 'logout' %}">Выход</a>
+                    </div>
+                </div>
+            </div>
+
+            <div style="float: right">
+                <div class="btn-group">
+                    <button type="button" id="dropdownMenuButton" data-bs-toggle="dropdown"
+                            aria-haspopup="true" aria-expanded="false"
+                            style="background: none; outline: none; border: none">
+                        <div class="div-block-7"><img
+                                src="{% static 'img/nav-icons/services.png' %}" width="30"
+                                height="30" alt="" class="image"/>
+                            <div class="text-block-12">Сервисы</div>
+                        </div>
+                    </button>
+
+                    <div class="dropdown-menu" style="width: 350px; height: auto; font-size: 14px;padding: 0;">
+                        <p style="margin: 15px 0 0 0; text-align: center">Доступные сервисы</p>
+                        <div class="list-group" style="padding: 15px">
+                            <div class="divaservices" style="margin-top: 0">
+                                <a href="#" class="aservices list-group-item list-group-item-action">
+                                    <img src="{% static 'img/nav-icons/mapservice.png' %}"
+                                         width="25" height="25" alt=""/><b class="servtext">Карты</b></a>
+                            </div>
+
+                            <div class="divaservices">
+                                <a href="#" class="aservices list-group-item list-group-item-action">
+                                    <img src="{% static 'img/nav-icons/groupservice.png' %}"
+                                         width="25" height="25" alt=""/><b class="servtext">Группы</b></a>
+                            </div>
+
+                            <div class="divaservices">
+                                <a href="#" class="aservices list-group-item list-group-item-action">
+                                    <img src="{% static 'img/nav-icons/starsservice.png' %}"
+                                         width="25" height="25" alt=""/><b class="servtext">Обзоры мест</b></a>
+                            </div>
+
+                            <div class="divaservices">
+                                <a href="#" class="aservices list-group-item list-group-item-action">
+                                    <img src="{% static 'img/nav-icons/partnerservice.png' %}"
+                                         width="25" height="25" alt=""/><b class="servtext">Партнёры</b></a>
+                            </div>
+
+                            <div class="divaservices">
+                                <a href="#" class="aservices list-group-item list-group-item-action">
+                                    <img src="{% static 'img/nav-icons/newsservice.png' %}"
+                                         width="25" height="25" alt=""/><b class="servtext">Статьи</b></a>
+                            </div>
+
+                            <div class="divaservices">
+                                <a href="#" class="aservices list-group-item list-group-item-action">
+                                    <img src="{% static 'img/nav-icons/newservice.png' %}"
+                                         width="25" height="25" alt=""/><b class="servtext">Новости проекта</b> </a>
+                            </div>
+
+                            <ul class="list-group list-group-horizontal divaservices">
+                                <a href="#" class="aservices list-group-item list-group-item-action"
+                                   style="text-align: center">Вопросы</a>
+                                <a href="#" class="aservices list-group-item list-group-item-action"
+                                   style="text-align: center">Обратная связь</a>
+                                <a href="#" class="aservices list-group-item list-group-item-action"
+                                   style="text-align: center">Помощь</a>
+                            </ul>
+                        </div>
+                    </div>
+                </div>
+
+
+                <div class="btn-group dropleft">
+                    <button type="button" id="dropdownMenuButton" data-bs-toggle="dropdown"
+                            aria-haspopup="true" aria-expanded="false"
+                            style="background: none; outline: none;border: none">
+                        <div class="div-block-8"><img
+                                src="{% static 'img/nav-icons/nav-bell.png' %}"
+                                width="25" height="25" alt="" class="image-2"/><span class="badge badge-light">3</span>
+                        </div>
+                    </button>
+                    <div class="dropdown-menu" style="width: 300px;" aria-labelledby="dropdownMenuButton">
+                        <div class="list-group">
+                            <a href="#" class="list-group-item list-group-item-action" aria-current="true">
+                                <div class="d-flex w-100 justify-content-between">
+                                    <h5 class="mb-1">Новый участник</h5>
+                                </div>
+                                <p class="mb-1">Пользователь User User вступил в ваше событие</p>
+                                <small>3 days ago</small>
+                            </a>
+                            <a href="#" class="list-group-item list-group-item-action" aria-current="true">
+                                <div class="d-flex w-100 justify-content-between">
+                                    <h5 class="mb-1">Новый участник</h5>
+                                </div>
+                                <p class="mb-1">Пользователь User User вступил в ваше событие</p>
+                                <small>3 days ago</small>
+                            </a>
+                            <a href="#" class="list-group-item list-group-item-action" aria-current="true">
+                                <div class="d-flex w-100 justify-content-between">
+                                    <h5 class="mb-1">Новый участник</h5>
+                                </div>
+                                <p class="mb-1">Пользователь User User вступил в ваше событие</p>
+                                <small>3 days ago</small>
+                            </a>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+
+    </div>
+
+
+    <div data-collapse="none" data-animation="default" data-duration="400" role="banner" class="navbar-5 w-nav">
+        <div class="div-block-2">
+            <nav role="navigation" class="nav-menu-4 w-nav-menu">
+                <div class="container-5 w-container">
+                    <a href="{% url 'main' %}" style="text-decoration: none;">
+                        <div class="nav-sec"><img
+                                src="{% static 'img/nav-icons/home.png' %}"
+                                width="25" height="25" alt=""/>
+                            <div class="text-block-8">Главная</div>
+                        </div>
+                    </a>
+                    <a href="{% url 'profile' %}" style="text-decoration: none;">
+                        <div class="nav-sec"><img
+                                src="{% static 'img/nav-icons/profile.png' %}"
+                                width="25" height="25" alt=""/>
+                            <div class="text-block-8">Профиль</div>
+                        </div>
+                    </a>
+                    <a href="{% url 'users' %}" style="text-decoration: none;">
+                        <div class="nav-sec"><img
+                                src="{% static 'img/nav-icons/users.png' %}"
+                                width="25" height="25" alt=""/>
+                            <div class="text-block-8">Люди</div>
+                        </div>
+                    </a>
+                    <a href="#" style="text-decoration: none;">
+                        <div class="nav-sec"><img
+                                src="{% static 'img/nav-icons/news.png' %}"
+                                width="25" height="25" alt=""/>
+                            <div class="text-block-8">Статьи</div>
+                        </div>
+                    </a>
+                    <a href="#" style="text-decoration: none;">
+                        <div class="nav-sec"><img
+                                src="{% static 'img/nav-icons/map.png' %}"
+                                width="25" height="25" alt=""/>
+                            <div class="text-block-8">Карта</div>
+                        </div>
+                    </a>
+                </div>
+            </nav>
+        </div>
+    </div>
+
+    {% block content %}
     {% endblock %}
-</head>
 
-
-<body class="body-2">
-<div data-collapse="none" data-animation="default" data-duration="400" role="banner" class="navbar-4 w-nav">
-    <div style="width: 100%">
-        <div style="float: left">
-            <div class="btn-group dropend">
-                <button type="button" id="dropdownMenuButton" data-bs-toggle="dropdown"
-                        aria-haspopup="true" aria-expanded="false"
-                        style="background: none; outline: none; border: none">
-                    <div class="div-block-7"><img
-                            src="{% static 'img/nav-icons/nav-face.png' %}" width="30"
-                            height="30" alt="" class="image"/>
-                        <div class="text-block-12">{{ user.first_name }}</div>
-                    </div>
-                </button>
-                <div class="dropdown-menu">
-                    <a id="dr-item" class="dropdown-item" href="{% url 'edit_profile' %}">Редактировать профиль</a>
-                    <a id="dr-item" class="dropdown-item disabled" href="#">Настройки</a>
-                    <a id="dr-item" class="dropdown-item disabled" href="#">Контакты</a>
-                    <div class="dropdown-divider"></div>
-                    <a id="dr-item" class="dropdown-item" href="{% url 'logout' %}">Выход</a>
-                </div>
-            </div>
-        </div>
-
-        <div style="float: right">
-            <div class="btn-group">
-                <button type="button" id="dropdownMenuButton" data-bs-toggle="dropdown"
-                        aria-haspopup="true" aria-expanded="false"
-                        style="background: none; outline: none; border: none">
-                    <div class="div-block-7"><img
-                            src="{% static 'img/nav-icons/services.png' %}" width="30"
-                            height="30" alt="" class="image"/>
-                        <div class="text-block-12">Сервисы</div>
-                    </div>
-                </button>
-
-                <div class="dropdown-menu" style="width: 350px; height: auto; font-size: 14px;padding: 0;">
-                    <p style="margin: 15px 0 0 0; text-align: center">Доступные сервисы</p>
-                    <div class="list-group" style="padding: 15px">
-                        <div class="divaservices" style="margin-top: 0">
-                            <a href="#" class="aservices list-group-item list-group-item-action">
-                                <img src="{% static 'img/nav-icons/mapservice.png' %}"
-                                     width="25" height="25" alt=""/><b class="servtext">Карты</b></a>
-                        </div>
-
-                        <div class="divaservices">
-                            <a href="#" class="aservices list-group-item list-group-item-action">
-                                <img src="{% static 'img/nav-icons/partnerservice.png' %}"
-                                     width="25" height="25" alt=""/><b class="servtext">Партнёры</b></a>
-                        </div>
-
-                        <div class="divaservices">
-                            <a href="#" class="aservices list-group-item list-group-item-action">
-                                <img src="{% static 'img/nav-icons/starsservice.png' %}"
-                                     width="25" height="25" alt=""/><b class="servtext">Обзоры мест</b></a>
-                        </div>
-
-                        <div class="divaservices">
-                            <a href="#" class="aservices list-group-item list-group-item-action">
-                                <img src="{% static 'img/nav-icons/newsservice.png' %}"
-                                     width="25" height="25" alt=""/><b class="servtext">Статьи</b></a>
-                        </div>
-
-                        <div class="divaservices">
-                            <a href="#" class="aservices list-group-item list-group-item-action">
-                                <img src="{% static 'img/nav-icons/newservice.png' %}"
-                                     width="25" height="25" alt=""/><b class="servtext">Новости проекта</b> </a>
-                        </div>
-
-                        <ul class="list-group list-group-horizontal divaservices">
-                            <a href="#" class="aservices list-group-item list-group-item-action"
-                               style="text-align: center">Вопросы</a>
-                            <a href="#" class="aservices list-group-item list-group-item-action"
-                               style="text-align: center">Обратная связь</a>
-                            <a href="#" class="aservices list-group-item list-group-item-action"
-                               style="text-align: center">Помощь</a>
-                        </ul>
-                    </div>
-                </div>
-            </div>
-
-
-            <div class="btn-group dropleft">
-                <button type="button" id="dropdownMenuButton" data-bs-toggle="dropdown"
-                        aria-haspopup="true" aria-expanded="false" style="background: none; outline: none;border: none">
-                    <div class="div-block-8"><img
-                            src="{% static 'img/nav-icons/nav-bell.png' %}"
-                            width="25" height="25" alt="" class="image-2"/><span class="badge badge-light">3</span>
-                    </div>
-                </button>
-                <div class="dropdown-menu" style="width: 300px;" aria-labelledby="dropdownMenuButton">
-                    <div class="list-group">
-                        <a href="#" class="list-group-item list-group-item-action" aria-current="true">
-                            <div class="d-flex w-100 justify-content-between">
-                                <h5 class="mb-1">Новый участник</h5>
-                            </div>
-                            <p class="mb-1">Пользователь User User вступил в ваше событие</p>
-                            <small>3 days ago</small>
-                        </a>
-                        <a href="#" class="list-group-item list-group-item-action" aria-current="true">
-                            <div class="d-flex w-100 justify-content-between">
-                                <h5 class="mb-1">Новый участник</h5>
-                            </div>
-                            <p class="mb-1">Пользователь User User вступил в ваше событие</p>
-                            <small>3 days ago</small>
-                        </a>
-                        <a href="#" class="list-group-item list-group-item-action" aria-current="true">
-                            <div class="d-flex w-100 justify-content-between">
-                                <h5 class="mb-1">Новый участник</h5>
-                            </div>
-                            <p class="mb-1">Пользователь User User вступил в ваше событие</p>
-                            <small>3 days ago</small>
-                        </a>
-                    </div>
-                </div>
-            </div>
-        </div>
-    </div>
-
-
-</div>
-
-
-<div data-collapse="none" data-animation="default" data-duration="400" role="banner" class="navbar-5 w-nav">
-    <div class="div-block-2">
-        <nav role="navigation" class="nav-menu-4 w-nav-menu">
-            <div class="container-5 w-container">
-                <a href="{% url 'main' %}" style="text-decoration: none;">
-                    <div class="nav-sec"><img
-                            src="{% static 'img/nav-icons/home.png' %}"
-                            width="25" height="25" alt=""/>
-                        <div class="text-block-8">Главная</div>
-                    </div>
-                </a>
-                <a href="{% url 'profile' %}" style="text-decoration: none;">
-                    <div class="nav-sec"><img
-                            src="{% static 'img/nav-icons/profile.png' %}"
-                            width="25" height="25" alt=""/>
-                        <div class="text-block-8">Профиль</div>
-                    </div>
-                </a>
-                <a href="{% url 'users' %}" style="text-decoration: none;">
-                    <div class="nav-sec"><img
-                            src="{% static 'img/nav-icons/users.png' %}"
-                            width="25" height="25" alt=""/>
-                        <div class="text-block-8">Люди</div>
-                    </div>
-                </a>
-                <a href="#" style="text-decoration: none;">
-                    <div class="nav-sec"><img
-                            src="{% static 'img/nav-icons/news.png' %}"
-                            width="25" height="25" alt=""/>
-                        <div class="text-block-8">Статьи</div>
-                    </div>
-                </a>
-                <a href="#" style="text-decoration: none;">
-                    <div class="nav-sec"><img
-                            src="{% static 'img/nav-icons/map.png' %}"
-                            width="25" height="25" alt=""/>
-                        <div class="text-block-8">Карта</div>
-                    </div>
-                </a>
-            </div>
-        </nav>
-    </div>
-</div>
-
-{% block content %}
-{% endblock %}
-
-<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.0-beta1/dist/js/bootstrap.bundle.min.js"
-        integrity="sha384-ygbV9kiqUc6oa4msXn9868pTtWMgiQaeYH7/t7LECLbyPA2x65Kgf80OJFdroafW"
-        crossorigin="anonymous"></script>
-<script src="https://code.jquery.com/jquery-3.5.1.slim.min.js"
-        integrity="sha384-DfXdz2htPH0lsSSs5nCTpuj/zy4C+OGpamoFVy38MVBnE+IbbVYUew+OrCXaRkfj"
-        crossorigin="anonymous"></script>
-<script src="{% static "js/bootstrap.bundle.min.js" %}"></script>
-<script src="{% static "js/bootstrap.bundle.js" %}"></script>
-<script src="{% static "js/bootstrap.js" %}"></script>
-<script src="{% static "js/bootstrap.min.js" %}"></script>
-<script src="{% static "js/popper.js" %}"></script>
-</body>
-</html>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.0-beta1/dist/js/bootstrap.bundle.min.js"
+            integrity="sha384-ygbV9kiqUc6oa4msXn9868pTtWMgiQaeYH7/t7LECLbyPA2x65Kgf80OJFdroafW"
+            crossorigin="anonymous"></script>
+    <script src="https://code.jquery.com/jquery-3.5.1.slim.min.js"
+            integrity="sha384-DfXdz2htPH0lsSSs5nCTpuj/zy4C+OGpamoFVy38MVBnE+IbbVYUew+OrCXaRkfj"
+            crossorigin="anonymous"></script>
+    <script src="{% static "js/bootstrap.bundle.min.js" %}"></script>
+    <script src="{% static "js/bootstrap.bundle.js" %}"></script>
+    <script src="{% static "js/bootstrap.js" %}"></script>
+    <script src="{% static "js/bootstrap.min.js" %}"></script>
+    <script src="{% static "js/popper.js" %}"></script>
+    </body>
+    </html>
 
 {% else %}
     <div style="margin-top: 400px;text-align: center">

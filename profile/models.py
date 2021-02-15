@@ -36,7 +36,7 @@ class Profile(models.Model):
     inst = models.CharField(max_length=150, blank=True, null=True)
     vk = models.CharField(max_length=150, blank=True, null=True)
     fb = models.CharField(max_length=150, blank=True, null=True)
-    act = MultiSelectField(choices=ACTIVITY)
+    act = MultiSelectField(choices=ACTIVITY, blank=True, null=True)
 
     @receiver(post_save, sender=User)
     def create_user_profile(sender, instance, created, **kwargs):

@@ -73,10 +73,15 @@
                         <div class="container-8 w-container">
                             <div class="text-block-22">Интересы:</div>
                         </div>
-                        {% for item in prfl %}
-                            <div class="text-block-15">{{ item.act }}</div>
-                        {% endfor %}
                         <div class="container-7 w-container">
+                            {% if user.profile.act %}
+                                {% for item in user.profile.act %}
+                                    {{ item }}
+                                {% endfor %}
+                            {% else %}
+                                <i>Ничего не выбрано</i>
+                            {% endif %}
+
 
                             {#                                <div class="div-block-31"><img#}
                             {#                                        src="{% static 'img/activity/bicycle.png' %}"#}
