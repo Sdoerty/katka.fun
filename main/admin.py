@@ -4,4 +4,4 @@ from .models import Katka
 
 @admin.register(Katka)
 class ProfileAdmin(admin.ModelAdmin):
-    list_display = ('id', 'city', 'date', 'time', 'descr')
+    list_display = ('id', 'city', 'date', 'time', 'descr', 'katka_act')

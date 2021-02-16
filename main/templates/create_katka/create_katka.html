@@ -7,6 +7,8 @@
     {% load static %}
     <link rel="stylesheet" type="text/css" href="{% static 'edit_profile/css/style_edit.css' %}"/>
     <link rel="stylesheet" type="text/css" href="{% static 'css/util.css' %}"/>
+    <link rel="stylesheet" type="text/css" href="{% static 'css/activities.css' %}"/>
+
 
 
 
@@ -60,88 +62,231 @@
                             <div class="container-8 w-container">
                                 <div style="text-align: center"><p>Выберите вид отдыха</p></div>
                             </div>
-                            <div class="container-7 w-container">
-                                <div class="div-block-31"><img
-                                        src="{% static 'img/activity/basketball.png' %}"
-                                        loading="lazy" alt="" class="image-22"/>
+                            <div multiple="multiple">
+                                <div class="items">
+                                    <div class="container-7 w-container">
+                                        <label class="item">
+                                            <input type="checkbox" name="katka_act" value="1">
+                                            <div class="item-content">
+                                                <div class="div-block-31">
+                                                    <span class="item-imgs">
+                                                        <img src="{% static 'img/activity/basketball.png' %}"
+                                                             loading="lazy" alt="" class="image-22"/>
+                                                    </span>
+                                                </div>
+                                            </div>
+                                        </label>
+                                        <label class="item">
+                                            <input type="checkbox" name="katka_act" value="2">
+                                            <div class="item-content">
+                                                <div class="div-block-31">
+                                                    <span class="item-imgs">
+                                                        <img src="{% static 'img/activity/bicycle.png' %}"
+                                                             loading="lazy" alt="" class="image-22"/>
+                                                    </span>
+                                                </div>
+                                            </div>
+                                        </label>
+                                        <label class="item">
+                                            <input type="checkbox" name="katka_act" value="3">
+                                            <div class="item-content">
+                                                <div class="div-block-31">
+                                                    <span class="item-imgs">
+                                                        <img src="{% static 'img/activity/bowling.png' %}"
+                                                             loading="lazy" alt="" class="image-22"/>
+                                                    </span>
+                                                </div>
+                                            </div>
+                                        </label>
+                                        <label class="item">
+                                            <input type="checkbox" name="katka_act" value="4">
+                                            <div class="item-content">
+                                                <div class="div-block-31">
+                                                    <span class="item-imgs">
+                                                        <img src="{% static 'img/activity/dancing.png' %}"
+                                                             loading="lazy" alt="" class="image-22"/>
+                                                    </span>
+                                                </div>
+                                            </div>
+                                        </label>
+                                        <label class="item">
+                                            <input type="checkbox" name="katka_act" value="5">
+                                            <div class="item-content">
+                                                <div class="div-block-31">
+                                                    <span class="item-imgs">
+                                                        <img src="{% static 'img/activity/football.png' %}"
+                                                             loading="lazy" alt="" class="image-22"/>
+                                                    </span>
+                                                </div>
+                                            </div>
+                                        </label>
+                                        <label class="item">
+                                            <input type="checkbox" name="katka_act" value="6">
+                                            <div class="item-content">
+                                                <div class="div-block-31">
+                                                    <span class="item-imgs">
+                                                        <img src="{% static 'img/activity/horse-riding.png' %}"
+                                                             loading="lazy" alt="" class="image-22"/>
+                                                    </span>
+                                                </div>
+                                            </div>
+                                        </label>
+                                        <label class="item">
+                                            <input type="checkbox" name="katka_act" value="7">
+                                            <div class="item-content">
+                                                <div class="div-block-31">
+                                                    <span class="item-imgs">
+                                                        <img src="{% static 'img/activity/lifting.png' %}"
+                                                             loading="lazy" alt="" class="image-22"/>
+                                                    </span>
+                                                </div>
+                                            </div>
+                                        </label>
+                                        <label class="item">
+                                            <input type="checkbox" name="katka_act" value="8">
+                                            <div class="item-content">
+                                                <div class="div-block-31">
+                                                    <span class="item-imgs">
+                                                        <img src="{% static 'img/activity/motocross.png' %}"
+                                                             loading="lazy" alt="" class="image-22"/>
+                                                    </span>
+                                                </div>
+                                            </div>
+                                        </label>
+                                        <label class="item">
+                                            <input type="checkbox" name="katka_act" value="9">
+                                            <div class="item-content">
+                                                <div class="div-block-31">
+                                                    <span class="item-imgs">
+                                                        <img src="{% static 'img/activity/ping-pong.png' %}"
+                                                             loading="lazy" alt="" class="image-22"/>
+                                                    </span>
+                                                </div>
+                                            </div>
+                                        </label>
+                                        <label class="item">
+                                            <input type="checkbox" name="katka_act" value="10">
+                                            <div class="item-content">
+                                                <div class="div-block-31">
+                                                    <span class="item-imgs">
+                                                        <img src="{% static 'img/activity/pullups.png' %}"
+                                                             loading="lazy" alt="" class="image-22"/>
+                                                    </span>
+                                                </div>
+                                            </div>
+                                        </label>
+                                        <label class="item">
+                                            <input type="checkbox" name="katka_act" value="11">
+                                            <div class="item-content">
+                                                <div class="div-block-31">
+                                                    <span class="item-imgs">
+                                                        <img src="{% static 'img/activity/rolls.png' %}"
+                                                             loading="lazy" alt="" class="image-22"/>
+                                                    </span>
+                                                </div>
+                                            </div>
+                                        </label>
+                                        <label class="item">
+                                            <input type="checkbox" name="katka_act" value="12">
+                                            <div class="item-content">
+                                                <div class="div-block-31">
+                                                    <span class="item-imgs">
+                                                        <img src="{% static 'img/activity/run.png' %}"
+                                                             loading="lazy" alt="" class="image-22"/>
+                                                    </span>
+                                                </div>
+                                            </div>
+                                        </label>
+                                        <label class="item">
+                                            <input type="checkbox" name="katka_act" value="13">
+                                            <div class="item-content">
+                                                <div class="div-block-31">
+                                                    <span class="item-imgs">
+                                                        <img src="{% static 'img/activity/skate.png' %}"
+                                                             loading="lazy" alt="" class="image-22"/>
+                                                    </span>
+                                                </div>
+                                            </div>
+                                        </label>
+                                        <label class="item">
+                                            <input type="checkbox" name="katka_act" value="14">
+                                            <div class="item-content">
+                                                <div class="div-block-31">
+                                                    <span class="item-imgs">
+                                                        <img src="{% static 'img/activity/skiing.png' %}"
+                                                             loading="lazy" alt="" class="image-22"/>
+                                                    </span>
+                                                </div>
+                                            </div>
+                                        </label>
+                                        <label class="item">
+                                            <input type="checkbox" name="katka_act" value="15">
+                                            <div class="item-content">
+                                                <div class="div-block-31">
+                                                    <span class="item-imgs">
+                                                        <img src="{% static 'img/activity/snowboard.png' %}"
+                                                             loading="lazy" alt="" class="image-22"/>
+                                                    </span>
+                                                </div>
+                                            </div>
+                                        </label>
+                                        <label class="item">
+                                            <input type="checkbox" name="katka_act" value="16">
+                                            <div class="item-content">
+                                                <div class="div-block-31">
+                                                    <span class="item-imgs">
+                                                        <img src="{% static 'img/activity/tennis.png' %}"
+                                                             loading="lazy" alt="" class="image-22"/>
+                                                    </span>
+                                                </div>
+                                            </div>
+                                        </label>
+                                        <label class="item">
+                                            <input type="checkbox" name="katka_act" value="17">
+                                            <div class="item-content">
+                                                <div class="div-block-31">
+                                                    <span class="item-imgs">
+                                                        <img src="{% static 'img/activity/trekking.png' %}"
+                                                             loading="lazy" alt="" class="image-22"/>
+                                                    </span>
+                                                </div>
+                                            </div>
+                                        </label>
+                                        <label class="item">
+                                            <input type="checkbox" name="katka_act" value="18">
+                                            <div class="item-content">
+                                                <div class="div-block-31">
+                                                    <span class="item-imgs">
+                                                        <img src="{% static 'img/activity/volleyball.png' %}"
+                                                             loading="lazy" alt="" class="image-22"/>
+                                                    </span>
+                                                </div>
+                                            </div>
+                                        </label>
+                                        <label class="item">
+                                            <input type="checkbox" name="katka_act" value="19">
+                                            <div class="item-content">
+                                                <div class="div-block-31">
+                                                    <span class="item-imgs">
+                                                        <img src="{% static 'img/activity/walking.png' %}"
+                                                             loading="lazy" alt="" class="image-22"/>
+                                                    </span>
+                                                </div>
+                                            </div>
+                                        </label>
+                                        <label class="item">
+                                            <input type="checkbox" name="katka_act" value="20">
+                                            <div class="item-content">
+                                                <div class="div-block-31">
+                                                    <span class="item-imgs">
+                                                        <img src="{% static 'img/activity/yoga.png' %}"
+                                                             loading="lazy" alt="" class="image-22"/>
+                                                    </span>
+                                                </div>
+                                            </div>
+                                        </label>
+                                    </div>
                                 </div>
-                                <div class="div-block-31"><img
-                                        src="{% static 'img/activity/bicycle.png' %}"
-                                        loading="lazy" alt="" class="image-22"/>
-                                </div>
-                                <div class="div-block-31"><img
-                                        src="{% static 'img/activity/bowling.png' %}"
-                                        loading="lazy" alt="" class="image-22"/>
-                                </div>
-                                <div class="div-block-31"><img
-                                        src="{% static 'img/activity/dancing.png' %}"
-                                        loading="lazy" alt="" class="image-22"/>
-                                </div>
-                                <div class="div-block-31"><img
-                                        src="{% static 'img/activity/football.png' %}"
-                                        loading="lazy" alt="" class="image-22"/>
-                                </div>
-                                <div class="div-block-31"><img
-                                        src="{% static 'img/activity/horse-riding.png' %}"
-                                        loading="lazy" alt="" class="image-22"/>
-                                </div>
-                                <div class="div-block-31"><img
-                                        src="{% static 'img/activity/lifting.png' %}"
-                                        loading="lazy" alt="" class="image-22"/>
-                                </div>
-                                <div class="div-block-31"><img
-                                        src="{% static 'img/activity/motocross.png' %}"
-                                        loading="lazy" alt="" class="image-22"/>
-                                </div>
-                                <div class="div-block-31"><img
-                                        src="{% static 'img/activity/ping-pong.png' %}"
-                                        loading="lazy" alt="" class="image-22"/>
-                                </div>
-                                <div class="div-block-31"><img
-                                        src="{% static 'img/activity/pullups.png' %}"
-                                        loading="lazy" alt="" class="image-22"/>
-                                </div>
-                                <div class="div-block-31"><img
-                                        src="{% static 'img/activity/rolls.png' %}"
-                                        loading="lazy" alt="" class="image-22"/>
-                                </div>
-                                <div class="div-block-31"><img
-                                        src="{% static 'img/activity/run.png' %}"
-                                        loading="lazy" alt="" class="image-22"/>
-                                </div>
-                                <div class="div-block-31"><img
-                                        src="{% static 'img/activity/skate.png' %}"
-                                        loading="lazy" alt="" class="image-22"/>
-                                </div>
-                                <div class="div-block-31"><img
-                                        src="{% static 'img/activity/skiing.png' %}"
-                                        loading="lazy" alt="" class="image-22"/>
-                                </div>
-                                <div class="div-block-31"><img
-                                        src="{% static 'img/activity/snowboard.png' %}"
-                                        loading="lazy" alt="" class="image-22"/>
-                                </div>
-                                <div class="div-block-31"><img
-                                        src="{% static 'img/activity/tennis.png' %}"
-                                        loading="lazy" alt="" class="image-22"/>
-                                </div>
-                                <div class="div-block-31"><img
-                                        src="{% static 'img/activity/trekking.png' %}"
-                                        loading="lazy" alt="" class="image-22"/>
-                                </div>
-                                <div class="div-block-31"><img
-                                        src="{% static 'img/activity/volleyball.png' %}"
-                                        loading="lazy" alt="" class="image-22"/>
-                                </div>
-                                <div class="div-block-31"><img
-                                        src="{% static 'img/activity/walking.png' %}"
-                                        loading="lazy" alt="" class="image-22"/>
-                                </div>
-                                <div class="div-block-31"><img
-                                        src="{% static 'img/activity/yoga.png' %}"
-                                        loading="lazy" alt="" class="image-22"/>
-                                </div>
-
                             </div>
                         </div>
                     </div>

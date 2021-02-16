@@ -19,14 +19,18 @@
                     <div class="div-block-42">
                         <div>
                             <div class="div-block-35">
-                                    <div class="text-block-25">ID: {{ ktk_item.id }}</div>
+                                <div class="text-block-25">ID: {{ ktk_item.id }}</div>
                             </div>
                         </div>
                         <div class="div-block-46"><a href="#" class="button-4 w-button">Вступить</a></div>
                         <div class="div-block-43">
-                            <div class="block-act"><img
-                                    src="https://uploads-ssl.webflow.com/5f1d72d3a5d4074a78fb17c3/5fc5473ba87f3518b3f98f39_skate.png"
-                                    loading="lazy" width="35" height="35" alt="" class="image-22"/></div>
+                            <div class="block-act">
+                                {% if ktk_item.katka_act %}
+                                    {% for item in ktk_item.katka_act %}
+                                        {{ item }}
+                                    {% endfor %}
+                                {% endif %}
+                            </div>
                             <div class="div-block-50"><img
                                     src="https://uploads-ssl.webflow.com/5f1d72d3a5d4074a78fb17c3/5ff1aee6d5a4c313f5e743ec_unlock.png"
                                     loading="lazy" width="35" height="35" alt=""/></div>
@@ -43,7 +47,7 @@
                                 <div class="text-block-22">Город:</div>
                             </div>
                             <div class="section-23">
-                                    <div class="text-block-15">{{ ktk_item.city }}</div>
+                                <div class="text-block-15">{{ ktk_item.city }}</div>
                             </div>
                         </div>
                         <div class="w-col w-col-4">
@@ -51,7 +55,7 @@
                                 <div class="text-block-22">Дата:</div>
                             </div>
                             <div class="section-24">
-                                    <div class="text-block-15">{{ ktk_item.date }}</div>
+                                <div class="text-block-15">{{ ktk_item.date }}</div>
                             </div>
                         </div>
                         <div class="w-col w-col-4">
@@ -59,13 +63,13 @@
                                 <div class="text-block-22">Время:</div>
                             </div>
                             <div class="section-25">
-                                    <div class="text-block-15">{{ ktk_item.time }}</div>
+                                <div class="text-block-15">{{ ktk_item.time }}</div>
                             </div>
                         </div>
                     </div>
                 </div>
                 <div>
-                        <div class="div-block-45"><p class="paragraph-2">{{ ktk_item.descr }}</p></div>
+                    <div class="div-block-45"><p class="paragraph-2">{{ ktk_item.descr }}</p></div>
                 </div>
                 <div class="div-block-23">
                     <div class="section-9"><h5 class="heading-4">Length: 123 km.</h5><img
