@@ -20,7 +20,7 @@
     <div class="div-block m-t-50">
         <div class="div-block-33">
             <div class="form-block-2 w-form">
-                <form method="POST">
+                <form method="POST" enctype="multipart/form-data">
                     {% csrf_token %}
                     <p><label for="city">Город:</label>
                         <input class="form-control" list="datalistOptions" required id="city" name="city"

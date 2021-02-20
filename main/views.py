@@ -1,3 +1,4 @@
+from django.contrib.auth.models import User
 from django.shortcuts import render, redirect
 from django.views.generic import DetailView
 from .forms import KatkaForm
@@ -15,11 +16,17 @@ def katka_page(request, pk):
 
 
 def create_katka(request):
+    poster = request.user
+
     if request.method == 'POST':
-        form = KatkaForm(request.POST)
+        form = KatkaForm(data=request.POST)
         if form.is_valid():
+            form = form.save(commit=False)
+            form.author = poster
             form.save()
             return redirect('main')
+        else:
+            print(form.errors)
     else:
         form = Katka()
 

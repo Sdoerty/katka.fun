@@ -23,6 +23,7 @@
                             </div>
                         </div>
                         <div class="div-block-46"><a href="#" class="button-4 w-button">Вступить</a></div>
+                        <div class="div-block-46"><a href="#" class="button-4 w-button">Пригласить</a></div>
                         <div class="div-block-43">
                             <div class="block-act">
                                 {% if ktk_item.katka_act %}
@@ -38,7 +39,7 @@
                     </div>
                     <div class="div-block-49">
                         <div>Организатор:</div>
-                        <a href="{% url 'profile' %}" class="link-5">Ronald Berger</a></div>
+                        <a href="{% url 'profile' %}" class="link-5">{{ ktk_item.author }}</a></div>
                 </div>
                 <div class="div-block-29">
                     <div class="columns-16 w-row">
