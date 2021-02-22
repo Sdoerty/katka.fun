@@ -31,3 +31,4 @@ def create_katka(request):
         form = Katka()
 
     return render(request, 'create_katka/create_katka.html', {'form': form})
+
