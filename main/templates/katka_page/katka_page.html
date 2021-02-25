@@ -23,6 +23,7 @@
                         </div>
                     </div>
                     <div class="div-block-46"><a href="#" class="button-4 w-button">Вступить</a></div>
+                    <div class="div-block-46"><a href="#" class="button-10 w-button">Покинуть</a></div>
                     <div class="div-block-46"><a href="#" class="button-4 w-button">Пригласить</a></div>
                     <div class="div-block-43">
                         <div class="block-act">
@@ -85,6 +86,10 @@
                     <div class="section-22">
                         <blockquote class="block-quote-3">Участники</blockquote>
                     </div>
+
+                                {% for i in ktk_item.members %}
+                                    {{ i }}
+                                {% endfor %}
                     <div class="container-7 w-container" style="float: left">
                         <div class="div-block-44">
                             <div class="section-19"><img
@@ -94,32 +99,9 @@
                                 <div>Ronald Berger</div>
                             </div>
                         </div>
-                        <div class="div-block-44">
-                            <div class="section-19"><img
-                                    src="https://uploads-ssl.webflow.com/5f1d72d3a5d4074a78fb17c3/5fb7c193eb305ec270f74501_iconfinder_profle_1055000.png"
-                                    loading="lazy" width="50" height="50" alt="" class="image-22"/></div>
-                            <div class="section-20">
-                                <div>John Smith</div>
-                            </div>
-                        </div>
-                        <div class="div-block-44">
-                            <div class="section-19"><img
-                                    src="https://uploads-ssl.webflow.com/5f1d72d3a5d4074a78fb17c3/5fb7c193eb305ec270f74501_iconfinder_profle_1055000.png"
-                                    loading="lazy" width="50" height="50" alt="" class="image-22"/></div>
-                            <div class="section-20">
-                                <div>Ronald Tester</div>
-                            </div>
-                        </div>
-                        <div class="div-block-44">
-                            <div class="section-19"><img
-                                    src="https://uploads-ssl.webflow.com/5f1d72d3a5d4074a78fb17c3/5fb7c193eb305ec270f74501_iconfinder_profle_1055000.png"
-                                    loading="lazy" width="50" height="50" alt="" class="image-22"/></div>
-                            <div class="section-20">
-                                <div>Jose Mourinho</div>
-                            </div>
-                        </div>
                     </div>
                 </div>
+
             </div>
             <div class="column w-col w-col-5 w-col-medium-5">
                 <div class="w-form">

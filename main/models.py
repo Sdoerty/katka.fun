@@ -3,6 +3,9 @@ from django.db import models
 from django.urls import reverse
 from multiselectfield import MultiSelectField
 from django.conf import settings
+from django.contrib.postgres.fields import ArrayField
+
+
 
 
 ACTIVITY = (
@@ -37,6 +40,8 @@ class Katka(models.Model):
     time = models.TimeField(max_length=150)
     descr = models.CharField(max_length=350)
     katka_act = MultiSelectField(choices=ACTIVITY)
+    members = ArrayField(models.CharField(max_length=1000, default=0, blank=True, null=True))
+
 
     def get_absolute_url(self):
         return reverse('katka', kwargs={'pk': self.pk})

@@ -4,9 +4,11 @@ from .models import Katka
 
 
 class KatkaForm(forms.ModelForm):
-
     class Meta:
         model = Katka
-        fields = ('id', 'city', 'date', 'time', 'descr', 'katka_act', 'author')
+        fields = ('id', 'city', 'date', 'time', 'descr', 'katka_act', 'author',)
 
 
+class KatkaEntryForm(forms.ModelForm):
+    class Meta:
+        fields = ('members',)

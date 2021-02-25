@@ -1940,7 +1940,12 @@ p {
 
 a {
     color: #000;
-    text-decoration: underline;
+    text-decoration: none;
+}
+
+a:hover {
+    text-decoration: none;
+    color: white;
 }
 
 .nav-link {
@@ -2365,8 +2370,6 @@ a {
 }
 
 
-
-
 .brand-3 {
     display: -webkit-box;
     display: -webkit-flex;
@@ -2714,8 +2717,6 @@ a {
     -ms-flex: 0 auto;
     flex: 0 auto;
 }
-
-
 
 
 .columns-4 {
@@ -4265,6 +4266,7 @@ a {
 }
 
 .button-4 {
+    text-decoration: none;
     display: block;
     width: auto;
     margin-right: 0px;
@@ -4286,6 +4288,35 @@ a {
     font-family: Exo, sans-serif;
     text-align: center;
 }
+
+.button-10 {
+    text-decoration: none;
+    display: block;
+    width: auto;
+    margin-right: 0px;
+    margin-left: 2px;
+    padding: 10px 15px;
+    -webkit-box-pack: center;
+    -webkit-justify-content: center;
+    -ms-flex-pack: center;
+    justify-content: center;
+    -webkit-box-align: center;
+    -webkit-align-items: center;
+    -ms-flex-align: center;
+    align-items: center;
+    border-style: none;
+    border-width: 1px;
+    border-color: #afafaf;
+    border-radius: 5px;
+    background-color: #cdcdcd;
+    font-family: Exo, sans-serif;
+    text-align: center;
+}
+
+a:hover {
+    text-decoration: none;
+}
+
 
 .button-5 {
     width: 93%;
@@ -5078,6 +5109,7 @@ a {
 }
 
 .div-block-46 {
+    text-decoration: none;
     display: -webkit-box;
     display: -webkit-flex;
     display: -ms-flexbox;
@@ -5251,7 +5283,6 @@ a {
     }
 
 
-
     .brand-3 {
         display: none;
         overflow: visible;
@@ -5335,7 +5366,6 @@ a {
         -ms-flex: 0 auto;
         flex: 0 auto;
     }
-
 
 
     .container-6 {
@@ -5437,7 +5467,6 @@ a {
     .search-button-2 {
         background-color: #29b6a6;
     }
-
 
 
     .text-block-11 {
@@ -5566,6 +5595,13 @@ a {
     }
 
     .button-4 {
+        width: auto;
+        padding-top: 7px;
+        padding-bottom: 7px;
+        font-size: 14px;
+    }
+
+    .button-10 {
         width: auto;
         padding-top: 7px;
         padding-bottom: 7px;
@@ -5908,6 +5944,10 @@ a {
         padding: 7px 15px;
     }
 
+    .button-10 {
+        padding: 7px 15px;
+    }
+
     .button-5 {
         padding: 9px 20px;
     }
@@ -6081,7 +6121,6 @@ a {
     }
 
 
-
     .div-block {
         margin-left: 0px;
     }
@@ -6119,7 +6158,6 @@ a {
         -ms-flex: 0 auto;
         flex: 0 auto;
     }
-
 
 
     .columns-4 {
@@ -6296,6 +6334,16 @@ a {
     }
 
     .button-4 {
+        display: -webkit-box;
+        display: -webkit-flex;
+        display: -ms-flexbox;
+        display: flex;
+        width: 100%;
+        padding: 7px 15px;
+        font-size: 12px;
+    }
+
+    .button-10 {
         display: -webkit-box;
         display: -webkit-flex;
         display: -ms-flexbox;

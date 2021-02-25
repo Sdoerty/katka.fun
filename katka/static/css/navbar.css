@@ -1,4 +1,4 @@
-#dr-item{
+#dr-item {
     text-decoration: none;
 }
 
@@ -9,16 +9,16 @@
     max-width: 940px
 }
 
-.aservices{
+.aservices {
     text-decoration: none;
 }
 
-.divaservices{
+.divaservices {
     margin-top: 5px;
     border-radius: 10px;
 }
 
-.servtext{
+.servtext {
     padding-left: 15px;
 }
 
@@ -50,6 +50,7 @@
 }
 
 @media screen and (max-width: 767px) {
+
 
 }
 
@@ -279,7 +280,6 @@
     -ms-flex-order: 0;
     order: 0;
     background-color: #1f282d;
-    opacity: 1;
 }
 
 
@@ -612,6 +612,10 @@
         padding-right: 0px;
     }
 
+    .navbar-4 {
+        background: rgba(31, 40, 45, .9)
+    }
+
 }
 
 @media screen and (max-width: 479px) {
@@ -661,7 +665,6 @@
         -ms-flex: 0 auto;
         flex: 0 auto;
     }
-
 
 
     .text-block-12 {

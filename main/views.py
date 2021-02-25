@@ -1,7 +1,7 @@
 from django.contrib.auth.models import User
 from django.shortcuts import render, redirect
 from django.views.generic import DetailView
-from .forms import KatkaForm
+from .forms import KatkaForm, KatkaEntryForm
 from .models import Katka
 
 
@@ -12,6 +12,13 @@ def index(request):
 
 def katka_page(request, pk):
     ktk_item = Katka.objects.get(pk=pk)
+
+    if request.method == 'POST':
+        entry = KatkaEntryForm('UPDATE main_katka SET members=members||"request" WHERE id = "pk"')
+        if entry.is_valid():
+            entry.save()
+
+
     return render(request, 'katka_page/katka_page.html', {"ktk_item": ktk_item})
 
 
