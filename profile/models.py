@@ -48,7 +48,7 @@ class Profile(models.Model):
         instance.profile.save()
 
     def __str__(self):
-        return str(self.user)
+        return str(self.user.first_name)
 
     class Meta:
         verbose_name = 'Профиль'

@@ -14,12 +14,15 @@ def katka_page(request, pk):
     ktk_item = Katka.objects.get(pk=pk)
 
     if request.method == 'POST':
-        entry = KatkaEntryForm('UPDATE main_katka SET members=members||"request" WHERE id = "pk"')
-        if entry.is_valid():
-            entry.save()
+        queryset = "UPDATE main_katka SET members = format('%s,%s', members, 100) WHERE id = 13"
+        form = KatkaEntryForm(queryset)
+        if form.is_valid():
+            form.save()
+            return redirect('main')
+    else:
+        form = KatkaForm()
 
-
-    return render(request, 'katka_page/katka_page.html', {"ktk_item": ktk_item})
+    return render(request, 'katka_page/katka_page.html', {"ktk_item": ktk_item, "form": form})
 
 
 def create_katka(request):
@@ -38,4 +41,3 @@ def create_katka(request):
         form = Katka()
 
     return render(request, 'create_katka/create_katka.html', {'form': form})
-
