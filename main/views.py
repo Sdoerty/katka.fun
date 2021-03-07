@@ -12,22 +12,20 @@ def index(request):
 
 
 def katka_page(request, pk):
+    # Получаем все обьекты катки на странице
     ktk_item = Katka.objects.get(pk=pk)
 
     if request.method == 'POST':
-        # form = Katka.objects.raw("UPDATE main_katka SET members = format('%s,%s', members, 100) WHERE id = 13")
-        # form.save()
         enter_katka(self=pk)
         return redirect('main')
 
     return render(request, 'katka_page/katka_page.html', {"ktk_item": ktk_item})
 
 
+# Прямое выполнение пользовательского SQL
 def enter_katka(self):
     with connection.cursor() as cursor:
-        cursor.execute("UPDATE main_katka SET descr=123 WHERE id=13")
-        row = cursor.fetchone()
-    return row
+        cursor.execute("UPDATE main_katka SET members = format('%s,%s', members, 123) WHERE id = 9")
 
 
 def create_katka(request):
