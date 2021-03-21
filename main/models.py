@@ -37,7 +37,7 @@ class Katka(models.Model):
     time = models.TimeField(max_length=150)
     descr = models.CharField(max_length=350)
     katka_act = MultiSelectField(choices=ACTIVITY)
-    members = models.IntegerField(default=0, blank=True, null=True)
+    members = models.CharField(max_length=1000, default=0, blank=True, null=True)
 
     def get_absolute_url(self):
         return reverse('katka', kwargs={'pk': self.pk})

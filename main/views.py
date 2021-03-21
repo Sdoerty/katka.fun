@@ -4,6 +4,8 @@ from django.views.generic import DetailView
 from .forms import KatkaForm, KatkaEntryForm
 from .models import Katka
 from django.db import connection
+from django.contrib.auth.models import User
+from profile.models import Profile
 
 
 def index(request):
@@ -13,6 +15,7 @@ def index(request):
 
 def katka_page(request, pk):
     # Получаем все обьекты катки на странице
+    global ktk_item
     ktk_item = Katka.objects.get(pk=pk)
 
     if request.method == 'POST':
@@ -22,10 +25,12 @@ def katka_page(request, pk):
     return render(request, 'katka_page/katka_page.html', {"ktk_item": ktk_item})
 
 
-# Прямое выполнение пользовательского SQL
 def enter_katka(self):
     with connection.cursor() as cursor:
-        cursor.execute("UPDATE main_katka SET members = format('%s,%s', members, 123) WHERE id = 9")
+        '''
+        TODO: {user.id}
+        '''
+        cursor.execute(f"UPDATE main_katka SET members=members||', '||{ktk_item.id} WHERE id={ktk_item.id}")
 
 
 def create_katka(request):
