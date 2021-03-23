@@ -11,4 +11,5 @@ class KatkaForm(forms.ModelForm):
 
 class KatkaEntryForm(forms.ModelForm):
     class Meta:
+        model = Katka
         fields = ('members',)

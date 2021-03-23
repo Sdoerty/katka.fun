@@ -101,7 +101,7 @@ WSGI_APPLICATION = 'katka.wsgi.application'
 DATABASES = {
     'default': {
         'ENGINE': 'django.db.backends.postgresql_psycopg2',
-        'NAME': 'r1',
+        'NAME': 'test2',
         'USER': 'romero',
         'PASSWORD': '2580654',
         'HOST': 'localhost',
