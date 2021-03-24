@@ -161,6 +161,19 @@ fieldset {
     padding: .35em .625em .75em
 }
 
+.username {
+    color: #393939;
+    font-weight: 700;
+    text-align: center;
+    padding-top: 10px;
+}
+
+.usertown {
+    text-align: center;
+    font-size: 14px;
+
+}
+
 legend {
     border: 0;
     padding: 0
@@ -5085,8 +5098,8 @@ a:hover {
 
 .div-block-44 {
     margin: 5px 5px 10px;
-    padding: 5px;
-    border: 1px solid #9e9e9e;
+    padding: 15px;
+    border: 1px solid #d2d2d2;
 }
 
 .div-block-45 {

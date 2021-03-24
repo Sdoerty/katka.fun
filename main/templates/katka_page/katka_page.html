@@ -45,7 +45,8 @@
                     </div>
                     <div class="div-block-49">
                         <div>Организатор:</div>
-                        <a href="{% url 'some' ktk_item.author.pk %}" class="link-5">{{ ktk_item.author.first_name }} {{ ktk_item.author.last_name }}</a></div>
+                        <a href="{% url 'some' ktk_item.author.pk %}"
+                           class="link-5">{{ ktk_item.author.first_name }} {{ ktk_item.author.last_name }}</a></div>
                 </div>
                 <div class="div-block-29">
                     <div class="columns-16 w-row">
@@ -92,19 +93,28 @@
                         <blockquote class="block-quote-3">Участники</blockquote>
                     </div>
 
-{#                        {% for u in ktk_item.members %}#}
-{#                            {{ u }}#}
-{#                        {% endfor %}#}
+
                     <div class="container-7 w-container" style="float: left">
-                        <div class="div-block-44">
-                            <div class="section-19"><img
-                                    src="https://uploads-ssl.webflow.com/5f1d72d3a5d4074a78fb17c3/5fb7c193eb305ec270f74501_iconfinder_profle_1055000.png"
-                                    loading="lazy" width="50" height="50" alt="" class="image-22"/></div>
-                            <div class="section-20">
-                                <div>Ronald Berger</div>
+                        {% for item in ktk_item.members.all %}
+
+                            <div class="div-block-44">
+                                <a href="{% url 'some' item.pk %}">
+                                    <div class="section-19">
+                                        <img src="{% static 'img/user.png' %}"
+                                             loading="lazy" width="50" height="50" alt="" class="image-22"/>
+                                    </div>
+                                    <div class="section-20">
+                                        <div class="username">{{ item.user.first_name }} {{ item.user.last_name }}</div>
+                                    </div>
+                                </a>
+                                <div class="usertown">{{ item.city }} </div>
                             </div>
-                        </div>
+                        {% endfor %}
                     </div>
+                    {#                {% for item in ktk_item.members.all %}#}
+                    {#                       {{ item.user.first_name }}             Перебор по User#}
+                    {#                       {{ item.city }}                        Перебор по Profile#}
+                    {#                {% endfor %}#}
                 </div>
 
             </div>

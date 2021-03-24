@@ -25,34 +25,6 @@ def katka_page(request, pk):
     return render(request, 'katka_page/katka_page.html', {"ktk_item": ktk_item})
 
 
-# def katka_page(request, pk):
-#     '''
-#     ktk_item получаем все обьекты каток по идентификатору. Глобальный потому что только так можно его использовать
-#     в entry_katka
-#
-#     member_id получает ID авторизованого пользователя, именно он при нажатии Вступить в катку записывается в
-#     колонку members
-#     '''
-#     global ktk_item
-#     global member_id
-#     ktk_item = Katka.objects.get(pk=pk)
-#     member_id = request.user.id
-#
-#     if request.method == 'POST':
-#         enter_katka(self=pk)
-#         return redirect('main')
-#
-#     return render(request, 'katka_page/katka_page.html', {"ktk_item": ktk_item, "member_id": member_id})
-#
-#
-# def enter_katka(self):
-#     with connection.cursor() as cursor:
-#         '''
-#         TODO: {user.id}
-#         '''
-#         cursor.execute(f"UPDATE main_katka SET members=members||', '||{member_id} WHERE id={ktk_item.id}")
-
-
 def create_katka(request):
     poster = request.user
 
