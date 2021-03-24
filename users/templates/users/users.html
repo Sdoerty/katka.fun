@@ -23,8 +23,14 @@
                         <div class="div-block-44">
                             <a href="{% url 'some' users.pk %}">
                                 <div class="section-19">
-                                    <img src="{% static 'img/user.png' %}"
-                                         loading="lazy" width="50" height="50" alt="" class="image-22"/>
+                                    {% if users.profile.avatar %}
+                                        <img src="{{ users.profile.avatar.url }}" loading="lazy" width="50" height="50"
+                                             alt=""
+                                             class="image-22"/>
+                                    {% else %}
+                                        <img src="{% static 'img/user.png' %}" loading="lazy" width="50" height="50"
+                                             alt="" class="image-22"/>
+                                    {% endif %}
                                 </div>
                                 <div class="section-20">
                                     <div class="username">{{ users.first_name }} {{ users.last_name }}</div>

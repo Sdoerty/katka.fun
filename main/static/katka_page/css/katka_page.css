@@ -4661,6 +4661,8 @@ a:hover {
 
 .image-22 {
     margin: 5px;
+    object-fit: cover;
+    border-radius: 100px;
 }
 
 .block-act {
@@ -5228,6 +5230,10 @@ a:hover {
 
 .link-5 {
     padding-left: 5px;
+}
+
+.link-5:hover{
+    color: #324555;
 }
 
 .div-block-50 {

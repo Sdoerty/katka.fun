@@ -90,18 +90,19 @@
                 </div>
                 <div>
                     <div class="section-22">
-                        <blockquote class="block-quote-3">Участники</blockquote>
+                        <blockquote class="block-quote-3">Все участники:</blockquote>
                     </div>
-
-
                     <div class="container-7 w-container" style="float: left">
                         {% for item in ktk_item.members.all %}
 
                             <div class="div-block-44">
                                 <a href="{% url 'some' item.pk %}">
                                     <div class="section-19">
-                                        <img src="{% static 'img/user.png' %}"
-                                             loading="lazy" width="50" height="50" alt="" class="image-22"/>
+                                        {% if item.avatar %}
+                                            <img src="{{ item.avatar.url }}" loading="lazy" width="50" height="50" alt="" class="image-22"/>
+                                        {% else %}
+                                            <img src="{% static 'img/user.png' %}" loading="lazy" width="50" height="50" alt="" class="image-22"/>
+                                        {% endif %}
                                     </div>
                                     <div class="section-20">
                                         <div class="username">{{ item.user.first_name }} {{ item.user.last_name }}</div>
