@@ -9,6 +9,12 @@
     max-width: 940px
 }
 
+.imagew-22 {
+    margin: 5px;
+    object-fit: cover;
+    border-radius: 100px;
+}
+
 .aservices {
     text-decoration: none;
 }
