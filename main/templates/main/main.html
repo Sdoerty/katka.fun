@@ -45,7 +45,7 @@
                                 <th class="table-th" id="th-town" scope="col">Город</th>
                                 <th class="table-th" id="th-date" scope="col">Дата/время</th>
                                 <th class="table-th" id="th-transport" style="width: 15%" scope="col">Вид</th>
-                                <th class="table-th" id="th-status" style="width: 15%" scope="col">?</th>
+                                <th class="table-th" id="th-status" style="width: 15%" scope="col">Участники</th>
                             </tr>
                             </thead>
                             <tbody>
@@ -61,8 +61,8 @@
                                             {% endfor %}
                                         {% endif %}
                                     </td>
-                                    <td aria-label="Статус"><img src="{% static 'img/unlock.png' %}" width="30"
-                                                                 height="30">
+                                    <td aria-label="Участники">
+                                        {{ katka.members.count }}
                                     </td>
                                 </tr>
                             {% endfor %}
