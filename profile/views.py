@@ -6,7 +6,7 @@ from .models import Profile
 
 
 def index(request):
-    prfl = Profile.objects.all()
+    prfl = Profile.objects.filter(user_id=request.user.id)
     return render(request, 'profile/profile.html', {"prfl": prfl})
 
 
