@@ -328,13 +328,15 @@
                                         </thead>
                                         <tbody>
 
+                                        {#profile_set это related_name в модели Katka (manyToManyField)#}
+
                                         {% for item in prfl %}
                                             {% for i in item.profile_set.all %}
 
-                                                <tr onclick="document.location = 'detailkatka.html';">
+                                                <tr onclick="document.location = '{{ i.get_absolute_url }}';">
                                                     <td aria-label="ID">{{ i.id }}</td>
                                                     <td aria-label="Город">{{ i.city }}</td>
-                                                    <td aria-label="Дата/время">{{ i.date }} / {{ i.time }}</td>
+                                                    <td aria-label="Дата/время">{{ i.date }}<br>({{ i.time }})</td>
                                                     <td aria-label="Вид">
                                                         {% for act in i.katka_act %}
                                                             {{ act }}

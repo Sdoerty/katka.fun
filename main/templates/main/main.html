@@ -53,7 +53,7 @@
                                 <tr onclick="document.location = '{{ katka.get_absolute_url }}';">
                                     <td aria-label="ID">{{ katka.id }}</td>
                                     <td aria-label="Город">{{ katka.city }}</td>
-                                    <td aria-label="Дата/время">{{ katka.date }} / ({{ katka.time }})</td>
+                                    <td aria-label="Дата/время">{{ katka.date }}<br>({{ katka.time }})</td>
                                     <td aria-label="Вид">
                                         {% if katka.katka_act %}
                                             {% for item in katka.katka_act %}
