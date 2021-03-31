@@ -1,7 +1,7 @@
 {% extends 'base_katka.html' %}
 
 {% block title %}
-    <title>Создать Катку</title>
+    <title>KATKA ID:{{ ktk_item.id }} | г.{{ ktk_item.city }}</title>
 {% endblock %}
 
 {% block links %}
@@ -24,8 +24,17 @@
                         </div>
                         <form method="POST" enctype="multipart/form-data">
                             {% csrf_token %}
-                            {# <div class="div-block-46"><a href="#" type="submit" class="button-4 w-button">Вступить</a></div>#}
-                            <button class="button-4 w-button" type="submit">Вступить</button>
+                            {% for x in ktk_item.members.all|slice:"2" %}
+                                {% if request.user.id == x.pk %}
+                                    <button class="button-10 w-button" type="button" data-bs-toggle="tooltip"
+                                            data-bs-placement="right" title="Нельзя покинуть :(">
+                                        <img src="{% static 'img/check_button.png' %}" width="15" height="15" alt="">
+                                        Участвую
+                                    </button>
+                                {% else %}
+                                    <button class="button-4 w-button" type="submit">Вступить</button>
+                                {% endif %}
+                            {% endfor %}
 
                         </form>
                         {# <div class="div-block-46"><a href="#" class="button-10 w-button">Покинуть</a></div>#}

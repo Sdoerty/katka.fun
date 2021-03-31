@@ -15,6 +15,7 @@ def index(request):
 
 def katka_page(request, pk):
     global ktk_item
+    status = 0
     ktk_item = Katka.objects.get(pk=pk)
 
     if request.method == 'POST':
@@ -22,7 +23,9 @@ def katka_page(request, pk):
         ktk_item.members.add(profile)
         return redirect('main')
 
-    return render(request, 'katka_page/katka_page.html', {"ktk_item": ktk_item})
+    status += 1
+
+    return render(request, 'katka_page/katka_page.html', {"ktk_item": ktk_item, "status": status})
 
 
 def create_katka(request):
