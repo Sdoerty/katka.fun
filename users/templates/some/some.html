@@ -16,6 +16,7 @@
 </head>
 
 {% block content %}
+    
     <div class="div-block">
         <div class="columns w-row">
             <div class="column-4 w-col w-col-4">
@@ -236,14 +237,15 @@
                 </div>
 
                 <div data-duration-in="300" data-duration-out="100" class="tabs-2 w-tabs">
-                    <div class="tabs-menu-2 w-tab-menu"><a data-w-tab="Tab 1"
-                                                           class="tab-link-tab-1-2 w-inline-block w-tab-link">
-                        <div style="text-decoration: none;color: black !important;">Мои</div>
-                    </a><a data-w-tab="Tab 2" class="tab-link-tab-2-2 w-inline-block w-tab-link w--current">
-                        <div style="text-decoration: none;color: black !important;">Участвую</div>
-                    </a><a data-w-tab="Tab 3" class="tab-link-tab-3-2 w-inline-block w-tab-link">
-                        <div style="text-decoration: none;color: black !important;">Прошедшие</div>
-                    </a></div>
+                    <div class="tabs-menu-2 w-tab-menu">
+                        <a data-w-tab="Tab 1" class="tab-link-tab-2-2 w-inline-block w-tab-link w--current">
+                            <div style="text-decoration: none;color: black !important;">События
+                                пользователя {{ some_item.first_name }}</div>
+                        </a>
+                        <a data-w-tab="Tab 2" class="tab-link-tab-3-2 w-inline-block w-tab-link">
+                            <div style="text-decoration: none;color: black !important;">Прошедшие</div>
+                        </a>
+                    </div>
                     <div class="w-tab-content">
                         <div data-w-tab="Tab 1" class="w-tab-pane">
                             <div class="banner-section" style=" margin-top: 15px;">
@@ -260,24 +262,26 @@
                                         </tr>
                                         </thead>
                                         <tbody>
-                                        <tr onclick="document.location = 'detailkatka.html';">
-                                            <td aria-label="ID">1</td>
-                                            <td aria-label="Город">Волгоград</td>
-                                            <td aria-label="Дата/время">04.07.2019 / 19:00</td>
-                                            <td aria-label="Вид"><img src="{% static 'img/activity/football.png' %}"
-                                                                      width="30"
-                                                                      height="30"></td>
+                                        {% for item in prfl %}
+                                            {% for i in item.profile_set.all %}
 
-                                        </tr>
-                                        <tr onclick="document.location = 'detailkatka.html';">
-                                            <td aria-label="ID">2</td>
-                                            <td aria-label="Город">Москва</td>
-                                            <td aria-label="Дата/время">04.07.2019 / 19:00</td>
-                                            <td aria-label="Вид"><img src="{% static 'img/activity/bicycle.png' %}"
-                                                                      width="30"
-                                                                      height="30"></td>
+                                                <tr onclick="document.location = '{{ i.get_absolute_url }}';">
+                                                    <td aria-label="ID">{{ i.id }}</td>
+                                                    <td aria-label="Город">{{ i.city }}</td>
+                                                    <td aria-label="Дата/время">{{ i.date }}<br>({{ i.time }})</td>
+                                                    <td aria-label="Вид">
+                                                        {% for act in i.katka_act %}
+                                                            {{ act }}
+                                                        {% endfor %}
+                                                    </td>
+                                                    {#                                                <td aria-label="Вид"><img src="{% static 'img/activity/skate.png' %}"#}
+                                                    {#                                                                          width="30"#}
+                                                    {#                                                                          height="30"></td>#}
 
-                                        </tr>
+                                                </tr>
+                                            {% endfor %}
+                                        {% endfor %}
+
 
                                         </tbody>
                                     </table>
@@ -299,24 +303,24 @@
                                         </tr>
                                         </thead>
                                         <tbody>
-                                        <tr onclick="document.location = 'detailkatka.html';">
-                                            <td aria-label="ID">1</td>
-                                            <td aria-label="Город">Санкт-Петербург</td>
-                                            <td aria-label="Дата/время">04.07.2019 / 19:00</td>
-                                            <td aria-label="Вид"><img src="{% static 'img/activity/skate.png' %}"
-                                                                      width="30"
-                                                                      height="30"></td>
-
-                                        </tr>
-                                        <tr onclick="document.location = 'detailkatka.html';">
-                                            <td aria-label="ID">2</td>
-                                            <td aria-label="Город">Москва</td>
-                                            <td aria-label="Дата/время">04.07.2019 / 19:00</td>
-                                            <td aria-label="Вид"><img src="{% static 'img/activity/rolls.png' %}"
-                                                                      width="30"
-                                                                      height="30"></td>
-
-                                        </tr>
+                                        {#                                        <tr onclick="document.location = 'detailkatka.html';">#}
+                                        {#                                            <td aria-label="ID">1</td>#}
+                                        {#                                            <td aria-label="Город">Санкт-Петербург</td>#}
+                                        {#                                            <td aria-label="Дата/время">04.07.2019 / 19:00</td>#}
+                                        {#                                            <td aria-label="Вид"><img src="{% static 'img/activity/skate.png' %}"#}
+                                        {#                                                                      width="30"#}
+                                        {#                                                                      height="30"></td>#}
+                                        {##}
+                                        {#                                        </tr>#}
+                                        {#                                        <tr onclick="document.location = 'detailkatka.html';">#}
+                                        {#                                            <td aria-label="ID">2</td>#}
+                                        {#                                            <td aria-label="Город">Москва</td>#}
+                                        {#                                            <td aria-label="Дата/время">04.07.2019 / 19:00</td>#}
+                                        {#                                            <td aria-label="Вид"><img src="{% static 'img/activity/rolls.png' %}"#}
+                                        {#                                                                      width="30"#}
+                                        {#                                                                      height="30"></td>#}
+                                        {##}
+                                        {#                                        </tr>#}
 
                                         </tbody>
                                     </table>
