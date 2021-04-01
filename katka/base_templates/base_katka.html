@@ -26,7 +26,7 @@
                             style="background: none; outline: none; border: none">
                         <div class="div-block-7">
                             {% if user.profile.avatar %}
-                                <img src="{{ user.profile.avatar.url }}" width="30" height="30" alt=""
+                                <img src="{{ user.profile.avatar.url }}" width="25" height="25" alt=""
                                      class="imagew-22"/>
                             {% else %}
                                 <img src="{% static 'img/nav-icons/nav-face.png' %}" width="30"
@@ -46,7 +46,7 @@
                 </div>
             </div>
 
-            <div style="float: right">
+            <div style="float: right;">
                 <div class="btn-group">
                     <button type="button" id="dropdownMenuButton" data-bs-toggle="dropdown"
                             aria-haspopup="true" aria-expanded="false"
@@ -170,6 +170,13 @@
                             <div class="text-block-8">Профиль</div>
                         </div>
                     </a>
+                    <a href="#" style="text-decoration: none;">
+                        <div class="nav-sec"><img
+                                src="{% static 'img/nav-icons/nav_email.png' %}"
+                                width="25" height="25" alt=""/>
+                            <div class="text-block-8">Почта</div>
+                        </div>
+                    </a>
                     <a href="{% url 'users' %}" style="text-decoration: none;">
                         <div class="nav-sec"><img
                                 src="{% static 'img/nav-icons/users.png' %}"
@@ -182,13 +189,6 @@
                                 src="{% static 'img/nav-icons/news.png' %}"
                                 width="25" height="25" alt=""/>
                             <div class="text-block-8">Статьи</div>
-                        </div>
-                    </a>
-                    <a href="#" style="text-decoration: none;">
-                        <div class="nav-sec"><img
-                                src="{% static 'img/nav-icons/map.png' %}"
-                                width="25" height="25" alt=""/>
-                            <div class="text-block-8">Карта</div>
                         </div>
                     </a>
                 </div>
