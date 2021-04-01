@@ -24,18 +24,17 @@
                         </div>
                         <form method="POST" enctype="multipart/form-data">
                             {% csrf_token %}
-                            {% for x in ktk_item.members.all|slice:"2" %}
-                                {% if request.user.id == x.pk %}
+                            {% if status == 1 %}
+                                <div class="div-block-46">
                                     <button class="button-10 w-button" type="button" data-bs-toggle="tooltip"
                                             data-bs-placement="right" title="Нельзя покинуть :(">
                                         <img src="{% static 'img/check_button.png' %}" width="15" height="15" alt="">
                                         Участвую
                                     </button>
-                                {% else %}
-                                    <button class="button-4 w-button" type="submit">Вступить</button>
-                                {% endif %}
-                            {% endfor %}
-
+                                </div>
+                            {% else %}
+                                <button class="button-4 w-button" type="submit">Вступить</button>
+                            {% endif %}
                         </form>
                         {# <div class="div-block-46"><a href="#" class="button-10 w-button">Покинуть</a></div>#}
                         {# <div class="div-block-46"><a href="#" class="button-4 w-button">Пригласить</a></div>#}

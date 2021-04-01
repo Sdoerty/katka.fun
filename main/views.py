@@ -15,15 +15,20 @@ def index(request):
 
 def katka_page(request, pk):
     global ktk_item
-    status = 0
     ktk_item = Katka.objects.get(pk=pk)
+    # начальный статус 0 - пользователь не участвует в катке
+    status = 0
 
     if request.method == 'POST':
         profile = Profile.objects.get(user_id=request.user.id)
         ktk_item.members.add(profile)
-        return redirect('main')
+        return redirect(ktk_item)
 
-    status += 1
+    # Проверяем, если id пользователя находиься в таблице участников, меняем статус на 1 и
+    # в условии шаблона если статус == 1 показать кнопку участвую, иначе Вступить
+    for i in ktk_item.members.all():
+        if i.pk == request.user.id:
+            status = 1
 
     return render(request, 'katka_page/katka_page.html', {"ktk_item": ktk_item, "status": status})
 

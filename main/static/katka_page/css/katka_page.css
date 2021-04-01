@@ -5125,10 +5125,7 @@ a:hover {
 
 .div-block-46 {
     text-decoration: none;
-    display: -webkit-box;
-    display: -webkit-flex;
-    display: -ms-flexbox;
-    display: flex;
+    display: inline-block;
     -webkit-box-pack: center;
     -webkit-justify-content: center;
     -ms-flex-pack: center;
