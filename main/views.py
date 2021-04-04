@@ -30,7 +30,8 @@ def katka_page(request, pk):
         if i.pk == request.user.id:
             status = 1
 
-    return render(request, 'katka_page/katka_page.html', {"ktk_item": ktk_item, "status": status})
+    return render(request, 'katka_page/katka_page.html',
+                  {"ktk_item": ktk_item, "status": status})
 
 
 def create_katka(request):

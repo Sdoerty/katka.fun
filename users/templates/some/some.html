@@ -58,32 +58,11 @@
                             <div class="container-7 w-container">
                                 {% if some_item.profile.act %}
                                     {% for item in some_item.profile.act %}
-                                        {{ item }}
+                                        <img src="{% static item %}" height="50" width="50" alt="">
                                     {% endfor %}
                                 {% else %}
                                     <i>Ничего не выбрано</i>
                                 {% endif %}
-                                {#                                <div class="div-block-31"><img#}
-                                {#                                        src="{% static 'img/activity/bicycle.png' %}"#}
-                                {#                                        loading="lazy" width="35" height="35" alt="" class="image-22"/></div>#}
-                                {#                                <div class="div-block-31"><img#}
-                                {#                                        src="{% static 'img/activity/snowboard.png' %}"#}
-                                {#                                        loading="lazy" width="35" height="35" alt="" class="image-22"/></div>#}
-                                {#                                <div class="div-block-31"><img#}
-                                {#                                        src="{% static 'img/activity/yoga.png' %}"#}
-                                {#                                        loading="lazy" width="35" height="35" alt="" class="image-22"/></div>#}
-                                {#                                <div class="div-block-31"><img#}
-                                {#                                        src="{% static 'img/activity/skate.png' %}"#}
-                                {#                                        loading="lazy" width="35" height="35" alt="" class="image-22"/></div>#}
-                                {#                                <div class="div-block-31"><img#}
-                                {#                                        src="{% static 'img/activity/trekking.png' %}"#}
-                                {#                                        loading="lazy" width="35" height="35" alt="" class="image-22"/></div>#}
-                                {#                                <div class="div-block-31"><img#}
-                                {#                                        src="{% static 'img/activity/football.png' %}"#}
-                                {#                                        loading="lazy" width="35" height="35" alt="" class="image-22"/></div>#}
-                                {#                                <div class="div-block-31"><img#}
-                                {#                                        src="{% static 'img/activity/pullups.png' %}"#}
-                                {#                                        loading="lazy" width="35" height="35" alt="" class="image-22"/></div>#}
                             </div>
                         </div>
                         <div class="columns-13 w-row">

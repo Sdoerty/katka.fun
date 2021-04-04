@@ -1863,6 +1863,11 @@ textarea.w-input, textarea.w-select {
     overflow: hidden
 }
 
+.kp_img {
+    height: 40px;
+    width: 40px;
+}
+
 .w-tab-pane {
     position: relative;
     display: none
@@ -1980,7 +1985,6 @@ a {
 }
 
 
-
 .header-background {
     position: relative;
     display: -webkit-box;
@@ -2003,7 +2007,6 @@ a {
     background-color: #fff;
     color: #1f282d;
 }
-
 
 
 .button {
@@ -2124,7 +2127,6 @@ a {
 }
 
 
-
 .hero-image-mask {
     width: 100%;
     margin-left: 40px;
@@ -2177,7 +2179,6 @@ a {
 }
 
 
-
 .brand {
     background-color: #fff;
 }
@@ -2186,7 +2187,6 @@ a {
 .brand-2 {
     margin-left: 2px;
 }
-
 
 
 .brand-3 {
@@ -2222,12 +2222,9 @@ a {
 }
 
 
-
-
 .text-block {
     text-align: center;
 }
-
 
 
 .search {
@@ -2929,7 +2926,6 @@ a {
     padding-top: 100px;
     padding-bottom: 100px;
 }
-
 
 
 .gallery-lightbox {
@@ -3889,8 +3885,6 @@ a {
     }
 
 
-
-
     .brand-3 {
         display: none;
         overflow: visible;
@@ -3950,7 +3944,6 @@ a {
     .map {
         border-radius: 20px;
     }
-
 
 
     .columns-4 {
@@ -4098,6 +4091,12 @@ a {
 }
 
 @media screen and (max-width: 767px) {
+
+    .kp_img {
+        height: 30px;
+        width: 30px;
+    }
+
     h1 {
         font-size: 40px;
         line-height: 1.2;
@@ -4133,7 +4132,6 @@ a {
     }
 
 
-
     .header-background {
         height: auto;
         padding-bottom: 40px;
@@ -4150,7 +4148,6 @@ a {
     }
 
 
-
     .footer {
         padding: 40px 20px;
     }
@@ -4163,7 +4160,6 @@ a {
     .hero {
         padding: 40px 20px;
     }
-
 
 
     .hero-image-mask {
@@ -4218,7 +4214,6 @@ a {
     .gallery {
         padding: 40px 20px;
     }
-
 
 
     .grid-2 {
@@ -4326,7 +4321,6 @@ a {
     }
 
 
-
     .footer-logo-link {
         height: 60px;
     }
@@ -4341,11 +4335,9 @@ a {
     }
 
 
-
     .icon-2 {
         color: #fff;
     }
-
 
 
     .div-block {

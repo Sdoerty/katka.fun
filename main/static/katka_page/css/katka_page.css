@@ -4665,6 +4665,13 @@ a:hover {
     border-radius: 100px;
 }
 
+.kp_img {
+    height: 50px;
+    width: 50px;
+
+}
+
+
 .block-act {
     display: -webkit-box;
     display: -webkit-flex;
@@ -4672,6 +4679,7 @@ a:hover {
     display: flex;
     width: auto;
     margin: 2px;
+    padding: 5px;
     -webkit-box-pack: center;
     -webkit-justify-content: center;
     -ms-flex-pack: center;
@@ -5229,7 +5237,7 @@ a:hover {
     padding-left: 5px;
 }
 
-.link-5:hover{
+.link-5:hover {
     color: #324555;
 }
 
@@ -5682,6 +5690,13 @@ a:hover {
 }
 
 @media screen and (max-width: 767px) {
+
+    .kp_img {
+        height: 25px;
+        width: 25px;
+
+    }
+
     h1 {
         font-size: 40px;
         line-height: 1.2;

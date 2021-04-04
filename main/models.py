@@ -5,29 +5,7 @@ from multiselectfield import MultiSelectField
 from django.conf import settings
 from django.contrib.postgres.fields import ArrayField
 from profile.models import Profile
-
-ACTIVITY = (
-    ('1', 'basketball'),
-    ('2', 'bicycle'),
-    ('3', 'bowling'),
-    ('4', 'dancing'),
-    ('5', 'football'),
-    ('6', 'horse-riding'),
-    ('7', 'lifting'),
-    ('8', 'motocross'),
-    ('9', 'ping-pong'),
-    ('10', 'pullups'),
-    ('11', 'rolls'),
-    ('12', 'run'),
-    ('13', 'skate'),
-    ('14', 'skiing'),
-    ('15', 'snowboard'),
-    ('16', 'tennis'),
-    ('17', 'trekking'),
-    ('18', 'volleyball'),
-    ('19', 'walking'),
-    ('20', 'yoga'),
-)
+from .activities import ACTIVITY
 
 
 class Katka(models.Model):

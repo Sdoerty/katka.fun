@@ -59,7 +59,7 @@
                                     <td aria-label="Вид">
                                         {% if katka.katka_act %}
                                             {% for item in katka.katka_act %}
-                                                {{ item }}
+                                                <img class="kp_img" src="{% static item %}" alt="">
                                             {% endfor %}
                                         {% endif %}
                                     </td>
