@@ -311,7 +311,7 @@
                                                     <td aria-label="Дата/время">{{ i.date }}<br>({{ i.time }})</td>
                                                     <td aria-label="Вид">
                                                         {% for act in i.katka_act %}
-                                                            {{ act }}
+                                                            <img class="kp_img" src="{% static act %}" alt="">
                                                         {% endfor %}
                                                     </td>
                                                     {#                                                <td aria-label="Вид"><img src="{% static 'img/activity/skate.png' %}"#}
