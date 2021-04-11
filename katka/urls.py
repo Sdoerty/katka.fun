@@ -1,3 +1,4 @@
+from django.conf.urls import url
 from django.conf.urls.static import static
 from django.contrib import admin
 from django.conf import settings
@@ -14,6 +15,7 @@ urlpatterns = [
     path('users/', include('users.urls')),
     path('login/', views.index, name='login'),
     path('signup/', views.index, name='signup'),
+
 ]
 
 if settings.DEBUG:

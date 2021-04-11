@@ -27,11 +27,18 @@ SECRET_KEY = 's4qiuu9o3jg=l!7k2lwt17tkc!6aye+ms(at&n(m%b^tsz5yt6'
 # SECURITY WARNING: don't run with debug turned on in production!
 DEBUG = True
 
-ALLOWED_HOSTS = ['localhost', '192.168.43.155']
+ALLOWED_HOSTS = []
 SITE_ID = 1
 
 LOGIN_REDIRECT_URL = 'profile'
 LOGOUT_REDIRECT_URL = 'login'
+
+# Вместо User теперь использовать свою модель - AUTH_USER_MODEL---------------------------------------------
+AUTH_USER_MODEL = 'signup.Account'
+AUTHENTICATION_BACKENDS = (
+    'django.contrib.auth.backends.AllowAllUsersModelBackend',
+    'login.backends.CaseInsensitiveModelBackend',
+    )
 
 # Application definition
 INSTALLED_APPS = [
@@ -89,9 +96,6 @@ TEMPLATES = [
     },
 ]
 
-AUTHENTICATION_BACKENDS = (
-    'django.contrib.auth.backends.ModelBackend',
-)
 
 WSGI_APPLICATION = 'katka.wsgi.application'
 
@@ -101,7 +105,7 @@ WSGI_APPLICATION = 'katka.wsgi.application'
 DATABASES = {
     'default': {
         'ENGINE': 'django.db.backends.postgresql_psycopg2',
-        'NAME': 'test2',
+        'NAME': 'm5',
         'USER': 'romero',
         'PASSWORD': '2580654',
         'HOST': 'localhost',
