@@ -6,7 +6,7 @@ from signup.models import Account
 
 
 class LoginForm(AuthenticationForm):
-    username = forms.CharField(max_length=150)
+    email = forms.CharField(max_length=150)
     password = forms.CharField()
 
 
