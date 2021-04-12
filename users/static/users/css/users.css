@@ -6,6 +6,24 @@
     text-align: center;
 }
 
+.srchh{
+    width: auto;
+}
+
+.nav_all_users{
+    margin-left: auto;
+    margin-right: auto;
+    width: 50%;
+    -webkit-box-pack: center;
+    -webkit-justify-content: center;
+    -ms-flex-pack: center;
+    justify-content: center;
+    -webkit-box-align: center;
+    -webkit-align-items: center;
+    -ms-flex-align: center;
+    align-items: center;
+}
+
 .username {
     color: #393939;
     font-weight: 700;
@@ -61,19 +79,7 @@
 }
 
 .div-block-40 {
-    display: -webkit-box;
-    display: -webkit-flex;
-    display: -ms-flexbox;
-    display: flex;
-    width: 50%;
-    -webkit-box-pack: center;
-    -webkit-justify-content: center;
-    -ms-flex-pack: center;
-    justify-content: center;
-    -webkit-box-align: center;
-    -webkit-align-items: center;
-    -ms-flex-align: center;
-    align-items: center;
+
 }
 
 .div-block-44 {
@@ -153,7 +159,7 @@
 
 @media screen and (max-width: 991px) {
 
-    .div-block-40 {
+    .nav_all_users {
         width: 80%;
     }
 
@@ -161,8 +167,8 @@
 
 @media screen and (max-width: 767px) {
 
-    .div-block-40 {
-        width: 90%;
+    .nav_all_users {
+        width: 95%;
     }
 
 }

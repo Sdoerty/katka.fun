@@ -4,6 +4,7 @@ from profile.models import Profile
 from django.conf import settings
 from signup.models import Account
 
+
 # Account - это новая модель вместо стандартной USER -------------------------------------
 
 def index(request):
