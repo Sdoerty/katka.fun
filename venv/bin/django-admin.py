@@ -1,4 +1,4 @@
-#!/home/romero/PycharmProjects/katka.fun/venv/bin/python
+#!/home/romero/PycharmProjects/katka/venv/bin/python
 # When the django-admin.py deprecation ends, remove this script.
 import warnings
 
