@@ -29,6 +29,9 @@ class FriendList(models.Model):
             return
         return False
 
+    class Meta:
+        verbose_name = 'Друзья'
+
 
 class FriendRequest(models.Model):
     """
@@ -71,3 +74,6 @@ class FriendRequest(models.Model):
         """
         self.is_active = False
         self.save()
+
+    class Meta:
+        verbose_name = 'Запросы в друзья'

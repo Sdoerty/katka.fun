@@ -9,8 +9,10 @@
     max-width: 940px
 }
 
-.imagew-22 {
+.imagew-nav {
     margin: 5px;
+    width: 25px;
+    height: 25px;
     object-fit: cover;
     border-radius: 100px;
 }

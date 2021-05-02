@@ -6,14 +6,20 @@
     text-align: center;
 }
 
-.srchh{
+.srchh {
     width: auto;
 }
 
-.nav_all_users{
+#myTabContent {
+    padding-top: 15px;
+    border-left: 1px solid #b3b3b3;
+    border-right: 1px solid #b3b3b3;
+}
+
+.nav_all_users {
     margin-left: auto;
     margin-right: auto;
-    width: 50%;
+    width: 55%;
     -webkit-box-pack: center;
     -webkit-justify-content: center;
     -ms-flex-pack: center;
@@ -26,6 +32,7 @@
 
 .username {
     color: #393939;
+    font-size: 16px;
     font-weight: 700;
     text-align: center;
     padding-top: 10px;
@@ -89,6 +96,8 @@
 }
 
 .imagew-22 {
+    width: 50px;
+    height: 50px;
     margin: 5px;
     object-fit: cover;
     border-radius: 100px;
@@ -170,5 +179,36 @@
     .nav_all_users {
         width: 95%;
     }
+
+    .imagew-22 {
+        width: 40px;
+        height: 40px;
+    }
+
+    .username {
+        font-size: 14px;
+        font-weight: 700;
+    }
+
+    .usertown {
+        font-size: 12px;
+
+    }
+
+    .userbtn {
+        height: 40px;
+        width: 100%;
+
+    }
+
+    .userbtn text {
+        font-size: 14px;
+    }
+
+    #myTabContent {
+        border-left: none;
+        border-right: none;
+    }
+
 
 }

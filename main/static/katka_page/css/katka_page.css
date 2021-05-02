@@ -5691,6 +5691,36 @@ a:hover {
 
 @media screen and (max-width: 767px) {
 
+    .imagew-22 {
+        width: 40px;
+        height: 40px;
+    }
+
+    .username {
+        font-size: 14px;
+        font-weight: 700;
+    }
+
+    .usertown {
+        font-size: 12px;
+
+    }
+
+    .userbtn {
+        height: 40px;
+        width: 100%;
+
+    }
+
+    .userbtn text {
+        font-size: 14px;
+    }
+
+    #myTabContent {
+        border-left: none;
+        border-right: none;
+    }
+
     .kp_img {
         height: 25px;
         width: 25px;
