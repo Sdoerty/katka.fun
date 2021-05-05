@@ -15,7 +15,6 @@ urlpatterns = [
     path('users/', include('users.urls')),
     path('login/', views.index, name='login'),
     path('signup/', views.index, name='signup'),
-
 ]
 
 if settings.DEBUG:

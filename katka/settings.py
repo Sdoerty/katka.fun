@@ -55,6 +55,7 @@ INSTALLED_APPS = [
     'profile.apps.UserProfileConfig',
     'users.apps.UsersConfig',
     'multiselectfield',
+    'friendship',
 ]
 
 MIDDLEWARE = [
