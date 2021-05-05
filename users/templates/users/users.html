@@ -42,6 +42,9 @@
 
 
             </ul>
+
+            {% load friendshiptags %}
+
             <div class="tab-content" id="myTabContent">
                 <div class="tab-pane fade show active" id="all" role="tabpanel" aria-labelledby="home-tab">
                     <div class="div-block-52">
@@ -71,12 +74,10 @@
                     </div>
                 </div>
                 <div class="tab-pane fade" id="friends" role="tabpanel" aria-labelledby="profile-tab">
-                    22222222222222222222222222222
+                    {% friends request.user %}
                 </div>
                 <div class="tab-pane fade" id="requests" role="tabpanel" aria-labelledby="contact-tab">
-                    {% if friend_requests %}
-                        {{ friend_requests }}
-                    {% endif %}
+                    {% friend_requests request.user %}
                 </div>
             </div>
         </div>
