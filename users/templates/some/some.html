@@ -39,32 +39,27 @@
                     <div class="div-block-29" style="text-align: center">
                         <text>последний вход: {{ some_item.last_login }}</text>
                     </div>
-                    <div class="div-block-28" style="padding-top: 15px;">
-                        <div class="columns-7 w-row">
-                            <form method="POST" enctype="multipart/form-data">
+                    <div class="div-block-28" style="padding-top: 15px; height: auto;">
+                        <div class="columns-7 w-row" style="height: inherit">
+                            <form style="width: 100%; height: inherit;"  method="POST" enctype="multipart/form-data">
                                 {% csrf_token %}
 
                                 <div class="column-11 w-col w-col-6">
-                                    <a href="#" class="button-4 w-button"
+                                    <a href="#" class="button-message w-button"
                                        style="text-decoration: none;color: white !important;">Сообщение</a>
                                 </div>
-                                <div class="column-13 w-col w-col-6">
+                                <div class="column-11 w-col w-col-6">
                                     {% if status == 1 %}
-                                        <button class="button-10 w-button" type="button">
-                                            <img src="{% static 'img/check_button.png' %}" width="15" height="15"
-                                                 alt="">
+                                        <button class="button-sub-done w-button" type="button"><img
+                                                src="{% static 'img/check_button.png' %}" width="15" height="15" alt="">
                                             Подписан
                                         </button>
                                     {% else %}
-                                        <button class="button-4 w-button" name="subscribe" type="submit">Подписаться
+                                        <button class="button-subscribe w-button" name="subscribe" type="submit">
+                                            Подписаться
                                         </button>
                                     {% endif %}
                                 </div>
-
-                                Подписчики:{{ my_followers.count }}<br>
-                                Подписки:{{ my_following.count }}<br><br>
-
-
                             </form>
                         </div>
                     </div>

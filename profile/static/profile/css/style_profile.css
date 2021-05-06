@@ -3955,7 +3955,7 @@ a {
 
 
 .div-block-21 {
-    padding-bottom: 0px;
+    height: 100%;
     border-style: none none solid;
     border-width: 1px;
     border-color: #757575 #757575 #c4c3c3;
@@ -4342,7 +4342,7 @@ a {
     padding-bottom: 10px;
 }
 
-.button-4 {
+.button-message {
     width: 93%;
     margin-left: 10px;
     padding-right: 0px;
@@ -4352,6 +4352,32 @@ a {
     border-color: #1f282d;
     border-radius: 5px;
     background-color: #3f5561;
+    font-family: Exo, sans-serif;
+}
+
+.button-subscribe {
+    width: 93%;
+    margin-right: 10px;
+    padding-right: 0px;
+    padding-left: 0px;
+    border-style: none;
+    border-width: 1px;
+    border-color: #1f282d;
+    border-radius: 5px;
+    background-color: #3f5561;
+    font-family: Exo, sans-serif;
+}
+
+.button-sub-done {
+    width: 93%;
+    margin-right: 10px;
+    padding-right: 0px;
+    padding-left: 0px;
+    border-style: none;
+    border-width: 1px;
+    color: #8d8d8d !important;
+    background-color: #e5e5e5;
+    border-radius: 5px;
     font-family: Exo, sans-serif;
 }
 
@@ -4946,7 +4972,6 @@ a {
     }
 
     .div-block-21 {
-        padding-bottom: 0px;
     }
 
     .submit-button-2 {
@@ -5003,6 +5028,27 @@ a {
     }
 
     .button-4 {
+        width: 90%;
+        padding-top: 7px;
+        padding-bottom: 7px;
+        font-size: 14px;
+    }
+
+    .button-message {
+        width: 90%;
+        padding-top: 7px;
+        padding-bottom: 7px;
+        font-size: 14px;
+    }
+
+    .button-subscribe {
+        width: 90%;
+        padding-top: 7px;
+        padding-bottom: 7px;
+        font-size: 14px;
+    }
+
+    .button-sub-done {
         width: 90%;
         padding-top: 7px;
         padding-bottom: 7px;
@@ -5324,6 +5370,22 @@ a {
 
     .button-4 {
         padding: 9px 20px;
+    }
+
+    .button-message {
+        margin: 0;
+
+    }
+
+    .div-block-29 {
+    }
+
+    .button-subscribe {
+        margin: 10px 0 0 0;
+    }
+
+    .button-sub-done {
+        margin: 10px 0 0 0;
     }
 
     .button-5 {
@@ -5692,6 +5754,18 @@ a {
     .button-4 {
         padding-top: 7px;
         padding-bottom: 7px;
+    }
+
+    .button-message {
+        margin: 0;
+    }
+
+    .button-subscribe {
+        margin: 10px 0 0 0;
+    }
+
+    .button-sub-done {
+        margin: 10px 0 0 0;
     }
 
     .button-5 {
