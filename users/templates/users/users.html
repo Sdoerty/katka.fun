@@ -28,15 +28,15 @@
                     </button>
                 </li>
                 <li class="nav-item" role="presentation">
-                    <button class="nav-link" id="profile-tab" data-bs-toggle="tab" data-bs-target="#friends"
+                    <button class="nav-link" id="profile-tab" data-bs-toggle="tab" data-bs-target="#following"
                             type="button"
-                            role="tab" aria-controls="profile" aria-selected="false">Мои друзья
+                            role="tab" aria-controls="profile" aria-selected="false">Подписки
                     </button>
                 </li>
                 <li class="nav-item" role="presentation">
-                    <button class="nav-link" id="contact-tab" data-bs-toggle="tab" data-bs-target="#requests"
+                    <button class="nav-link" id="contact-tab" data-bs-toggle="tab" data-bs-target="#followers"
                             type="button"
-                            role="tab" aria-controls="contact" aria-selected="false">Заявки
+                            role="tab" aria-controls="contact" aria-selected="false">Подписчики
                     </button>
                 </li>
 
@@ -47,6 +47,9 @@
 
             <div class="tab-content" id="myTabContent">
                 <div class="tab-pane fade show active" id="all" role="tabpanel" aria-labelledby="home-tab">
+                    <div class="count-statistic">
+                        <i>Всего пользоваталей: {{ usu.count }}</i>
+                    </div>
                     <div class="div-block-52">
                         <div class="div-block-40">
                             <div class="container-7 w-container">
@@ -73,11 +76,67 @@
                         </div>
                     </div>
                 </div>
-                <div class="tab-pane fade" id="friends" role="tabpanel" aria-labelledby="profile-tab">
-                    {% friends request.user %}
+                <div class="tab-pane fade" id="following" role="tabpanel" aria-labelledby="profile-tab">
+                    <div class="count-statistic">
+                        <i>Количество подписок: {{ count_of_followings }}</i>
+                    </div>
+                    <div class="div-block-52">
+                        <div class="div-block-40">
+                            <div class="container-7 w-container">
+                                {% for following in my_following %}
+                                    <div class="div-block-44">
+                                        <a href="{% url 'some' following.pk %}">
+                                            <div class="section-19">
+                                                {% if following.profile.avatar %}
+                                                    <img src="{{ following.profile.avatar.url }}" loading="lazy" alt=""
+                                                         class="imagew-22"/>
+                                                {% else %}
+                                                    <img src="{% static 'img/user.png' %}" loading="lazy"
+                                                         alt="" class="imagew-22"/>
+                                                {% endif %}
+                                            </div>
+                                            <div class="section-20">
+                                                <div class="username">{{ following.first_name }} {{ following.last_name }}</div>
+                                            </div>
+                                        </a>
+                                        <div class="usertown">{{ following.profile.city }}</div>
+                                    </div>
+                                {% endfor %}
+                            </div>
+                        </div>
+                    </div>
+
                 </div>
-                <div class="tab-pane fade" id="requests" role="tabpanel" aria-labelledby="contact-tab">
-                    {% friend_requests request.user %}
+                <div class="tab-pane fade" id="followers" role="tabpanel" aria-labelledby="contact-tab">
+                    <div class="count-statistic">
+                        <i>Количество подписчиков: {{ count_of_followers }}</i>
+                    </div>
+                    <div class="div-block-52">
+                        <div class="div-block-40">
+                            <div class="container-7 w-container">
+                                {% for folower in my_followers %}
+                                    <div class="div-block-44">
+                                        <a href="{% url 'some' folower.pk %}">
+                                            <div class="section-19">
+                                                {% if folower.profile.avatar %}
+                                                    <img src="{{ folower.profile.avatar.url }}" loading="lazy" alt=""
+                                                         class="imagew-22"/>
+                                                {% else %}
+                                                    <img src="{% static 'img/user.png' %}" loading="lazy"
+                                                         alt="" class="imagew-22"/>
+                                                {% endif %}
+                                            </div>
+                                            <div class="section-20">
+                                                <div class="username">{{ folower.first_name }} {{ folower.last_name }}</div>
+                                            </div>
+                                        </a>
+                                        <div class="usertown">{{ folower.profile.city }}</div>
+                                    </div>
+                                {% endfor %}
+                            </div>
+                        </div>
+                    </div>
+
                 </div>
             </div>
         </div>

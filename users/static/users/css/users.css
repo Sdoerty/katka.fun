@@ -69,6 +69,11 @@
     color: #525252;
 }
 
+.count-statistic {
+    margin-top: 15px;
+    text-align: center;
+}
+
 .div-block-52 {
     display: -webkit-box;
     display: -webkit-flex;
@@ -208,6 +213,11 @@
     #myTabContent {
         border-left: none;
         border-right: none;
+    }
+
+    .count-statistic {
+        margin-top: 40px;
+        text-align: center;
     }
 
 

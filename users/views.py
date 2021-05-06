@@ -14,7 +14,23 @@ from django.http import HttpResponseRedirect
 
 def index(request):
     usu = Account.objects.all()
-    return render(request, 'users/users.html', {"usu": usu})
+    my_followers = Follow.objects.followers(request.user)
+    my_following = Follow.objects.following(request.user)
+    list_followers = []
+    list_following = []
+
+    for a in my_followers:
+        list_followers.append(a)
+
+    for b in my_following:
+        list_following.append(b)
+
+    count_of_followers = len(list_followers)
+    count_of_followings = len(list_following)
+
+    return render(request, 'users/users.html', {"usu": usu, "my_followers": my_followers,
+                                                "my_following": my_following, "count_of_followers": count_of_followers,
+                                                "count_of_followings": count_of_followings})
 
 
 def some(request, pk):

@@ -41,7 +41,7 @@
                     </div>
                     <div class="div-block-28" style="padding-top: 15px; height: auto;">
                         <div class="columns-7 w-row" style="height: inherit">
-                            <form style="width: 100%; height: inherit;"  method="POST" enctype="multipart/form-data">
+                            <form style="width: 100%; height: inherit;" method="POST" enctype="multipart/form-data">
                                 {% csrf_token %}
 
                                 <div class="column-11 w-col w-col-6">
@@ -50,9 +50,9 @@
                                 </div>
                                 <div class="column-11 w-col w-col-6">
                                     {% if status == 1 %}
-                                        <button class="button-sub-done w-button" type="button"><img
-                                                src="{% static 'img/check_button.png' %}" width="15" height="15" alt="">
-                                            Подписан
+                                        <button class="button-sub-done w-button" type="button">
+                                            Подписка
+                                            <img src="{% static 'img/check_button.png' %}" width="15" height="15" alt="">
                                         </button>
                                     {% else %}
                                         <button class="button-subscribe w-button" name="subscribe" type="submit">
