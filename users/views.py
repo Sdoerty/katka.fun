@@ -52,6 +52,21 @@ def some(request, pk):
         Follow.objects.add_follower(request.user, some_item)
         return HttpResponseRedirect('#')
 
+    his_followers = Follow.objects.followers(some_item)
+    his_following = Follow.objects.following(some_item)
+    list_followers = []
+    list_following = []
+
+    for a in his_followers:
+        list_followers.append(a)
+
+    for b in his_following:
+        list_following.append(b)
+
+    count_of_followers = len(list_followers)
+    count_of_followings = len(list_following)
+
     return render(request, 'some/some.html',
-                  {"some_item": some_item, "prfl": prfl, "follow_all": follow_all, "my_followers": my_followers,
-                   "my_following": my_following, "status": status})
+                  {"some_item": some_item, "prfl": prfl, "follow_all": follow_all, "his_followers": his_followers,
+                   "his_following": his_following, "status": status, "count_of_followers": count_of_followers,
+                   "count_of_followings": count_of_followings})
