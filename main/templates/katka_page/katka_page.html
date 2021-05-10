@@ -8,6 +8,7 @@
     {{ block.super }}
     {% load static %}
     <link rel="stylesheet" type="text/css" href="{% static 'katka_page/css/katka_page.css' %}"/>
+    <link rel="stylesheet" type="text/css" href="{% static 'katka_page/css/katka_chat.css' %}"/>
 
 {% endblock %}
 
@@ -130,7 +131,20 @@
             <div class="column w-col w-col-5 w-col-medium-5">
                 <div class="w-form">
                     <form action="#">
-                        <div class="div-block-41"></div>
+                        <div class="div-block-41">
+                            <div class="cht-block">
+                                <div id="convo">
+                                    <div class="chatroom-title">
+                                        <text>Чат комнаты ID: {{ ktk_item.id }}</text>
+                                        <hr>
+                                    </div>
+                                    <ul class="chat-thread">
+                                        <li id="mes1">Едем?</li>
+                                        <li id="mes2">Да, капитан!</li>
+                                    </ul>
+                                </div>
+                            </div>
+                        </div>
                         <div class="section-21"><input type="text" class="text-field w-input" maxlength="256"
                                                        name="field"
                                                        data-name="Field" placeholder="Сообщение..." id="field"/><input

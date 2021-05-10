@@ -56,7 +56,11 @@ INSTALLED_APPS = [
     'users.apps.UsersConfig',
     'multiselectfield',
     'friendship',
+    'channels',
 ]
+
+ASGI_APPLICATION = "katka.asgi.application"
+
 
 MIDDLEWARE = [
     'django.middleware.security.SecurityMiddleware',
