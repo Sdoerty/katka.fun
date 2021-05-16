@@ -9,7 +9,6 @@ from .activities import ACTIVITY
 from django.conf import settings
 
 
-
 class Katka(models.Model):
     id = models.AutoField(primary_key=True)
     author = models.ForeignKey(settings.AUTH_USER_MODEL, on_delete=models.CASCADE, blank=True, null=True)
