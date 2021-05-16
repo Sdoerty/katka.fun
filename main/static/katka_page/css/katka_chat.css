@@ -1,18 +1,5 @@
 @import 'https://fonts.googleapis.com/css?family=Noto+Sans';
 
-::-webkit-scrollbar {
-    width: 10px;
-}
-
-::-webkit-scrollbar-track {
-    border-radius: 10px;
-    background-color: rgba(25, 147, 147, 0.1);
-}
-
-::-webkit-scrollbar-thumb {
-    border-radius: 10px;
-    background-color: rgba(25, 147, 147, 0.2);
-}
 
 ul.chat-thread {
     width: 100%;
@@ -137,6 +124,10 @@ ul.chat-thread {
         left: 5%;
         width: 90%;
     }
+
+    ul.chat-thread {
+    width: auto;
+}
 }
 
 /* Medium and large screens */
@@ -162,67 +153,6 @@ ul.chat-thread {
 
     #mes2 {
         font-size: 12px;
-    }
-}
-
-
-@keyframes show-chat-even {
-    0% {
-        margin-left: -480px;
-    }
-
-    100% {
-        margin-left: 0;
-    }
-}
-
-@-moz-keyframes show-chat-even {
-    0% {
-        margin-left: -480px;
-    }
-
-    100% {
-        margin-left: 0;
-    }
-}
-
-@-webkit-keyframes show-chat-even {
-    0% {
-        margin-left: -480px;
-    }
-
-    100% {
-        margin-left: 0;
-    }
-}
-
-@keyframes show-chat-odd {
-    0% {
-        margin-right: -480px;
-    }
-
-    100% {
-        margin-right: 0;
-    }
-}
-
-@-moz-keyframes show-chat-odd {
-    0% {
-        margin-right: -480px;
-    }
-
-    100% {
-        margin-right: 0;
-    }
-}
-
-@-webkit-keyframes show-chat-odd {
-    0% {
-        margin-right: -480px;
-    }
-
-    100% {
-        margin-right: 0;
     }
 }
 

@@ -5691,6 +5691,10 @@ a:hover {
 
 @media screen and (max-width: 767px) {
 
+    .section-21 {
+        margin-bottom: 60px;
+    }
+
     .imagew-22 {
         width: 40px;
         height: 40px;
