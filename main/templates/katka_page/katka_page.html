@@ -130,36 +130,36 @@
             </div>
             <div class="column w-col w-col-5 w-col-medium-5">
                 <div class="w-form">
-                    <form action="#">
-                        <div class="div-block-41">
-                            <div class="cht-block">
-                                <div id="convo">
-                                    <div class="chatroom-title">
-                                        <text>Чат комнаты ID: {{ ktk_item.id }}</text>
-                                        <hr>
-                                    </div>
-                                    <div class="dv_chat">
-                                        <ul class="chat-thread">
-                                            <li id="mes1">Едем?</li>
-                                            <li id="mes2">Да, капитан!</li>
-                                        </ul>
-                                    </div>
+                    {#                    <form action="#">#}
+                    {#                        <div class="div-block-41">#}
+                    {#                            <div class="cht-block">#}
+                    {#                                <div id="convo">#}
+                    {#                                    <div class="chatroom-title">#}
+                    {#                                        <text>Чат комнаты ID: {{ ktk_item.id }}</text>#}
+                    {#                                        <hr>#}
+                    {#                                    </div>#}
+                    {#                                    <div class="dv_chat">#}
+                    {#                                        <ul class="chat-thread">#}
+                    {#                                            <li id="mes1">Едем?</li>#}
+                    {#                                            <li id="mes2">Да, капитан!</li>#}
+                    {#                                            <textarea id="chat-log" cols="100" rows="20"></textarea><br>#}
+                    {#                                        </ul>#}
+                    {#                                    </div>#}
+                    {##}
+                    {#                                </div>#}
+                    {#                            </div>#}
+                    {#                        </div>#}
+                    {#                        <div class="section-21">#}
+                    {#                            <input id="chat-message-input" type="text" class="text-field w-input" maxlength="256"#}
+                    {#                                   name="field" data-name="Field" placeholder="Сообщение..."/>#}
+                    {#                            <input id="chat-message-submit" type="submit" value="Отправить" data-wait="Please wait..."#}
+                    {#                                   class="submit-button-4 w-button"/></div>#}
+                    {#                    </form>#}
+                    <textarea id="chat-log" cols="50" rows="20"></textarea><br>
+                    <input id="chat-message-input" type="text" size="50"><br>
+                    <input id="chat-message-submit" type="button" value="Send">
 
-                                </div>
-                            </div>
-                        </div>
-                        <div class="section-21"><input type="text" class="text-field w-input" maxlength="256"
-                                                       name="field"
-                                                       data-name="Field" placeholder="Сообщение..." id="field"/><input
-                                type="submit" value="Отправить" data-wait="Please wait..."
-                                class="submit-button-4 w-button"/></div>
-                    </form>
-                    <div class="w-form-done">
-                        <div>Thank you! Your submission has been received!</div>
-                    </div>
-                    <div class="w-form-fail">
-                        <div>Oops! Something went wrong while submitting the form.</div>
-                    </div>
+
                 </div>
             </div>
         </div>
@@ -172,6 +172,43 @@
             type="text/javascript"></script>
     <!--[if lte IE 9]>
     <script src="//cdnjs.cloudflare.com/ajax/libs/placeholders/3.0.2/placeholders.min.js"></script><![endif]-->
+
+    <script>
+        const roomName = JSON.parse(document.getElementById('room-name').textContent);
+
+        const chatSocket = new WebSocket(
+            'ws://'
+            + window.location.host
+            + '/ws/main/katka/'
+            + roomName
+            + '/'
+        );
+
+        chatSocket.onmessage = function(e) {
+            const data = JSON.parse(e.data);
+            document.querySelector('#chat-log').value += (data.message + '\n');
+        };
+
+        chatSocket.onclose = function(e) {
+            console.error('Chat socket closed unexpectedly');
+        };
+
+        document.querySelector('#chat-message-input').focus();
+        document.querySelector('#chat-message-input').onkeyup = function(e) {
+            if (e.keyCode === 13) {  // enter, return
+                document.querySelector('#chat-message-submit').click();
+            }
+        };
+
+        document.querySelector('#chat-message-submit').onclick = function(e) {
+            const messageInputDom = document.querySelector('#chat-message-input');
+            const message = messageInputDom.value;
+            chatSocket.send(JSON.stringify({
+                'message': message
+            }));
+            messageInputDom.value = '';
+        };
+    </script>
 
 {% endblock %}
 

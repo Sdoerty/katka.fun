@@ -12,6 +12,11 @@ def index(request):
     ktk = Katka.objects.all()
     return render(request, 'main/main.html', {"ktk": ktk})
 
+def room(request, room_name):
+    return render(request, 'main/room.html', {
+        'room_name': room_name
+    })
+
 
 def katka_page(request, pk):
     global ktk_item

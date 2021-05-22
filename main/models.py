@@ -26,3 +26,17 @@ class Katka(models.Model):
         verbose_name = 'Катка'
         verbose_name_plural = 'Все события Катка'
         ordering = ['-id']
+
+#
+# class ChatMessage(models.Model):
+#     """
+#     Модель для представления сообщения чата
+#     """
+#     user = models.ForeignKey(settings.AUTH_USER_MODEL, on_delete=models.CASCADE)
+#     message = models.TextField(max_length=3000)
+#     message_html = models.TextField()
+#     created = models.DateTimeField(auto_now_add=True)
+#     updated = models.DateTimeField(auto_now=True)
+#
+#     def __str__(self):
+#         return self.message
