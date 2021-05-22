@@ -174,7 +174,7 @@
     <script src="//cdnjs.cloudflare.com/ajax/libs/placeholders/3.0.2/placeholders.min.js"></script><![endif]-->
 
     <script>
-        const roomName = JSON.parse(document.getElementById('room-name').textContent);
+        const roomName = {{ ktk_item.id }};
 
         const chatSocket = new WebSocket(
             'ws://'
