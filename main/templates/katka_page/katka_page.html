@@ -130,35 +130,29 @@
             </div>
             <div class="column w-col w-col-5 w-col-medium-5">
                 <div class="w-form">
-                    {#                    <form action="#">#}
-                    {#                        <div class="div-block-41">#}
-                    {#                            <div class="cht-block">#}
-                    {#                                <div id="convo">#}
-                    {#                                    <div class="chatroom-title">#}
-                    {#                                        <text>Чат комнаты ID: {{ ktk_item.id }}</text>#}
-                    {#                                        <hr>#}
-                    {#                                    </div>#}
-                    {#                                    <div class="dv_chat">#}
-                    {#                                        <ul class="chat-thread">#}
-                    {#                                            <li id="mes1">Едем?</li>#}
-                    {#                                            <li id="mes2">Да, капитан!</li>#}
-                    {#                                            <textarea id="chat-log" cols="100" rows="20"></textarea><br>#}
-                    {#                                        </ul>#}
-                    {#                                    </div>#}
-                    {##}
-                    {#                                </div>#}
-                    {#                            </div>#}
-                    {#                        </div>#}
-                    {#                        <div class="section-21">#}
-                    {#                            <input id="chat-message-input" type="text" class="text-field w-input" maxlength="256"#}
-                    {#                                   name="field" data-name="Field" placeholder="Сообщение..."/>#}
-                    {#                            <input id="chat-message-submit" type="submit" value="Отправить" data-wait="Please wait..."#}
-                    {#                                   class="submit-button-4 w-button"/></div>#}
-                    {#                    </form>#}
-                    <textarea id="chat-log" cols="50" rows="20"></textarea><br>
-                    <input id="chat-message-input" type="text" size="50"><br>
-                    <input id="chat-message-submit" type="button" value="Send">
+                        <div class="div-block-41">
+                            <div class="cht-block">
+                                <div id="convo">
+                                    <div class="chatroom-title">
+                                        <text>Чат комнаты ID: {{ ktk_item.id }}</text>
+                                        <hr>
+                                    </div>
+                                    <div class="dv_chat">
+                                        <ul class="chat-thread">
+                                            <li id="mes1">Едем?</li>
+                                            <li id="mes2">Да, капитан!</li>
+                                            <textarea id="chat-log" cols="100" rows="20"></textarea><br>
+                                        </ul>
+                                    </div>
 
+                                </div>
+                            </div>
+                        </div>
+                        <div class="section-21">
+                            <input id="chat-message-input" type="text" class="text-field w-input" maxlength="256"
+                                   name="field" data-name="Field" placeholder="Сообщение..."/>
+                            <input id="chat-message-submit" type="submit" value="Отправить" data-wait="Please wait..."
+                                   class="submit-button-4 w-button"/></div>
 
                 </div>
             </div>
@@ -184,23 +178,23 @@
             + '/'
         );
 
-        chatSocket.onmessage = function(e) {
+        chatSocket.onmessage = function (e) {
             const data = JSON.parse(e.data);
             document.querySelector('#chat-log').value += (data.message + '\n');
         };
 
-        chatSocket.onclose = function(e) {
+        chatSocket.onclose = function (e) {
             console.error('Chat socket closed unexpectedly');
         };
 
         document.querySelector('#chat-message-input').focus();
-        document.querySelector('#chat-message-input').onkeyup = function(e) {
+        document.querySelector('#chat-message-input').onkeyup = function (e) {
             if (e.keyCode === 13) {  // enter, return
                 document.querySelector('#chat-message-submit').click();
             }
         };
 
-        document.querySelector('#chat-message-submit').onclick = function(e) {
+        document.querySelector('#chat-message-submit').onclick = function (e) {
             const messageInputDom = document.querySelector('#chat-message-input');
             const message = messageInputDom.value;
             chatSocket.send(JSON.stringify({
