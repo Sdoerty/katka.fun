@@ -7,6 +7,7 @@
 {% block links %}
     {{ block.super }}
     {% load static %}
+    {% load crispy_forms_tags %}
     <link rel="stylesheet" type="text/css" href="{% static 'katka_page/css/katka_page.css' %}"/>
     <link rel="stylesheet" type="text/css" href="{% static 'katka_page/css/katka_chat.css' %}"/>
 
@@ -173,12 +174,12 @@
                             </div>
                         </div>
                     </div>
-                    <form action="post"
+                    <form action="{% url 'katkamessages:message-create' content_type="katka" object_id=ktk_item.pk %}"
                           method="POST">
                         {% csrf_token %}
                         <div class="section-21">
                             <input id="chat-message-input" type="text" class="text-field w-input" maxlength="256"
-                                   name="field" data-name="Field" placeholder="Сообщение..."/>
+                                   name="text" data-name="Field" placeholder="Сообщение..."/>
                             <input id="chat-message-submit" type="submit" value="Отправить" data-wait="Please wait..."
                                    class="submit-button-4 w-button"/>
                         </div>
@@ -196,42 +197,42 @@
     <!--[if lte IE 9]>
     <script src="//cdnjs.cloudflare.com/ajax/libs/placeholders/3.0.2/placeholders.min.js"></script><![endif]-->
 
-    <script>
-        const roomName = {{ ktk_item.id }};
-
-        const chatSocket = new WebSocket(
-            'ws://'
-            + window.location.host
-            + '/ws/main/katka/'
-            + roomName
-            + '/'
-        );
-
-        chatSocket.onmessage = function (e) {
-            const data = JSON.parse(e.data);
-            document.querySelector('#chat-log').value += (data.message + '\n');
-        };
-
-        chatSocket.onclose = function (e) {
-            console.error('Chat socket closed unexpectedly');
-        };
-
-        document.querySelector('#chat-message-input').focus();
-        document.querySelector('#chat-message-input').onkeyup = function (e) {
-            if (e.keyCode === 13) {  // enter, return
-                document.querySelector('#chat-message-submit').click();
-            }
-        };
-
-        document.querySelector('#chat-message-submit').onclick = function (e) {
-            const messageInputDom = document.querySelector('#chat-message-input');
-            const message = messageInputDom.value;
-            chatSocket.send(JSON.stringify({
-                'message': message
-            }));
-            messageInputDom.value = '';
-        };
-    </script>
+{#    <script>#}
+{#        const roomName = {{ ktk_item.id }};#}
+{##}
+{#        const chatSocket = new WebSocket(#}
+{#            'ws://'#}
+{#            + window.location.host#}
+{#            + '/ws/main/katka/'#}
+{#            + roomName#}
+{#            + '/'#}
+{#        );#}
+{##}
+{#        chatSocket.onmessage = function (e) {#}
+{#            const data = JSON.parse(e.data);#}
+{#            document.querySelector('#chat-log').value += (data.message + '\n');#}
+{#        };#}
+{##}
+{#        chatSocket.onclose = function (e) {#}
+{#            console.error('Chat socket closed unexpectedly');#}
+{#        };#}
+{##}
+{#        document.querySelector('#chat-message-input').focus();#}
+{#        document.querySelector('#chat-message-input').onkeyup = function (e) {#}
+{#            if (e.keyCode === 13) {  // enter, return#}
+{#                document.querySelector('#chat-message-submit').click();#}
+{#            }#}
+{#        };#}
+{##}
+{#        document.querySelector('#chat-message-submit').onclick = function (e) {#}
+{#            const messageInputDom = document.querySelector('#chat-message-input');#}
+{#            const message = messageInputDom.value;#}
+{#            chatSocket.send(JSON.stringify({#}
+{#                'message': message#}
+{#            }));#}
+{#            messageInputDom.value = '';#}
+{#        };#}
+{#    </script>#}
 
 {% endblock %}
 

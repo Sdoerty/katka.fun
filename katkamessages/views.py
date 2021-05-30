@@ -12,7 +12,7 @@ class MessageCreateView(View):
 
     @staticmethod
     def post(request, *args, **kwargs):
-        form = KatkaMessageForm(request.POST or None)
+        form = KatkaMessageForm(data=request.POST)
         ct = ContentType.objects.get(model=kwargs['content_type'])
         model = ct.model_class().objects.get(pk=kwargs['object_id'])
         if form.is_valid():
