@@ -1,47 +1,66 @@
 import json
+from django.contrib.contenttypes.models import ContentType
+from channels.db import database_sync_to_async
 from asgiref.sync import async_to_sync
-from channels.generic.websocket import WebsocketConsumer
+from channels.generic.websocket import AsyncWebsocketConsumer
+from katkamessages.models import KatkaMessage
+from .models import Katka
 
 
-class ChatConsumer(WebsocketConsumer):
-    def connect(self):
+class ChatConsumer(AsyncWebsocketConsumer):
+
+    async def connect(self):
         self.room_name = self.scope['url_route']['kwargs']['pk']
         self.room_group_name = 'chat_%s' % self.room_name
 
         # Join room group
-        async_to_sync(self.channel_layer.group_add)(
+        await self.channel_layer.group_add(
             self.room_group_name,
             self.channel_name
         )
 
-        self.accept()
+        await self.accept()
 
-    def disconnect(self, close_code):
+    async def disconnect(self, close_code):
         # Leave room group
-        async_to_sync(self.channel_layer.group_discard)(
+        await self.channel_layer.group_discard(
             self.room_group_name,
             self.channel_name
         )
 
     # Receive message from WebSocket
-    def receive(self, text_data):
+    async def receive(self, text_data):
         text_data_json = json.loads(text_data)
-        message = text_data_json['message']
-
+        comment = text_data_json['text']
+        new_comment = await self.create_new_comment(comment)
+        data = {'author': new_comment.author.username,
+                'created_at': new_comment.created_at.strftime('%Y-%m-%d %H:%m'),
+                'text': new_comment.text}
         # Send message to room group
-        async_to_sync(self.channel_layer.group_send)(
+        await self.channel_layer.group_send(
             self.room_group_name,
             {
-                'type': 'chat_message',
-                'message': message
+                'type': 'new_comment',
+                'message': data
             }
         )
 
     # Receive message from room group
-    def chat_message(self, event):
+    async def new_comment(self, event):
         message = event['message']
 
         # Send message to WebSocket
-        self.send(text_data=json.dumps({
+        await self.send(text_data=json.dumps({
             'message': message
         }))
+
+    @database_sync_to_async
+    def create_new_comment(self, text):
+        ct = ContentType.objects.get_for_model(Post)
+        new_comment = Comment.objects.create(
+            author=self.scope['user'],
+            text=text,
+            content_type=ct,
+            object_id=int(self.room_name)
+        )
+        return new_comment

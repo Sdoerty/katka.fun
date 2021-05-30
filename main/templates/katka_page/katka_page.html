@@ -178,7 +178,8 @@
                           method="POST">
                         {% csrf_token %}
                         <div class="section-21">
-                            <textarea name="text" class="form-control" id="exampleFormControlTextarea1" rows="1"></textarea>
+                            <textarea name="text" class="form-control" id="exampleFormControlTextarea1"
+                                      rows="1"></textarea>
                             <input id="chat-message-submit" type="submit" value="Отправить" data-wait="Please wait..."
                                    class="submit-button-4 w-button"/>
                         </div>
@@ -196,42 +197,38 @@
     <!--[if lte IE 9]>
     <script src="//cdnjs.cloudflare.com/ajax/libs/placeholders/3.0.2/placeholders.min.js"></script><![endif]-->
 
-{#    <script>#}
-{#        const roomName = {{ ktk_item.id }};#}
-{##}
-{#        const chatSocket = new WebSocket(#}
-{#            'ws://'#}
-{#            + window.location.host#}
-{#            + '/ws/main/katka/'#}
-{#            + roomName#}
-{#            + '/'#}
-{#        );#}
-{##}
-{#        chatSocket.onmessage = function (e) {#}
-{#            const data = JSON.parse(e.data);#}
-{#            document.querySelector('#chat-log').value += (data.message + '\n');#}
-{#        };#}
-{##}
-{#        chatSocket.onclose = function (e) {#}
-{#            console.error('Chat socket closed unexpectedly');#}
-{#        };#}
-{##}
-{#        document.querySelector('#chat-message-input').focus();#}
-{#        document.querySelector('#chat-message-input').onkeyup = function (e) {#}
-{#            if (e.keyCode === 13) {  // enter, return#}
-{#                document.querySelector('#chat-message-submit').click();#}
-{#            }#}
-{#        };#}
-{##}
-{#        document.querySelector('#chat-message-submit').onclick = function (e) {#}
-{#            const messageInputDom = document.querySelector('#chat-message-input');#}
-{#            const message = messageInputDom.value;#}
-{#            chatSocket.send(JSON.stringify({#}
-{#                'message': message#}
-{#            }));#}
-{#            messageInputDom.value = '';#}
-{#        };#}
-{#    </script>#}
+    <script>
+        const roomName = {{ ktk_item.id }};
+
+        const commentsSocket = new WebSocket(
+            'ws://'
+            + window.location.host
+            + '/ws/main/katka/'
+            + roomName
+            + '/'
+        );
+        commentsSocket.onmessage = function (e) {
+            const data = JSON.parse(e.data);
+            commentsList = document.getElementById('comments-list')
+            commentsList.insertAdjacentHTML(
+                'beforeend',
+                '<div class="col-md-12 mt-3 mb-3">\n' +
+                '<p><strong>' + data['message']['author'] + '</strong> | <small>опубликовано:' + data['message']['created_at'] + '</small></p>\n' +
+                '<p>' + data['message']['text'] + '</p>\n' +
+                '</div>'
+            )
+        };
+        document.querySelector('#send-comment').onclick = function (e) {
+            e.preventDefault()
+            const messageInputDom = document.querySelector('#id_text');
+            const text = messageInputDom.value;
+            commentsSocket.send(JSON.stringify({
+                'text': text
+            }));
+            messageInputDom.value = '';
+        };
+    </script>
+
 
 {% endblock %}
 
