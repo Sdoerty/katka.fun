@@ -161,16 +161,7 @@ fieldset {
     padding: .35em .625em .75em
 }
 
-.chatblock{
-    display: flex;
-}
 
-.chatdata{
-    margin-left: 10px;
-    border-radius: 10px;
-    background-color: rgba(25, 147, 147, 0.2);
-    padding: 10px 20px 10px 20px;
-}
 
 .username {
     color: #393939;
@@ -179,11 +170,6 @@ fieldset {
     padding-top: 10px;
 }
 
-.username2 {
-    color: #393939;
-    font-size: 16px;
-    font-weight: 700;
-}
 
 .usertown {
     text-align: center;
@@ -5037,13 +5023,23 @@ a:hover {
 }
 
 .div-block-41 {
-    height: 600px;
+    height: 650px;
     margin: 5px;
     border-style: solid;
     border-width: 1px;
     border-color: #d9d9d9;
     background-color: #fafafa;
 }
+
+.cht-block{
+    height: inherit;
+}
+
+#convo{
+    height: inherit;
+}
+
+
 
 .section-21 {
     display: -webkit-box;
@@ -6052,7 +6048,7 @@ a:hover {
     }
 
     .div-block-41 {
-        height: 400px;
+        height: 500px;
     }
 }
 
@@ -6493,9 +6489,7 @@ a:hover {
         justify-content: flex-start;
     }
 
-    .div-block-41 {
-        height: 300px;
-    }
+
 
     .div-block-49 {
         padding-left: 15px;

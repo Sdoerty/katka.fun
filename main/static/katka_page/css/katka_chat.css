@@ -53,6 +53,29 @@ ul.chat-thread {
     font-size: 14px;
 }
 
+.username2 {
+    color: #393939;
+    font-size: 16px;
+    font-weight: 700;
+}
+
+.dv_chat {
+    height: 85%;
+    overflow-y: scroll;
+}
+
+.chatblock {
+    height: inherit;
+    display: flex;
+}
+
+.chatdata {
+    margin-left: 10px;
+    border-radius: 10px;
+    background-color: rgba(25, 147, 147, 0.2);
+    padding: 10px 20px 10px 20px;
+}
+
 .chat-thread li:nth-child(odd) {
     animation: show-chat-odd 0.15s 1 ease-in;
     -moz-animation: show-chat-odd 0.15s 1 ease-in;
@@ -126,8 +149,8 @@ ul.chat-thread {
     }
 
     ul.chat-thread {
-    width: auto;
-}
+        width: auto;
+    }
 }
 
 /* Medium and large screens */
@@ -153,6 +176,15 @@ ul.chat-thread {
 
     #mes2 {
         font-size: 12px;
+    }
+
+    .div-block-41 {
+        height: 500px;
+
+    }
+
+    .dv_chat {
+        height: 83%;
     }
 }
 

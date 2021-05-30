@@ -166,34 +166,23 @@
                                                     <p>{{ message.text }}</p>
                                                     <small>{{ message.created_at|date:"d-m-Y" }} {{ message.created_at|time:"H:i" }}</small>
                                                 </div>
-
                                             </div>
                                         </div>
                                     {% endfor %}
                                 </div>
-
                             </div>
                         </div>
                     </div>
-                    {#                                            <div class="section-21">#}
-                    {#                                                <input id="chat-message-input" type="text" class="text-field w-input" maxlength="256"#}
-                    {#                                                       name="field" data-name="Field" placeholder="Сообщение..."/>#}
-                    {#                                                <input id="chat-message-submit" type="submit" value="Отправить" data-wait="Please wait..."#}
-                    {#                                                       class="submit-button-4 w-button"/>#}
-                    {#                                            </div>#}
-                    <div class="row">
-
-                    </div>
-                    <hr>
                     <form action="post"
                           method="POST">
                         {% csrf_token %}
-                        {{ form }}
-                        <br>
-                        <input class="btn btn-primary" type="submit" value="Отправить">
+                        <div class="section-21">
+                            <input id="chat-message-input" type="text" class="text-field w-input" maxlength="256"
+                                   name="field" data-name="Field" placeholder="Сообщение..."/>
+                            <input id="chat-message-submit" type="submit" value="Отправить" data-wait="Please wait..."
+                                   class="submit-button-4 w-button"/>
+                        </div>
                     </form>
-
-
                 </div>
             </div>
         </div>
