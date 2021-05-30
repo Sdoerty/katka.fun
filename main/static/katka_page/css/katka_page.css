@@ -5072,6 +5072,7 @@ a:hover {
 }
 
 .submit-button-4 {
+    border-radius: 5px;
     background-color: #3f5561;
     font-family: Exo, sans-serif;
 }
