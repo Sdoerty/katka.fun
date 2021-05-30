@@ -52,6 +52,7 @@ INSTALLED_APPS = [
     'login.apps.AuthRegConfig',
     'signup.apps.SignupConfig',
     'main.apps.MainpageConfig',
+    'katkamessages.apps.KatkamessagesConfig',
     'profile.apps.UserProfileConfig',
     'users.apps.UsersConfig',
     'multiselectfield',

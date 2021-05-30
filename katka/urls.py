@@ -15,6 +15,7 @@ urlpatterns = [
     path('users/', include('users.urls')),
     path('login/', views.index, name='login'),
     path('signup/', views.index, name='signup'),
+    path('katkamessages/', include('katkamessages.urls', namespace='katkamessages')),
 ]
 
 if settings.DEBUG:

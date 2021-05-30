@@ -7,6 +7,7 @@ from django.contrib.postgres.fields import ArrayField
 from profile.models import Profile
 from .activities import ACTIVITY
 from django.conf import settings
+from django.contrib.contenttypes.fields import GenericRelation
 
 
 class Katka(models.Model):
@@ -18,6 +19,7 @@ class Katka(models.Model):
     descr = models.CharField(max_length=350)
     katka_act = MultiSelectField(choices=ACTIVITY)
     members = models.ManyToManyField(Profile, related_name="profile_set")
+    comments = GenericRelation('katkamessages.KatkaMessage')
 
     def get_absolute_url(self):
         return reverse('katka', kwargs={'pk': self.pk})

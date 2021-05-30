@@ -130,29 +130,69 @@
             </div>
             <div class="column w-col w-col-5 w-col-medium-5">
                 <div class="w-form">
-                        <div class="div-block-41">
-                            <div class="cht-block">
-                                <div id="convo">
-                                    <div class="chatroom-title">
-                                        <text>Чат комнаты ID: {{ ktk_item.id }}</text>
-                                        <hr>
-                                    </div>
-                                    <div class="dv_chat">
-                                        <ul class="chat-thread">
-                                            <li id="mes1">Едем?</li>
-                                            <li id="mes2">Да, капитан!</li>
-                                            <textarea id="chat-log" cols="100" rows="20"></textarea><br>
-                                        </ul>
-                                    </div>
-
+                    <div class="div-block-41">
+                        <div class="cht-block">
+                            <div id="convo">
+                                <div class="chatroom-title">
+                                    <text>Чат комнаты ID: {{ ktk_item.id }}</text>
+                                    <hr>
                                 </div>
+                                <div class="dv_chat">
+                                    {% for message in ktk_item.comments.all %}
+                                        <div class="col-md-12 mt-3 mb-3">
+                                            <div class="chatblock">
+                                                <div class="chatimage">
+                                                    <div class="section-19">
+                                                        <a href="{% url 'some' message.author.pk %}">
+                                                            {% if message.author.profile.avatar %}
+                                                                <img src="{{ message.author.profile.avatar.url }}"
+                                                                     loading="lazy" width="50"
+                                                                     height="50"
+                                                                     alt="" class="imagew-22"/>
+                                                            {% else %}
+                                                                <img src="{% static 'img/user.png' %}" loading="lazy"
+                                                                     width="50" height="50"
+                                                                     alt="" class="imagew-22"/>
+                                                            {% endif %}
+                                                        </a>
+                                                    </div>
+                                                </div>
+                                                <div class="chatdata">
+                                                    <a href="{% url 'some' message.author.pk %}">
+                                                        <div class="username2">
+                                                            {{ message.author.first_name }} {{ message.author.last_name }}
+                                                        </div>
+                                                    </a>
+                                                    <p>{{ message.text }}</p>
+                                                    <small>{{ message.created_at|date:"d-m-Y" }} {{ message.created_at|time:"H:i" }}</small>
+                                                </div>
+
+                                            </div>
+                                        </div>
+                                    {% endfor %}
+                                </div>
+
                             </div>
                         </div>
-                        <div class="section-21">
-                            <input id="chat-message-input" type="text" class="text-field w-input" maxlength="256"
-                                   name="field" data-name="Field" placeholder="Сообщение..."/>
-                            <input id="chat-message-submit" type="submit" value="Отправить" data-wait="Please wait..."
-                                   class="submit-button-4 w-button"/></div>
+                    </div>
+                    {#                                            <div class="section-21">#}
+                    {#                                                <input id="chat-message-input" type="text" class="text-field w-input" maxlength="256"#}
+                    {#                                                       name="field" data-name="Field" placeholder="Сообщение..."/>#}
+                    {#                                                <input id="chat-message-submit" type="submit" value="Отправить" data-wait="Please wait..."#}
+                    {#                                                       class="submit-button-4 w-button"/>#}
+                    {#                                            </div>#}
+                    <div class="row">
+
+                    </div>
+                    <hr>
+                    <form action="post"
+                          method="POST">
+                        {% csrf_token %}
+                        {{ form }}
+                        <br>
+                        <input class="btn btn-primary" type="submit" value="Отправить">
+                    </form>
+
 
                 </div>
             </div>

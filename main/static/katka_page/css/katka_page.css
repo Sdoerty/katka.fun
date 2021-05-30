@@ -161,11 +161,28 @@ fieldset {
     padding: .35em .625em .75em
 }
 
+.chatblock{
+    display: flex;
+}
+
+.chatdata{
+    margin-left: 10px;
+    border-radius: 10px;
+    background-color: rgba(25, 147, 147, 0.2);
+    padding: 10px 20px 10px 20px;
+}
+
 .username {
     color: #393939;
     font-weight: 700;
     text-align: center;
     padding-top: 10px;
+}
+
+.username2 {
+    color: #393939;
+    font-size: 16px;
+    font-weight: 700;
 }
 
 .usertown {
