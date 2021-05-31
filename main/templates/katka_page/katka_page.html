@@ -1,4 +1,4 @@
-{% extends 'base_katka.html' %}
+{% extends 'main.html' %}
 
 {% block title %}
     <title>KATKA ID:{{ ktk_item.id }} | г.{{ ktk_item.city }}</title>
@@ -138,7 +138,7 @@
                                     <text>Чат комнаты ID: {{ ktk_item.id }}</text>
                                     <hr>
                                 </div>
-                                <div class="dv_chat">
+                                <div class="dv_chat" id="comments-list">
                                     {% for message in ktk_item.comments.all %}
                                         <div class="col-md-12 mt-3 mb-3">
                                             <div class="chatblock">
@@ -178,9 +178,9 @@
                           method="POST">
                         {% csrf_token %}
                         <div class="section-21">
-                            <textarea name="text" class="form-control" id="exampleFormControlTextarea1"
-                                      rows="1"></textarea>
-                            <input id="chat-message-submit" type="submit" value="Отправить" data-wait="Please wait..."
+                            <textarea name="text" class="form-control" id="chat-message-input"
+                                   rows="1"></textarea>
+                            <input id="chat-message-submit" type="submit" value="Отправить"
                                    class="submit-button-4 w-button"/>
                         </div>
                     </form>
@@ -197,37 +197,39 @@
     <!--[if lte IE 9]>
     <script src="//cdnjs.cloudflare.com/ajax/libs/placeholders/3.0.2/placeholders.min.js"></script><![endif]-->
 
-    <script>
-        const roomName = {{ ktk_item.id }};
+    {% block js %}
+        <script>
+            const roomName = {{ ktk_item.id }};
 
-        const commentsSocket = new WebSocket(
-            'ws://'
-            + window.location.host
-            + '/ws/main/katka/'
-            + roomName
-            + '/'
-        );
-        commentsSocket.onmessage = function (e) {
-            const data = JSON.parse(e.data);
-            commentsList = document.getElementById('comments-list')
-            commentsList.insertAdjacentHTML(
-                'beforeend',
-                '<div class="col-md-12 mt-3 mb-3">\n' +
-                '<p><strong>' + data['message']['author'] + '</strong> | <small>опубликовано:' + data['message']['created_at'] + '</small></p>\n' +
-                '<p>' + data['message']['text'] + '</p>\n' +
-                '</div>'
-            )
-        };
-        document.querySelector('#send-comment').onclick = function (e) {
-            e.preventDefault()
-            const messageInputDom = document.querySelector('#id_text');
-            const text = messageInputDom.value;
-            commentsSocket.send(JSON.stringify({
-                'text': text
-            }));
-            messageInputDom.value = '';
-        };
-    </script>
+            const commentsSocket = new WebSocket(
+                'ws://'
+                + window.location.host
+                + '/ws/main/katka/'
+                + roomName
+                + '/'
+            );
+            commentsSocket.onmessage = function (e) {
+                const data = JSON.parse(e.data);
+                commentsList = document.getElementById('comments-list')
+                commentsList.insertAdjacentHTML(
+                    'beforeend',
+                    '<div class="col-md-12 mt-3 mb-3">\n' +
+                    '<p><strong>' + data['message']['author'] + '</strong> | <small>опубликовано:' + data['message']['created_at'] + '</small></p>\n' +
+                    '<p>' + data['message']['text'] + '</p>\n' +
+                    '</div>'
+                )
+            };
+            document.querySelector('#chat-message-submit').onclick = function (e) {
+                e.preventDefault()
+                const messageInputDom = document.querySelector('#chat-message-input');
+                const text = messageInputDom.value;
+                commentsSocket.send(JSON.stringify({
+                    'text': text
+                }));
+                messageInputDom.value = '';
+            };
+        </script>
+    {% endblock js %}
 
 
 {% endblock %}

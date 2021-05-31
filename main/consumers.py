@@ -10,12 +10,12 @@ from .models import Katka
 class ChatConsumer(AsyncWebsocketConsumer):
 
     async def connect(self):
-        self.room_name = self.scope['url_route']['kwargs']['pk']
-        self.room_group_name = 'chat_%s' % self.room_name
+        self.katka_pk = self.scope['url_route']['kwargs']['pk']
+        self.katka_group_name = 'katka_%s' % self.katka_pk
 
         # Join room group
         await self.channel_layer.group_add(
-            self.room_group_name,
+            self.katka_group_name,
             self.channel_name
         )
 
@@ -24,7 +24,7 @@ class ChatConsumer(AsyncWebsocketConsumer):
     async def disconnect(self, close_code):
         # Leave room group
         await self.channel_layer.group_discard(
-            self.room_group_name,
+            self.katka_group_name,
             self.channel_name
         )
 
@@ -38,7 +38,7 @@ class ChatConsumer(AsyncWebsocketConsumer):
                 'text': new_comment.text}
         # Send message to room group
         await self.channel_layer.group_send(
-            self.room_group_name,
+            self.katka_group_name,
             {
                 'type': 'new_comment',
                 'message': data
@@ -56,11 +56,11 @@ class ChatConsumer(AsyncWebsocketConsumer):
 
     @database_sync_to_async
     def create_new_comment(self, text):
-        ct = ContentType.objects.get_for_model(Post)
-        new_comment = Comment.objects.create(
+        ct = ContentType.objects.get_for_model(Katka)
+        new_comment = KatkaMessage.objects.create(
             author=self.scope['user'],
             text=text,
             content_type=ct,
-            object_id=int(self.room_name)
+            object_id=int(self.katka_pk)
         )
         return new_comment
