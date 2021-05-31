@@ -33,8 +33,9 @@ class ChatConsumer(AsyncWebsocketConsumer):
         text_data_json = json.loads(text_data)
         comment = text_data_json['text']
         new_comment = await self.create_new_comment(comment)
-        data = {'author': new_comment.author.username,
-                'created_at': new_comment.created_at.strftime('%Y-%m-%d %H:%m'),
+        data = {'author_f': new_comment.author.first_name,
+                'author_l': new_comment.author.last_name,
+                'created_at': new_comment.created_at.strftime('%d-%m-%Y %H:%m'),
                 'text': new_comment.text}
         # Send message to room group
         await self.channel_layer.group_send(

@@ -1,4 +1,4 @@
-{% extends 'main.html' %}
+{% extends 'base_katka.html' %}
 
 {% block title %}
     <title>KATKA ID:{{ ktk_item.id }} | г.{{ ktk_item.city }}</title>
@@ -179,7 +179,7 @@
                         {% csrf_token %}
                         <div class="section-21">
                             <textarea name="text" class="form-control" id="chat-message-input"
-                                   rows="1"></textarea>
+                                      rows="1"></textarea>
                             <input id="chat-message-submit" type="submit" value="Отправить"
                                    class="submit-button-4 w-button"/>
                         </div>
@@ -197,39 +197,53 @@
     <!--[if lte IE 9]>
     <script src="//cdnjs.cloudflare.com/ajax/libs/placeholders/3.0.2/placeholders.min.js"></script><![endif]-->
 
-    {% block js %}
-        <script>
-            const roomName = {{ ktk_item.id }};
+    <script>
+        const roomName = {{ ktk_item.id }};
 
-            const commentsSocket = new WebSocket(
-                'ws://'
-                + window.location.host
-                + '/ws/main/katka/'
-                + roomName
-                + '/'
-            );
-            commentsSocket.onmessage = function (e) {
-                const data = JSON.parse(e.data);
-                commentsList = document.getElementById('comments-list')
-                commentsList.insertAdjacentHTML(
-                    'beforeend',
-                    '<div class="col-md-12 mt-3 mb-3">\n' +
-                    '<p><strong>' + data['message']['author'] + '</strong> | <small>опубликовано:' + data['message']['created_at'] + '</small></p>\n' +
-                    '<p>' + data['message']['text'] + '</p>\n' +
-                    '</div>'
-                )
-            };
-            document.querySelector('#chat-message-submit').onclick = function (e) {
-                e.preventDefault()
-                const messageInputDom = document.querySelector('#chat-message-input');
-                const text = messageInputDom.value;
-                commentsSocket.send(JSON.stringify({
-                    'text': text
-                }));
-                messageInputDom.value = '';
-            };
-        </script>
-    {% endblock js %}
+        const commentsSocket = new WebSocket(
+            'ws://'
+            + window.location.host
+            + '/ws/main/katka/'
+            + roomName
+            + '/'
+        );
+        commentsSocket.onmessage = function (e) {
+            const data = JSON.parse(e.data);
+            commentsList = document.getElementById('comments-list')
+            commentsList.insertAdjacentHTML(
+                'beforeend',
+                '<div class="col-md-12 mt-3 mb-3">\n' +
+                '<div class="chatblock">\n' +
+                '<div class="chatimage">\n' +
+                '<div class="section-19">\n' +
+                '{% for message in ktk_item.comments.all %}' +
+                    '<img class="imagew-22"  width="50" height="50"'
+                    +  'src="{{ message.author.profile.avatar.url }}"' +
+                    '{% endfor %}' +
+                '</>' +
+                '</div>' +
+                '</div>' +
+                '<div class="chatdata">' +
+                '<a href="#">' + '<div class="username2">' +
+                data['message']['author_f'] + ' ' + data['message']['author_l'] + '\n' +
+                '</div>' + '</a>' +
+                '<p>' + data['message']['text'] + '</p>' + '\n' +
+                '<small>' + data['message']['created_at'] + '</small>' +
+                '</div>' +
+                '</div>' +
+                '</div>'
+            )
+        };
+        document.querySelector('#chat-message-submit').onclick = function (e) {
+            e.preventDefault()
+            const messageInputDom = document.querySelector('#chat-message-input');
+            const text = messageInputDom.value;
+            commentsSocket.send(JSON.stringify({
+                'text': text
+            }));
+            messageInputDom.value = '';
+        };
+    </script>
 
 
 {% endblock %}
