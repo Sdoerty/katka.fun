@@ -198,6 +198,10 @@
     <script src="//cdnjs.cloudflare.com/ajax/libs/placeholders/3.0.2/placeholders.min.js"></script><![endif]-->
 
     <script>
+        {#Первичный скролл всего чата к последнему сообщению#}
+        var element = document.getElementById('comments-list');
+        element.scrollTop = element.scrollHeight;
+
         const roomName = {{ ktk_item.id }};
 
         const commentsSocket = new WebSocket(
@@ -207,6 +211,7 @@
             + roomName
             + '/'
         );
+
         commentsSocket.onmessage = function (e) {
             const data = JSON.parse(e.data);
             commentsList = document.getElementById('comments-list')
@@ -216,24 +221,24 @@
                 '<div class="chatblock">\n' +
                 '<div class="chatimage">\n' +
                 '<div class="section-19">\n' +
-                '{% for message in ktk_item.comments.all %}' +
-                    '<img class="imagew-22"  width="50" height="50"'
-                    +  'src="{{ message.author.profile.avatar.url }}"' +
-                    '{% endfor %}' +
-                '</>' +
                 '</div>' +
                 '</div>' +
                 '<div class="chatdata">' +
-                '<a href="#">' + '<div class="username2">' +
+                '<div class="username2">' +
                 data['message']['author_f'] + ' ' + data['message']['author_l'] + '\n' +
-                '</div>' + '</a>' +
+                '</div>' +
                 '<p>' + data['message']['text'] + '</p>' + '\n' +
                 '<small>' + data['message']['created_at'] + '</small>' +
                 '</div>' +
                 '</div>' +
                 '</div>'
             )
+            {#Скролл при добавлении каждого сообщения#}
+            var element = document.getElementById('comments-list');
+            element.scrollTop = element.scrollHeight;
         };
+
+
         document.querySelector('#chat-message-submit').onclick = function (e) {
             e.preventDefault()
             const messageInputDom = document.querySelector('#chat-message-input');

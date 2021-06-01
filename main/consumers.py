@@ -2,9 +2,11 @@ import json
 from django.contrib.contenttypes.models import ContentType
 from channels.db import database_sync_to_async
 from asgiref.sync import async_to_sync
+from asgiref.sync import sync_to_async
 from channels.generic.websocket import AsyncWebsocketConsumer
 from katkamessages.models import KatkaMessage
 from .models import Katka
+from profile.models import Profile
 
 
 class ChatConsumer(AsyncWebsocketConsumer):
@@ -27,6 +29,7 @@ class ChatConsumer(AsyncWebsocketConsumer):
             self.katka_group_name,
             self.channel_name
         )
+
 
     # Receive message from WebSocket
     async def receive(self, text_data):
