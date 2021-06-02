@@ -13,6 +13,7 @@ urlpatterns = [
     path('main/', include('main.urls')),
     path('profile/', include('profile.urls')),
     path('users/', include('users.urls')),
+    path('messenger/', include('messenger.urls')),
     path('login/', views.index, name='login'),
     path('signup/', views.index, name='signup'),
     path('katkamessages/', include('katkamessages.urls', namespace='katkamessages')),

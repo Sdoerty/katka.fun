@@ -43,6 +43,7 @@ INSTALLED_APPS = [
     'katkamessages.apps.KatkamessagesConfig',
     'profile.apps.UserProfileConfig',
     'users.apps.UsersConfig',
+    'messenger',
     'multiselectfield',
     'friendship',
     'channels',
@@ -81,6 +82,7 @@ CREATE_KATKA = os.path.join(BASE_DIR, 'main/templates/create_katka')
 ALL_KATKA = os.path.join(BASE_DIR, 'main/templates/main')
 ALL_USERS = os.path.join(BASE_DIR, 'users/templates/users')
 SOME_USER = os.path.join(BASE_DIR, 'users/templates/some')
+MESSENGER = os.path.join(BASE_DIR, 'messenger/templates/messenger')
 
 TEMPLATES = [
     {
