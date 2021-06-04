@@ -34,10 +34,6 @@
     --font-family-monospace: SFMono-Regular, Menlo, Monaco, Consolas, "Liberation Mono", "Courier New", monospace
 }
 
-.div-block {
-    margin-top: 50px;
-    margin-left: 50px;
-}
 
 *, ::after, ::before {
     -webkit-box-sizing: border-box;
@@ -45,6 +41,7 @@
 }
 
 html {
+    height: 50%;
     font-family: sans-serif;
     line-height: 1.15;
     -webkit-text-size-adjust: 100%;
@@ -8111,6 +8108,11 @@ a.bg-basic-inverse:focus, a.bg-basic-inverse:hover, button.bg-basic-inverse:focu
 
 a.bg-primary:focus, a.bg-primary:hover, button.bg-primary:focus, button.bg-primary:hover {
     background-color: #005ecd !important
+}
+
+.bg-cht{
+        background-color: #117a8b !important
+
 }
 
 .bg-secondary {
@@ -16342,8 +16344,7 @@ code[class*=language-], pre[class*=language-] {
 }
 
 .chat-sidebar, .main {
-    height: 100vh;
-    height: 100%
+    height: 90%
 }
 
 .chat-sidebar, .main, .navigation {
@@ -16351,6 +16352,7 @@ code[class*=language-], pre[class*=language-] {
 }
 
 .sidebar {
+    padding: 50px 0 0 50px;
     background: #f5f6fa;
     -webkit-box-flex: 2;
     -ms-flex-positive: 2;
@@ -16361,6 +16363,7 @@ code[class*=language-], pre[class*=language-] {
 }
 
 .main {
+    padding-top: 50px;
     overflow: hidden;
     -webkit-box-ordinal-group: 4;
     -ms-flex-order: 3;
@@ -16481,12 +16484,10 @@ code[class*=language-], pre[class*=language-] {
 @media (max-width: 1199.98px) {
     .main {
         position: fixed;
-        top: 0;
-        left: 0;
-        bottom: 0;
+        padding-bottom: 50px;
         height: 100%;
         width: 100%;
-        z-index: 1020;
+        z-index: 1;
         visibility: hidden;
         -webkit-transform: translateX(100%);
         transform: translateX(100%);
