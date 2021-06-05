@@ -5507,9 +5507,12 @@ input[type=button].btn-block, input[type=reset].btn-block, input[type=submit].bt
         padding-right: 0;
         padding-left: 0
     }
+
+
 }
 
 @media (min-width: 992px) {
+
     .navbar-expand-lg {
         -webkit-box-orient: horizontal;
         -webkit-box-direction: normal;
@@ -8110,8 +8113,8 @@ a.bg-primary:focus, a.bg-primary:hover, button.bg-primary:focus, button.bg-prima
     background-color: #005ecd !important
 }
 
-.bg-cht{
-        background-color: #117a8b !important
+.bg-cht {
+    background-color: #117a8b !important
 
 }
 
@@ -16482,6 +16485,7 @@ code[class*=language-], pre[class*=language-] {
 }
 
 @media (max-width: 1199.98px) {
+
     .main {
         position: fixed;
         padding-bottom: 50px;
@@ -16499,6 +16503,12 @@ code[class*=language-], pre[class*=language-] {
         visibility: visible;
         -webkit-transform: translateX(0);
         transform: translateX(0)
+    }
+}
+
+@media (max-width: 992px) {
+        .sidebar {
+        padding-left: 0px;
     }
 }
 
